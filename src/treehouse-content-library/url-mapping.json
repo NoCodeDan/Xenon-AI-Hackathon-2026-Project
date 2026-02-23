@@ -1,0 +1,3407 @@
+{
+  "tracks": [
+    [
+      "Front End Web Development",
+      "https://teamtreehouse.com/tracks/front-end-web-development",
+      true
+    ],
+    [
+      "Full Stack JavaScript",
+      "https://teamtreehouse.com/tracks/full-stack-javascript",
+      true
+    ],
+    [
+      "Beginning Python",
+      "https://teamtreehouse.com/tracks/beginning-python",
+      true
+    ],
+    [
+      "Beginning SQL",
+      "https://teamtreehouse.com/tracks/beginning-sql",
+      true
+    ],
+    [
+      "Web Design",
+      "https://teamtreehouse.com/tracks/web-design",
+      true
+    ],
+    [
+      "Learn React",
+      "https://teamtreehouse.com/tracks/learn-react",
+      true
+    ],
+    [
+      "Beginning JavaScript",
+      "https://teamtreehouse.com/tracks/beginning-javascript",
+      true
+    ],
+    [
+      "Beginning Data Science",
+      "https://teamtreehouse.com/tracks/beginning-data-science",
+      true
+    ],
+    [
+      "Beginning C#",
+      "https://teamtreehouse.com/tracks/beginning-c",
+      true
+    ],
+    [
+      "Learn to Code for Beginners",
+      "https://teamtreehouse.com/tracks/learn-to-code-for-beginners",
+      true
+    ],
+    [
+      "Beginning Java",
+      "https://teamtreehouse.com/tracks/beginning-java",
+      true
+    ],
+    [
+      "Digital Literacy",
+      "https://teamtreehouse.com/tracks/digital-literacy",
+      true
+    ],
+    [
+      "Full Stack Foundations",
+      "https://teamtreehouse.com/tracks/full-stack-foundations",
+      true
+    ],
+    [
+      "Beginning PHP",
+      "https://teamtreehouse.com/tracks/beginning-php",
+      true
+    ],
+    [
+      "UX: Research Process",
+      "https://teamtreehouse.com/tracks/ux-research-process",
+      true
+    ],
+    [
+      "Intermediate Python",
+      "https://teamtreehouse.com/tracks/intermediate-python",
+      true
+    ],
+    [
+      "UX: Interaction Design",
+      "https://teamtreehouse.com/tracks/ux-interaction-design",
+      true
+    ],
+    [
+      "Beginning Data Analysis",
+      "https://teamtreehouse.com/tracks/beginning-data-analysis",
+      true
+    ],
+    [
+      "Algorithms and Data Structures",
+      "https://teamtreehouse.com/tracks/algorithms-and-data-structures",
+      true
+    ],
+    [
+      "Learn HTML",
+      "https://teamtreehouse.com/tracks/learn-html",
+      true
+    ],
+    [
+      "Design and Build a Website",
+      "https://teamtreehouse.com/tracks/design-and-build-a-website",
+      true
+    ],
+    [
+      "Design Skills for Web Developers",
+      "https://teamtreehouse.com/tracks/design-skills-for-web-developers",
+      true
+    ],
+    [
+      "Rails Development",
+      "https://teamtreehouse.com/tracks/rails-development",
+      true
+    ],
+    [
+      "UX: Visual Design Process",
+      "https://teamtreehouse.com/tracks/ux-visual-design-process",
+      true
+    ],
+    [
+      "Computer Science Basics",
+      "https://teamtreehouse.com/tracks/computer-science-basics",
+      true
+    ],
+    [
+      "Intermediate Java",
+      "https://teamtreehouse.com/tracks/intermediate-java",
+      true
+    ],
+    [
+      "Object-Oriented PHP",
+      "https://teamtreehouse.com/tracks/object-oriented-php",
+      false
+    ],
+    [
+      "Start Your Coding Journey",
+      "https://teamtreehouse.com/tracks/start-your-coding-journey",
+      true
+    ],
+    [
+      "Intermediate PHP",
+      "https://teamtreehouse.com/tracks/intermediate-php",
+      true
+    ],
+    [
+      "Product Management Basics",
+      "https://teamtreehouse.com/tracks/product-management-basics",
+      true
+    ],
+    [
+      "Practice Front End Web Development",
+      "https://teamtreehouse.com/tracks/practice-front-end-web-development",
+      true
+    ],
+    [
+      "Learn Ruby",
+      "https://teamtreehouse.com/tracks/learn-ruby",
+      true
+    ],
+    [
+      "Introduction to Project Management",
+      "https://teamtreehouse.com/tracks/introduction-to-project-management",
+      true
+    ],
+    [
+      "Exploring Flask with SQLAlchemy",
+      "https://teamtreehouse.com/tracks/exploring-flask-with-sqlalchemy",
+      true
+    ],
+    [
+      "Beginning Security",
+      "https://teamtreehouse.com/tracks/beginning-security",
+      true
+    ],
+    [
+      "Skills for a Modern Entrepreneur or Business Owner",
+      "https://teamtreehouse.com/tracks/skills-for-a-modern-entrepreneur-or-business-owner",
+      true
+    ],
+    [
+      "STEM Learning - for Kids!",
+      "https://teamtreehouse.com/tracks/stem-learning-for-kids",
+      true
+    ],
+    [
+      "Web Programming Skills for Graphic Designers",
+      "https://teamtreehouse.com/tracks/web-programming-skills-for-graphic-designers",
+      true
+    ],
+    [
+      "Introduction to Marketing and Sales Analytics",
+      "https://teamtreehouse.com/tracks/introduction-to-marketing-and-sales-analytics",
+      true
+    ],
+    [
+      "Treehouse Career Toolbox",
+      "https://teamtreehouse.com/tracks/treehouse-career-toolbox",
+      true
+    ],
+    [
+      "Exploring Flask with Peewee",
+      "https://teamtreehouse.com/tracks/exploring-flask-with-peewee",
+      true
+    ],
+    [
+      "AI for Programmers",
+      "https://teamtreehouse.com/tracks/ai-for-programmers",
+      true
+    ],
+    [
+      "AI for Designers",
+      "https://teamtreehouse.com/tracks/ai-for-designers",
+      true
+    ],
+    [
+      "College Credit: Introduction to HTML and CSS",
+      "https://teamtreehouse.com/tracks/college-credit-introduction-to-html-and-css",
+      true
+    ],
+    [
+      "College Credit: Introduction to JavaScript",
+      "https://teamtreehouse.com/tracks/college-credit-introduction-to-javascript",
+      true
+    ],
+    [
+      "College Credit: Programming in Python",
+      "https://teamtreehouse.com/tracks/college-credit-programming-in-python",
+      true
+    ],
+    [
+      "College Credit: Cybersecurity",
+      "https://teamtreehouse.com/tracks/college-credit-cybersecurity",
+      true
+    ],
+    [
+      "AI for Everyone: Build Powerful Apps Without Coding",
+      "https://teamtreehouse.com/tracks/ai-for-everyone-build-powerful-apps-without-coding",
+      true
+    ],
+    [
+      "Skills for Modern Marketing & Business",
+      "https://teamtreehouse.com/tracks/skills-for-modern-marketing-and-business",
+      false
+    ]
+  ],
+  "courses": [
+    [
+      "A Social Network with Flask",
+      "https://teamtreehouse.com/library/a-social-network-with-flask",
+      true
+    ],
+    [
+      "AI Chatbot Comparison: Google Bard, Bing AI, Claude, ChatGPT",
+      "https://teamtreehouse.com/library/ai-chatbot-comparison-google-bard-bing-ai-claude-chatgpt",
+      true
+    ],
+    [
+      "AI Tools for Designers",
+      "https://teamtreehouse.com/library/ai-tools-for-designers",
+      true
+    ],
+    [
+      "AJAX Basics",
+      "https://teamtreehouse.com/library/ajax-basics-2",
+      true
+    ],
+    [
+      "AWS with S3",
+      "https://teamtreehouse.com/library/aws-with-s3",
+      true
+    ],
+    [
+      "Accessibility For Web Developers",
+      "https://teamtreehouse.com/library/accessibility-for-web-developers",
+      true
+    ],
+    [
+      "Accessibility for UX Designers",
+      "https://teamtreehouse.com/library/accessibility-for-ux-designers-2",
+      true
+    ],
+    [
+      "Adobe Illustrator for Web Design",
+      "https://teamtreehouse.com/library/adobe-illustrator-for-web-design",
+      true
+    ],
+    [
+      "Algorithms: Sorting and Searching",
+      "https://teamtreehouse.com/library/algorithms-sorting-and-searching",
+      true
+    ],
+    [
+      "Analyzing Books with Pandas",
+      "https://teamtreehouse.com/library/analyzing-books-with-pandas",
+      false
+    ],
+    [
+      "Animating SVG with CSS",
+      "https://teamtreehouse.com/library/animating-svg-with-css",
+      true
+    ],
+    [
+      "Asynchronous Programming with JavaScript",
+      "https://teamtreehouse.com/library/asynchronous-programming-with-javascript",
+      true
+    ],
+    [
+      "Basic Error Handling in PHP",
+      "https://teamtreehouse.com/library/basic-error-handling-in-php",
+      false
+    ],
+    [
+      "Basic Object-Oriented Python",
+      "https://teamtreehouse.com/library/basic-objectoriented-python",
+      true
+    ],
+    [
+      "Bootstrap Basics",
+      "https://teamtreehouse.com/library/bootstrap-basics",
+      true
+    ],
+    [
+      "Brand Identity Basics",
+      "https://teamtreehouse.com/library/brand-identity-basics",
+      true
+    ],
+    [
+      "Browser Persistent Data with PHP",
+      "https://teamtreehouse.com/library/browser-persistent-data-with-php",
+      true
+    ],
+    [
+      "Build Your Own CRM in Lovable Step-by-Step",
+      "https://teamtreehouse.com/library/build-your-own-crm-in-lovable-step-by-step",
+      false
+    ],
+    [
+      "Build a Basic PHP Website",
+      "https://teamtreehouse.com/library/build-a-basic-php-website-2",
+      true
+    ],
+    [
+      "Build a Chatbot with Watson APIs",
+      "https://teamtreehouse.com/library/build-a-chatbot-with-watson-apis",
+      true
+    ],
+    [
+      "Build a No-Code Web App with Softr",
+      "https://teamtreehouse.com/library/build-a-no-code-web-app-with-softr",
+      false
+    ],
+    [
+      "Build a REST API in Spark",
+      "https://teamtreehouse.com/library/build-a-rest-api-in-spark",
+      false
+    ],
+    [
+      "Build a REST API with Laravel",
+      "https://teamtreehouse.com/library/build-a-rest-api-with-laravel",
+      true
+    ],
+    [
+      "Build a REST API with PHP",
+      "https://teamtreehouse.com/library/build-a-rest-api-with-php",
+      true
+    ],
+    [
+      "Build a Side Business with AI Tools",
+      "https://teamtreehouse.com/library/build-a-side-business-with-ai-tools",
+      false
+    ],
+    [
+      "Build a Simple Dynamic Site with Node.js",
+      "https://teamtreehouse.com/library/build-a-simple-dynamic-site-with-nodejs",
+      true
+    ],
+    [
+      "Build a To-Do List App with Replit Agent",
+      "https://teamtreehouse.com/library/build-a-to-do-list-app-with-replit-agent",
+      false
+    ],
+    [
+      "Build an Address Book in Ruby",
+      "https://teamtreehouse.com/library/build-an-address-book-in-ruby",
+      true
+    ],
+    [
+      "Build an Instagram Clone in Adalo",
+      "https://teamtreehouse.com/library/build-an-instagram-clone-in-adalo",
+      true
+    ],
+    [
+      "Build and Deploy a Landing Page Using Bolt",
+      "https://teamtreehouse.com/library/build-and-deploy-a-landing-page-using-bolt",
+      false
+    ],
+    [
+      "Building a Portfolio",
+      "https://teamtreehouse.com/library/building-a-portfolio",
+      true
+    ],
+    [
+      "CRUD Operations with PHP",
+      "https://teamtreehouse.com/library/crud-operations-with-php",
+      true
+    ],
+    [
+      "CSS Basics",
+      "https://teamtreehouse.com/library/css-basics-5",
+      true
+    ],
+    [
+      "CSS Best Practices",
+      "https://teamtreehouse.com/library/css-best-practices",
+      false
+    ],
+    [
+      "CSS Flexbox Layout",
+      "https://teamtreehouse.com/library/css-flexbox-layout",
+      true
+    ],
+    [
+      "CSS Grid Layout",
+      "https://teamtreehouse.com/library/css-grid-layout",
+      true
+    ],
+    [
+      "CSS Layout",
+      "https://teamtreehouse.com/library/css-layout",
+      true
+    ],
+    [
+      "CSS Selectors",
+      "https://teamtreehouse.com/library/css-selectors",
+      true
+    ],
+    [
+      "CSS Selectors Quickstart",
+      "https://teamtreehouse.com/library/css-selectors-quickstart",
+      true
+    ],
+    [
+      "CSS Transitions and Transforms",
+      "https://teamtreehouse.com/library/css-transitions-and-transforms",
+      true
+    ],
+    [
+      "CSS to Sass",
+      "https://teamtreehouse.com/library/css-to-sass",
+      true
+    ],
+    [
+      "CSS3 Master Class",
+      "https://teamtreehouse.com/library/css3-master-class",
+      false
+    ],
+    [
+      "Callback Functions in JavaScript",
+      "https://teamtreehouse.com/library/callback-functions-in-javascript",
+      true
+    ],
+    [
+      "Careers Foundations",
+      "https://teamtreehouse.com/library/careers-foundations",
+      true
+    ],
+    [
+      "Careers in the Tech Industry",
+      "https://teamtreehouse.com/library/careers-in-the-tech-industry",
+      true
+    ],
+    [
+      "Code Racer",
+      "https://teamtreehouse.com/library/code-racer",
+      false
+    ],
+    [
+      "Collaborating with Developers",
+      "https://teamtreehouse.com/library/collaborating-with-developers",
+      true
+    ],
+    [
+      "Combining Data for Analysis",
+      "https://teamtreehouse.com/library/combining-data-for-analysis",
+      false
+    ],
+    [
+      "Computer Basics",
+      "https://teamtreehouse.com/library/computer-basics",
+      true
+    ],
+    [
+      "Conducting User Interviews",
+      "https://teamtreehouse.com/library/conducting-user-interviews",
+      true
+    ],
+    [
+      "Continuous Integration with Jenkins",
+      "https://teamtreehouse.com/library/continuous-integration-with-jenkins",
+      true
+    ],
+    [
+      "Copyright Basics",
+      "https://teamtreehouse.com/library/copyright-basics",
+      true
+    ],
+    [
+      "Create AR Effects for TikTok with Effect House",
+      "https://teamtreehouse.com/library/create-ar-effects-for-tiktok-with-effect-house",
+      false
+    ],
+    [
+      "Create a Portfolio Using HTML and CSS",
+      "https://teamtreehouse.com/library/create-a-portfolio-using-html-and-css",
+      false
+    ],
+    [
+      "Creating Mockups",
+      "https://teamtreehouse.com/library/creating-mockups",
+      false
+    ],
+    [
+      "Creating User Experiences",
+      "https://teamtreehouse.com/library/creating-user-experiences",
+      true
+    ],
+    [
+      "Creating Wireframe and Photoshop Mockups",
+      "https://teamtreehouse.com/library/creating-wireframe-and-photoshop-mockups",
+      false
+    ],
+    [
+      "Creating a CSS Marquee",
+      "https://teamtreehouse.com/library/creating-a-css-marquee",
+      false
+    ],
+    [
+      "Creating and Modifying Database Tables",
+      "https://teamtreehouse.com/library/creating-and-modifying-database-tables",
+      true
+    ],
+    [
+      "DOM Scripting By Example",
+      "https://teamtreehouse.com/library/dom-scripting-by-example",
+      true
+    ],
+    [
+      "Data Analysis Basics",
+      "https://teamtreehouse.com/library/data-analysis-basics",
+      true
+    ],
+    [
+      "Data Fetching in React",
+      "https://teamtreehouse.com/library/data-fetching-in-react",
+      false
+    ],
+    [
+      "Data Relationships with SQL and Sequelize",
+      "https://teamtreehouse.com/library/data-relationships-with-sql-and-sequelize-2",
+      true
+    ],
+    [
+      "Data Visualization Foundations",
+      "https://teamtreehouse.com/library/data-visualization-foundations",
+      true
+    ],
+    [
+      "Data Visualization with Bokeh",
+      "https://teamtreehouse.com/library/data-visualization-with-bokeh",
+      true
+    ],
+    [
+      "Data Visualization with Excel",
+      "https://teamtreehouse.com/library/data-visualization-with-excel",
+      true
+    ],
+    [
+      "Data Visualization with Google Sheets",
+      "https://teamtreehouse.com/library/data-visualization-with-google-sheets",
+      false
+    ],
+    [
+      "Data from APIs",
+      "https://teamtreehouse.com/library/data-from-apis",
+      false
+    ],
+    [
+      "Debugging CSS with Chrome DevTools",
+      "https://teamtreehouse.com/library/debugging-css-with-chrome-devtools",
+      false
+    ],
+    [
+      "Debugging JavaScript in the Browser",
+      "https://teamtreehouse.com/library/debugging-javascript-in-the-browser",
+      false
+    ],
+    [
+      "Design Foundations",
+      "https://teamtreehouse.com/library/design-foundations",
+      true
+    ],
+    [
+      "Designing Interactions",
+      "https://teamtreehouse.com/library/designing-interactions",
+      true
+    ],
+    [
+      "Designing Interfaces in PHP",
+      "https://teamtreehouse.com/library/designing-interfaces-in-php",
+      true
+    ],
+    [
+      "Designing Layouts",
+      "https://teamtreehouse.com/library/designing-layouts",
+      true
+    ],
+    [
+      "Designing with Generative AI",
+      "https://teamtreehouse.com/library/designing-with-generative-ai",
+      true
+    ],
+    [
+      "Digital Media Through Photoshop",
+      "https://teamtreehouse.com/library/digital-media-through-photoshop",
+      true
+    ],
+    [
+      "Enhancing Design with CSS",
+      "https://teamtreehouse.com/library/enhancing-design-with-css",
+      true
+    ],
+    [
+      "Environment Variables with PHP",
+      "https://teamtreehouse.com/library/environment-variables-with-php",
+      true
+    ],
+    [
+      "Ethical Design",
+      "https://teamtreehouse.com/library/ethical-design",
+      true
+    ],
+    [
+      "Evaluating Design",
+      "https://teamtreehouse.com/library/evaluating-design",
+      true
+    ],
+    [
+      "Exercise Your Creative",
+      "https://teamtreehouse.com/library/exercise-your-creative",
+      false
+    ],
+    [
+      "Express Basics",
+      "https://teamtreehouse.com/library/express-basics-2",
+      true
+    ],
+    [
+      "Extending Object-Oriented PHP",
+      "https://teamtreehouse.com/library/extending-objectoriented-php",
+      true
+    ],
+    [
+      "Feeling Loopy with Java",
+      "https://teamtreehouse.com/library/feeling-loopy-with-java",
+      false
+    ],
+    [
+      "File Handling with PHP",
+      "https://teamtreehouse.com/library/file-handling-with-php",
+      true
+    ],
+    [
+      "Financial Statement Basics",
+      "https://teamtreehouse.com/library/financial-statement-basics",
+      true
+    ],
+    [
+      "Flask Basics",
+      "https://teamtreehouse.com/library/flask-basics",
+      true
+    ],
+    [
+      "Flask REST API",
+      "https://teamtreehouse.com/library/flask-rest-api",
+      true
+    ],
+    [
+      "Flask with SQLAlchemy Basics",
+      "https://teamtreehouse.com/library/flask-with-sqlalchemy-basics",
+      true
+    ],
+    [
+      "Fluid Grids",
+      "https://teamtreehouse.com/library/fluid-grids",
+      false
+    ],
+    [
+      "Front End Web Optimization Workflow",
+      "https://teamtreehouse.com/library/front-end-web-optimization-workflow",
+      true
+    ],
+    [
+      "Functional Programming with Python",
+      "https://teamtreehouse.com/library/functional-programming-with-python",
+      false
+    ],
+    [
+      "Functional Python",
+      "https://teamtreehouse.com/library/functional-python",
+      true
+    ],
+    [
+      "Functions, Packing, and Unpacking",
+      "https://teamtreehouse.com/library/functions-packing-and-unpacking",
+      true
+    ],
+    [
+      "Game Development with Phaser",
+      "https://teamtreehouse.com/library/game-development-with-phaser",
+      true
+    ],
+    [
+      "Getting Started With ES2015",
+      "https://teamtreehouse.com/library/getting-started-with-es2015-2",
+      true
+    ],
+    [
+      "Getting Started With Human Interface Guidelines",
+      "https://teamtreehouse.com/library/getting-started-with-human-interface-guidelines",
+      true
+    ],
+    [
+      "Getting Started With Material Design",
+      "https://teamtreehouse.com/library/getting-started-with-material-design",
+      true
+    ],
+    [
+      "Getting Started in Adalo",
+      "https://teamtreehouse.com/library/getting-started-in-adalo",
+      true
+    ],
+    [
+      "Getting Started with PHP Unit Testing",
+      "https://teamtreehouse.com/library/getting-started-with-php-unit-testing",
+      true
+    ],
+    [
+      "Getting Started with TypeScript",
+      "https://teamtreehouse.com/library/getting-started-with-typescript",
+      false
+    ],
+    [
+      "Getting Started with WeWeb",
+      "https://teamtreehouse.com/library/getting-started-with-weweb",
+      false
+    ],
+    [
+      "Git Branches and Merging",
+      "https://teamtreehouse.com/library/git-branches-and-merging",
+      true
+    ],
+    [
+      "GitHub Basics",
+      "https://teamtreehouse.com/library/github-basics",
+      true
+    ],
+    [
+      "Go Language Overview",
+      "https://teamtreehouse.com/library/go-language-overview",
+      true
+    ],
+    [
+      "HTML Basics",
+      "https://teamtreehouse.com/library/html-basics-2",
+      true
+    ],
+    [
+      "HTML Forms",
+      "https://teamtreehouse.com/library/html-forms",
+      true
+    ],
+    [
+      "HTML Tables",
+      "https://teamtreehouse.com/library/html-tables",
+      true
+    ],
+    [
+      "HTML Video and Audio",
+      "https://teamtreehouse.com/library/html-video-and-audio-2",
+      true
+    ],
+    [
+      "HTML5 Mobile Web Applications",
+      "https://teamtreehouse.com/library/html5-mobile-web-applications",
+      false
+    ],
+    [
+      "HTTP Basics",
+      "https://teamtreehouse.com/library/http-basics",
+      true
+    ],
+    [
+      "Hello Front-End Web Development (FEWD)",
+      "https://teamtreehouse.com/library/hello-front-end-web-development-fewd",
+      false
+    ],
+    [
+      "Hello Python",
+      "https://teamtreehouse.com/library/hello-python",
+      false
+    ],
+    [
+      "Hello Swift & SwiftUI",
+      "https://teamtreehouse.com/library/hello-swift-and-swiftui",
+      false
+    ],
+    [
+      "Hibernate Basics",
+      "https://teamtreehouse.com/library/hibernate-basics",
+      true
+    ],
+    [
+      "How the Internet Works",
+      "https://teamtreehouse.com/library/how-the-internet-works",
+      true
+    ],
+    [
+      "How the Web Works",
+      "https://teamtreehouse.com/library/how-the-web-works",
+      true
+    ],
+    [
+      "How to Build a Google Chrome Extension: Strong Password Generator",
+      "https://teamtreehouse.com/library/how-to-build-a-google-chrome-extension-strong-password-generator",
+      false
+    ],
+    [
+      "How to Freelance",
+      "https://teamtreehouse.com/library/how-to-freelance",
+      true
+    ],
+    [
+      "How to Have 1:1's",
+      "https://teamtreehouse.com/library/how-to-have-11s",
+      true
+    ],
+    [
+      "How to Land Your Dream Job",
+      "https://teamtreehouse.com/library/how-to-land-your-dream-job",
+      false
+    ],
+    [
+      "How to Make a Favicon",
+      "https://teamtreehouse.com/library/how-to-make-a-favicon",
+      false
+    ],
+    [
+      "How to Market Your Business",
+      "https://teamtreehouse.com/library/how-to-market-your-business",
+      true
+    ],
+    [
+      "How to Run a Web Design Business",
+      "https://teamtreehouse.com/library/how-to-run-a-web-design-business",
+      true
+    ],
+    [
+      "How to Start a Business",
+      "https://teamtreehouse.com/library/how-to-start-a-business",
+      true
+    ],
+    [
+      "How to Use Treehouse",
+      "https://teamtreehouse.com/library/how-to-use-treehouse",
+      false
+    ],
+    [
+      "How to Write a Business Plan",
+      "https://teamtreehouse.com/library/how-to-write-a-business-plan",
+      true
+    ],
+    [
+      "Important Skills for Professional Success",
+      "https://teamtreehouse.com/library/important-skills-for-professional-success",
+      false
+    ],
+    [
+      "Information Architecture",
+      "https://teamtreehouse.com/library/information-architecture",
+      true
+    ],
+    [
+      "Inheritance in Java",
+      "https://teamtreehouse.com/library/inheritance-in-java",
+      true
+    ],
+    [
+      "Integrating PHP with Databases",
+      "https://teamtreehouse.com/library/integrating-php-with-databases",
+      true
+    ],
+    [
+      "Interacting with the DOM",
+      "https://teamtreehouse.com/library/interacting-with-the-dom",
+      true
+    ],
+    [
+      "Intermediate Excel",
+      "https://teamtreehouse.com/library/intermediate-excel",
+      true
+    ],
+    [
+      "Intermediate Selenium WebDriver",
+      "https://teamtreehouse.com/library/intermediate-selenium-webdriver",
+      true
+    ],
+    [
+      "Intro to Design Thinking",
+      "https://teamtreehouse.com/library/intro-to-design-thinking",
+      true
+    ],
+    [
+      "Intro to Gender & Sexuality",
+      "https://teamtreehouse.com/library/intro-to-gender-and-sexuality",
+      false
+    ],
+    [
+      "Intro to Java Web Development with Spark",
+      "https://teamtreehouse.com/library/intro-to-java-web-development-with-spark",
+      true
+    ],
+    [
+      "Intro to Seaborn",
+      "https://teamtreehouse.com/library/intro-to-seaborn",
+      true
+    ],
+    [
+      "Introducing Coda",
+      "https://teamtreehouse.com/library/introducing-coda",
+      false
+    ],
+    [
+      "Introducing Dictionaries",
+      "https://teamtreehouse.com/library/introducing-dictionaries",
+      true
+    ],
+    [
+      "Introducing ES2015",
+      "https://teamtreehouse.com/library/introducing-es2015",
+      true
+    ],
+    [
+      "Introducing JavaScript",
+      "https://teamtreehouse.com/library/introducing-javascript",
+      true
+    ],
+    [
+      "Introducing Lists",
+      "https://teamtreehouse.com/library/introducing-lists",
+      true
+    ],
+    [
+      "Introducing MVC Frameworks in PHP",
+      "https://teamtreehouse.com/library/introducing-mvc-frameworks-in-php",
+      true
+    ],
+    [
+      "Introducing UXPin Merge",
+      "https://teamtreehouse.com/library/introducing-uxpin-merge",
+      false
+    ],
+    [
+      "Introduction to Algorithms",
+      "https://teamtreehouse.com/library/introduction-to-algorithms",
+      true
+    ],
+    [
+      "Introduction to Application Security",
+      "https://teamtreehouse.com/library/introduction-to-application-security",
+      true
+    ],
+    [
+      "Introduction to Big Data",
+      "https://teamtreehouse.com/library/introduction-to-big-data",
+      true
+    ],
+    [
+      "Introduction to Churn and Lifetime Value (LTV) Analysis",
+      "https://teamtreehouse.com/library/introduction-to-churn-and-lifetime-value-ltv-analysis",
+      true
+    ],
+    [
+      "Introduction to Computer Vision",
+      "https://teamtreehouse.com/library/introduction-to-computer-vision",
+      true
+    ],
+    [
+      "Introduction to Data Security",
+      "https://teamtreehouse.com/library/introduction-to-data-security",
+      true
+    ],
+    [
+      "Introduction to Data Structures",
+      "https://teamtreehouse.com/library/introduction-to-data-structures",
+      true
+    ],
+    [
+      "Introduction to Data Visualization with Matplotlib",
+      "https://teamtreehouse.com/library/introduction-to-data-visualization-with-matplotlib",
+      true
+    ],
+    [
+      "Introduction to Design Patterns",
+      "https://teamtreehouse.com/library/introduction-to-design-patterns",
+      false
+    ],
+    [
+      "Introduction to Design Systems",
+      "https://teamtreehouse.com/library/introduction-to-design-systems",
+      true
+    ],
+    [
+      "Introduction to Docker",
+      "https://teamtreehouse.com/library/introduction-to-docker",
+      true
+    ],
+    [
+      "Introduction to Front End Performance Optimization",
+      "https://teamtreehouse.com/library/introduction-to-front-end-performance-optimization",
+      true
+    ],
+    [
+      "Introduction to Git",
+      "https://teamtreehouse.com/library/introduction-to-git",
+      true
+    ],
+    [
+      "Introduction to GraphQL",
+      "https://teamtreehouse.com/library/introduction-to-graphql",
+      true
+    ],
+    [
+      "Introduction to HTML and CSS",
+      "https://teamtreehouse.com/library/introduction-to-html-and-css-2",
+      true
+    ],
+    [
+      "Introduction to NLP",
+      "https://teamtreehouse.com/library/introduction-to-nlp",
+      true
+    ],
+    [
+      "Introduction to NumPy",
+      "https://teamtreehouse.com/library/introduction-to-numpy",
+      true
+    ],
+    [
+      "Introduction to PostCSS",
+      "https://teamtreehouse.com/library/introduction-to-postcss",
+      false
+    ],
+    [
+      "Introduction to Product Design",
+      "https://teamtreehouse.com/library/introduction-to-product-design",
+      true
+    ],
+    [
+      "Introduction to QA Engineering",
+      "https://teamtreehouse.com/library/introduction-to-qa-engineering",
+      true
+    ],
+    [
+      "Introduction to Regular Expressions",
+      "https://teamtreehouse.com/library/introduction-to-regular-expressions-2",
+      true
+    ],
+    [
+      "Introduction to Ruby on Rails 7",
+      "https://teamtreehouse.com/library/introduction-to-ruby-on-rails-7",
+      true
+    ],
+    [
+      "Introduction to Selenium",
+      "https://teamtreehouse.com/library/introduction-to-selenium",
+      true
+    ],
+    [
+      "Introduction to User Authentication in PHP",
+      "https://teamtreehouse.com/library/introduction-to-user-authentication-in-php",
+      true
+    ],
+    [
+      "Introduction to Wireframing",
+      "https://teamtreehouse.com/library/introduction-to-wireframing",
+      true
+    ],
+    [
+      "Introduction to pandas",
+      "https://teamtreehouse.com/library/introduction-to-pandas",
+      true
+    ],
+    [
+      "Introduction to the Terminal",
+      "https://teamtreehouse.com/library/introduction-to-the-terminal",
+      true
+    ],
+    [
+      "Java Annotations",
+      "https://teamtreehouse.com/library/java-annotations",
+      true
+    ],
+    [
+      "Java Arrays",
+      "https://teamtreehouse.com/library/java-arrays",
+      false
+    ],
+    [
+      "Java Basics",
+      "https://teamtreehouse.com/library/java-basics",
+      false
+    ],
+    [
+      "Java Data Structures",
+      "https://teamtreehouse.com/library/java-data-structures",
+      false
+    ],
+    [
+      "Java Loops",
+      "https://teamtreehouse.com/library/java-loops",
+      false
+    ],
+    [
+      "Java Objects",
+      "https://teamtreehouse.com/library/java-objects",
+      false
+    ],
+    [
+      "JavaScript Array Iteration Methods",
+      "https://teamtreehouse.com/library/javascript-array-iteration-methods",
+      true
+    ],
+    [
+      "JavaScript Arrays",
+      "https://teamtreehouse.com/library/javascript-arrays",
+      true
+    ],
+    [
+      "JavaScript Basics",
+      "https://teamtreehouse.com/library/javascript-basics",
+      true
+    ],
+    [
+      "JavaScript Data Fetching",
+      "https://teamtreehouse.com/library/javascript-data-fetching",
+      false
+    ],
+    [
+      "JavaScript Functions",
+      "https://teamtreehouse.com/library/javascript-functions",
+      true
+    ],
+    [
+      "JavaScript Loops",
+      "https://teamtreehouse.com/library/javascript-loops",
+      true
+    ],
+    [
+      "JavaScript Numbers",
+      "https://teamtreehouse.com/library/javascript-numbers",
+      true
+    ],
+    [
+      "JavaScript Objects",
+      "https://teamtreehouse.com/library/javascript-objects-2",
+      true
+    ],
+    [
+      "JavaScript Quickstart",
+      "https://teamtreehouse.com/library/javascript-quickstart",
+      true
+    ],
+    [
+      "JavaScript Unit Testing",
+      "https://teamtreehouse.com/library/javascript-unit-testing",
+      true
+    ],
+    [
+      "JavaScript and the DOM",
+      "https://teamtreehouse.com/library/javascript-and-the-dom-3",
+      true
+    ],
+    [
+      "Laravel Basics",
+      "https://teamtreehouse.com/library/laravel-basics-2",
+      true
+    ],
+    [
+      "Learn React Panel",
+      "https://teamtreehouse.com/library/learn-react-panel",
+      false
+    ],
+    [
+      "Local Development Environments",
+      "https://teamtreehouse.com/library/local-development-environments",
+      false
+    ],
+    [
+      "Machine Learning Basics",
+      "https://teamtreehouse.com/library/machine-learning-basics",
+      true
+    ],
+    [
+      "Markdown Basics",
+      "https://teamtreehouse.com/library/markdown-basics",
+      true
+    ],
+    [
+      "Media Queries",
+      "https://teamtreehouse.com/library/media-queries",
+      false
+    ],
+    [
+      "Mobile-First CSS Layout",
+      "https://teamtreehouse.com/library/mobile-first-css-layout",
+      false
+    ],
+    [
+      "Mockups for Responsive Design",
+      "https://teamtreehouse.com/library/mockups-for-responsive-design",
+      false
+    ],
+    [
+      "Modifying Data with SQL",
+      "https://teamtreehouse.com/library/modifying-data-with-sql",
+      true
+    ],
+    [
+      "Modular CSS with Sass",
+      "https://teamtreehouse.com/library/modular-css-with-sass",
+      true
+    ],
+    [
+      "Navigate Unfamiliar Code with AI",
+      "https://teamtreehouse.com/library/navigate-unfamiliar-code-with-ai",
+      false
+    ],
+    [
+      "Node.js Basics",
+      "https://teamtreehouse.com/library/nodejs-basics-3",
+      true
+    ],
+    [
+      "Object-Oriented JavaScript",
+      "https://teamtreehouse.com/library/objectoriented-javascript-2",
+      true
+    ],
+    [
+      "Object-Oriented JavaScript: Challenge",
+      "https://teamtreehouse.com/library/objectoriented-javascript-challenge",
+      true
+    ],
+    [
+      "Object-Oriented PHP Basics",
+      "https://teamtreehouse.com/library/objectoriented-php-basics-2",
+      true
+    ],
+    [
+      "Object-Oriented Python",
+      "https://teamtreehouse.com/library/objectoriented-python-2",
+      true
+    ],
+    [
+      "Observer Design Pattern using Java",
+      "https://teamtreehouse.com/library/observer-design-pattern-using-java",
+      false
+    ],
+    [
+      "PHP & Databases with PDO",
+      "https://teamtreehouse.com/library/php-and-databases-with-pdo",
+      false
+    ],
+    [
+      "PHP Arrays and Control Structures",
+      "https://teamtreehouse.com/library/php-arrays-and-control-structures",
+      true
+    ],
+    [
+      "PHP Basics",
+      "https://teamtreehouse.com/library/php-basics-2",
+      true
+    ],
+    [
+      "PHP Functions",
+      "https://teamtreehouse.com/library/php-functions-2",
+      true
+    ],
+    [
+      "PHP Standards and Best Practices",
+      "https://teamtreehouse.com/library/php-standards-and-best-practices",
+      true
+    ],
+    [
+      "PHP User Authentication",
+      "https://teamtreehouse.com/library/php-user-authentication",
+      true
+    ],
+    [
+      "Pagination with GitHub Copilot",
+      "https://teamtreehouse.com/library/pagination-with-github-copilot",
+      false
+    ],
+    [
+      "Preparing Data for Analysis",
+      "https://teamtreehouse.com/library/preparing-data-for-analysis",
+      true
+    ],
+    [
+      "Presentation Skills",
+      "https://teamtreehouse.com/library/presentation-skills-2",
+      true
+    ],
+    [
+      "Prototyping in the Browser",
+      "https://teamtreehouse.com/library/prototyping-in-the-browser",
+      true
+    ],
+    [
+      "Prototyping with Adobe XD",
+      "https://teamtreehouse.com/library/prototyping-with-adobe-xd",
+      true
+    ],
+    [
+      "Prototyping with Figma",
+      "https://teamtreehouse.com/library/prototyping-with-figma",
+      true
+    ],
+    [
+      "Python Basics",
+      "https://teamtreehouse.com/library/python-basics-3",
+      true
+    ],
+    [
+      "Python Comprehensions",
+      "https://teamtreehouse.com/library/python-comprehensions",
+      false
+    ],
+    [
+      "Python Dates and Times",
+      "https://teamtreehouse.com/library/python-dates-and-times",
+      true
+    ],
+    [
+      "Python Sequences",
+      "https://teamtreehouse.com/library/python-sequences",
+      true
+    ],
+    [
+      "Python Sets",
+      "https://teamtreehouse.com/library/python-sets",
+      false
+    ],
+    [
+      "Python Testing",
+      "https://teamtreehouse.com/library/python-testing",
+      true
+    ],
+    [
+      "Python for File Systems",
+      "https://teamtreehouse.com/library/python-for-file-systems",
+      true
+    ],
+    [
+      "Python for Kids",
+      "https://teamtreehouse.com/library/python-for-kids",
+      true
+    ],
+    [
+      "Querying Relational Databases",
+      "https://teamtreehouse.com/library/querying-relational-databases",
+      true
+    ],
+    [
+      "REST API Validation with Express",
+      "https://teamtreehouse.com/library/rest-api-validation-with-express-2",
+      true
+    ],
+    [
+      "REST APIs with Express",
+      "https://teamtreehouse.com/library/rest-apis-with-express",
+      true
+    ],
+    [
+      "Rails 8 Course - Beginner to Intermediate",
+      "https://teamtreehouse.com/library/rails-8-course-beginner-to-intermediate",
+      false
+    ],
+    [
+      "Rapid Website Prototyping",
+      "https://teamtreehouse.com/library/rapid-website-prototyping",
+      false
+    ],
+    [
+      "React Authentication",
+      "https://teamtreehouse.com/library/react-authentication-2",
+      true
+    ],
+    [
+      "React Basics",
+      "https://teamtreehouse.com/library/react-basics-4",
+      true
+    ],
+    [
+      "React Components",
+      "https://teamtreehouse.com/library/react-components-2",
+      true
+    ],
+    [
+      "React Context API",
+      "https://teamtreehouse.com/library/react-context-api",
+      false
+    ],
+    [
+      "React Hooks",
+      "https://teamtreehouse.com/library/react-hooks",
+      false
+    ],
+    [
+      "React Router v6 Basics",
+      "https://teamtreehouse.com/library/react-router-v6-basics",
+      true
+    ],
+    [
+      "React by Example",
+      "https://teamtreehouse.com/library/react-by-example",
+      true
+    ],
+    [
+      "Regular Expressions in JavaScript",
+      "https://teamtreehouse.com/library/regular-expressions-in-javascript",
+      true
+    ],
+    [
+      "Regular Expressions in Python",
+      "https://teamtreehouse.com/library/regular-expressions-in-python",
+      true
+    ],
+    [
+      "Relational Databases With SQLAlchemy",
+      "https://teamtreehouse.com/library/relational-databases-with-sqlalchemy",
+      false
+    ],
+    [
+      "Reporting with SQL",
+      "https://teamtreehouse.com/library/reporting-with-sql",
+      true
+    ],
+    [
+      "Researching User Needs",
+      "https://teamtreehouse.com/library/researching-user-needs",
+      true
+    ],
+    [
+      "Responsive Design",
+      "https://teamtreehouse.com/library/responsive-design",
+      false
+    ],
+    [
+      "Responsive Images",
+      "https://teamtreehouse.com/library/responsive-images",
+      true
+    ],
+    [
+      "Responsive Layouts",
+      "https://teamtreehouse.com/library/responsive-layouts",
+      true
+    ],
+    [
+      "Ruby Basics",
+      "https://teamtreehouse.com/library/ruby-basics-2",
+      true
+    ],
+    [
+      "Ruby Blocks",
+      "https://teamtreehouse.com/library/ruby-blocks",
+      true
+    ],
+    [
+      "Ruby Collections",
+      "https://teamtreehouse.com/library/ruby-collections",
+      true
+    ],
+    [
+      "Ruby Loops",
+      "https://teamtreehouse.com/library/ruby-loops",
+      true
+    ],
+    [
+      "Ruby Modules",
+      "https://teamtreehouse.com/library/ruby-modules",
+      true
+    ],
+    [
+      "Ruby Objects and Classes",
+      "https://teamtreehouse.com/library/ruby-objects-and-classes",
+      true
+    ],
+    [
+      "SQL Basics",
+      "https://teamtreehouse.com/library/sql-basics",
+      true
+    ],
+    [
+      "SQL Reporting by Example",
+      "https://teamtreehouse.com/library/sql-reporting-by-example",
+      true
+    ],
+    [
+      "SQLAlchemy Basics",
+      "https://teamtreehouse.com/library/sqlalchemy-basics",
+      true
+    ],
+    [
+      "SVG Basics",
+      "https://teamtreehouse.com/library/svg-basics",
+      true
+    ],
+    [
+      "SVG Workflow and Tools",
+      "https://teamtreehouse.com/library/svg-workflow-and-tools",
+      false
+    ],
+    [
+      "Sass Basics",
+      "https://teamtreehouse.com/library/sass-basics-2",
+      true
+    ],
+    [
+      "Scraping Data From the Web",
+      "https://teamtreehouse.com/library/scraping-data-from-the-web",
+      true
+    ],
+    [
+      "Scrum Basics",
+      "https://teamtreehouse.com/library/scrum-basics",
+      true
+    ],
+    [
+      "Security Literacy",
+      "https://teamtreehouse.com/library/security-literacy",
+      true
+    ],
+    [
+      "Sketch Basics",
+      "https://teamtreehouse.com/library/sketch-basics",
+      true
+    ],
+    [
+      "Soft Skills",
+      "https://teamtreehouse.com/library/soft-skills",
+      true
+    ],
+    [
+      "Spreadsheet Basics",
+      "https://teamtreehouse.com/library/spreadsheet-basics",
+      true
+    ],
+    [
+      "Structuring Your Code",
+      "https://teamtreehouse.com/library/structuring-your-code",
+      false
+    ],
+    [
+      "Supercharge Your Figma Workflow with AI Plugins",
+      "https://teamtreehouse.com/library/supercharge-your-figma-workflow-with-ai-plugins",
+      true
+    ],
+    [
+      "Technical Interviewing",
+      "https://teamtreehouse.com/library/technical-interviewing",
+      true
+    ],
+    [
+      "Templating with Twig",
+      "https://teamtreehouse.com/library/templating-with-twig",
+      true
+    ],
+    [
+      "The 4-Step Career Checklist",
+      "https://teamtreehouse.com/library/the-4-step-career-checklist",
+      false
+    ],
+    [
+      "The Complete Guide to Publishing Your No-Code Apps with Adalo",
+      "https://teamtreehouse.com/library/the-complete-guide-to-publishing-your-nocode-apps-with-adalo",
+      true
+    ],
+    [
+      "The Landscape of JavaScript",
+      "https://teamtreehouse.com/library/the-landscape-of-javascript",
+      true
+    ],
+    [
+      "Tkinter",
+      "https://teamtreehouse.com/library/tkinter",
+      false
+    ],
+    [
+      "Treehouse Club: CSS",
+      "https://teamtreehouse.com/library/treehouse-club-css",
+      true
+    ],
+    [
+      "Treehouse Club: HTML",
+      "https://teamtreehouse.com/library/treehouse-club-html",
+      true
+    ],
+    [
+      "Treehouse Club: JavaScript",
+      "https://teamtreehouse.com/library/treehouse-club-javascript",
+      true
+    ],
+    [
+      "Treehouse Features: Code Challenges",
+      "https://teamtreehouse.com/library/treehouse-features-code-challenges",
+      false
+    ],
+    [
+      "TypeScript Basics",
+      "https://teamtreehouse.com/library/typescript-basics",
+      true
+    ],
+    [
+      "Typography for Designers",
+      "https://teamtreehouse.com/library/typography-for-designers",
+      true
+    ],
+    [
+      "UX Content Strategy",
+      "https://teamtreehouse.com/library/ux-content-strategy",
+      true
+    ],
+    [
+      "UX Design Patterns",
+      "https://teamtreehouse.com/library/ux-design-patterns-2",
+      true
+    ],
+    [
+      "Unit Testing in Java",
+      "https://teamtreehouse.com/library/unit-testing-in-java",
+      true
+    ],
+    [
+      "Unity Basics",
+      "https://teamtreehouse.com/library/unity-basics",
+      false
+    ],
+    [
+      "Usability Foundations",
+      "https://teamtreehouse.com/library/usability-foundations",
+      true
+    ],
+    [
+      "Usability Testing",
+      "https://teamtreehouse.com/library/usability-testing",
+      false
+    ],
+    [
+      "User Authentication With Express and Mongo",
+      "https://teamtreehouse.com/library/user-authentication-with-express-and-mongo",
+      true
+    ],
+    [
+      "User Onboarding",
+      "https://teamtreehouse.com/library/user-onboarding",
+      true
+    ],
+    [
+      "Using CSS Variables",
+      "https://teamtreehouse.com/library/using-css-variables",
+      false
+    ],
+    [
+      "Using Cookies and JWTs for Secure Authentication",
+      "https://teamtreehouse.com/library/using-cookies-and-jwts-for-secure-authentication",
+      true
+    ],
+    [
+      "Using Databases in Python",
+      "https://teamtreehouse.com/library/using-databases-in-python",
+      true
+    ],
+    [
+      "Using SQL ORMs with Node.js",
+      "https://teamtreehouse.com/library/using-sql-orms-with-nodejs",
+      true
+    ],
+    [
+      "Using SQL and Node.js with Sequelize",
+      "https://teamtreehouse.com/library/using-sql-and-nodejs-with-sequelize",
+      false
+    ],
+    [
+      "Using Sequelize ORM With Express",
+      "https://teamtreehouse.com/library/using-sequelize-orm-with-express",
+      false
+    ],
+    [
+      "Using jQuery Plugins",
+      "https://teamtreehouse.com/library/using-jquery-plugins",
+      true
+    ],
+    [
+      "Using the Angular CLI",
+      "https://teamtreehouse.com/library/using-the-angular-cli",
+      false
+    ],
+    [
+      "Using the GitHub API with PHP",
+      "https://teamtreehouse.com/library/using-the-github-api-with-php",
+      true
+    ],
+    [
+      "Visual Design Foundations",
+      "https://teamtreehouse.com/library/visual-design-foundations",
+      true
+    ],
+    [
+      "Vue.js Basics",
+      "https://teamtreehouse.com/library/vuejs-basics",
+      true
+    ],
+    [
+      "Web Accessibility Compliance",
+      "https://teamtreehouse.com/library/web-accessibility-compliance",
+      true
+    ],
+    [
+      "Web Design Process",
+      "https://teamtreehouse.com/library/web-design-process",
+      true
+    ],
+    [
+      "Web Typography",
+      "https://teamtreehouse.com/library/web-typography",
+      true
+    ],
+    [
+      "Website Optimization",
+      "https://teamtreehouse.com/library/website-optimization",
+      true
+    ],
+    [
+      "Working with $_GET and $_POST in PHP",
+      "https://teamtreehouse.com/library/working-with-get-and-post-in-php",
+      true
+    ],
+    [
+      "Write Better Python",
+      "https://teamtreehouse.com/library/write-better-python",
+      true
+    ],
+    [
+      "jQuery Basics",
+      "https://teamtreehouse.com/library/jquery-basics-2",
+      true
+    ],
+    [
+      "npm Basics",
+      "https://teamtreehouse.com/library/npm-basics-2",
+      true
+    ]
+  ],
+  "workshops": [
+    [
+      "A Developer's Adventure with AI",
+      "https://teamtreehouse.com/library/a-developers-adventure-with-ai",
+      false
+    ],
+    [
+      "AI Tools Treehouse Developers Love",
+      "https://teamtreehouse.com/library/ai-tools-treehouse-developers-love",
+      false
+    ],
+    [
+      "AI Tools for No-Code Development",
+      "https://teamtreehouse.com/library/ai-tools-for-no-code-development",
+      false
+    ],
+    [
+      "AI Tools for Sitemapping and Wireframing",
+      "https://teamtreehouse.com/library/ai-tools-for-sitemapping-and-wireframing",
+      false
+    ],
+    [
+      "AI-Powered VS Code Extensions",
+      "https://teamtreehouse.com/library/ai-powered-vs-code-extensions",
+      false
+    ],
+    [
+      "Animated Hamburger Menu",
+      "https://teamtreehouse.com/library/animated-hamburger-menu",
+      false
+    ],
+    [
+      "App Deployment Accounts",
+      "https://teamtreehouse.com/library/app-deployment-accounts",
+      false
+    ],
+    [
+      "App Planning & Organization with Adalo",
+      "https://teamtreehouse.com/library/app-planning-and-organization-with-adalo",
+      false
+    ],
+    [
+      "Asynchronous Code in Express",
+      "https://teamtreehouse.com/library/asynchronous-code-in-express",
+      true
+    ],
+    [
+      "Automate Your Work with Zapier",
+      "https://teamtreehouse.com/library/automate-your-work-with-zapier",
+      false
+    ],
+    [
+      "Basic Exception Handling with PHP",
+      "https://teamtreehouse.com/library/basic-exception-handling-with-php",
+      false
+    ],
+    [
+      "Basic JavaScript Array Methods",
+      "https://teamtreehouse.com/library/basic-javascript-array-methods",
+      false
+    ],
+    [
+      "Basic Math for Data Analysis",
+      "https://teamtreehouse.com/library/basic-math-for-data-analysis",
+      true
+    ],
+    [
+      "Basic Statistics for Data Analysis",
+      "https://teamtreehouse.com/library/basic-statistics-for-data-analysis",
+      true
+    ],
+    [
+      "Before and After: Color",
+      "https://teamtreehouse.com/library/before-and-after-color",
+      false
+    ],
+    [
+      "Before and After: Layout",
+      "https://teamtreehouse.com/library/before-and-after-layout",
+      false
+    ],
+    [
+      "Before and After: Typography",
+      "https://teamtreehouse.com/library/before-and-after-typography",
+      false
+    ],
+    [
+      "Build & Launch an App in 30 Minutes with Cursor",
+      "https://teamtreehouse.com/library/build-and-launch-an-app-in-30-minutes-with-cursor",
+      false
+    ],
+    [
+      "Build Your Own AI Image Generator",
+      "https://teamtreehouse.com/library/build-your-own-ai-image-generator",
+      false
+    ],
+    [
+      "Build a Basic ChatGPT Clone with Vanilla JavaScript",
+      "https://teamtreehouse.com/library/build-a-basic-chatgpt-clone-with-vanilla-javascript",
+      false
+    ],
+    [
+      "Build a ChatGPT Discord Bot",
+      "https://teamtreehouse.com/library/build-a-chatgpt-discord-bot",
+      false
+    ],
+    [
+      "Build a Cross-Platform Desktop Application with Electron",
+      "https://teamtreehouse.com/library/build-a-cross-platform-desktop-application-with-electron",
+      false
+    ],
+    [
+      "Build a Fully Functional AI SaaS in 10 Minutes for Free",
+      "https://teamtreehouse.com/library/build-a-fully-functional-ai-saas-in-10-minutes-for-free",
+      false
+    ],
+    [
+      "Build a Responsive Navigation with Flexbox",
+      "https://teamtreehouse.com/library/build-a-responsive-navigation-with-flexbox",
+      false
+    ],
+    [
+      "Build a Weather App in Less Than 3 Minutes",
+      "https://teamtreehouse.com/library/build-a-weather-app-in-less-than-3-minutes",
+      false
+    ],
+    [
+      "Building a React App with ChatGPT",
+      "https://teamtreehouse.com/library/building-a-react-app-with-chatgpt",
+      false
+    ],
+    [
+      "CSS Blend Modes",
+      "https://teamtreehouse.com/library/css-blend-modes",
+      false
+    ],
+    [
+      "CSS Clipping Paths",
+      "https://teamtreehouse.com/library/css-clipping-paths",
+      false
+    ],
+    [
+      "CSS Masks",
+      "https://teamtreehouse.com/library/css-masks",
+      false
+    ],
+    [
+      "CSS-Only Toggle",
+      "https://teamtreehouse.com/library/css-only-toggle",
+      false
+    ],
+    [
+      "CSV and JSON in Python",
+      "https://teamtreehouse.com/library/csv-and-json-in-python",
+      false
+    ],
+    [
+      "Can ChatGPT Build a Website?",
+      "https://teamtreehouse.com/library/can-chatgpt-build-a-website",
+      false
+    ],
+    [
+      "Career Self-Assessment with C.C. Chapman",
+      "https://teamtreehouse.com/library/career-self-assessment-with-cc-chapman",
+      false
+    ],
+    [
+      "ChatGPT for Beginners",
+      "https://teamtreehouse.com/library/chatgpt-for-beginners",
+      false
+    ],
+    [
+      "ChatGPT for Designers",
+      "https://teamtreehouse.com/library/chatgpt-for-designers",
+      false
+    ],
+    [
+      "ChatGPT: Code Interpreter",
+      "https://teamtreehouse.com/library/chatgpt-code-interpreter",
+      false
+    ],
+    [
+      "Code Coverage with Istanbul",
+      "https://teamtreehouse.com/library/code-coverage-with-istanbul",
+      false
+    ],
+    [
+      "Collecting Design Inspiration",
+      "https://teamtreehouse.com/library/collecting-design-inspiration",
+      false
+    ],
+    [
+      "Common Table Expressions Using WITH",
+      "https://teamtreehouse.com/library/common-table-expressions-using-with",
+      false
+    ],
+    [
+      "Computer Fundamentals (Mac)",
+      "https://teamtreehouse.com/library/computer-fundamentals-mac",
+      false
+    ],
+    [
+      "Computer Fundamentals (Windows)",
+      "https://teamtreehouse.com/library/computer-fundamentals-windows",
+      false
+    ],
+    [
+      "Copy to Clipboard",
+      "https://teamtreehouse.com/library/copy-to-clipboard",
+      false
+    ],
+    [
+      "Crafting SMART Goals",
+      "https://teamtreehouse.com/library/crafting-smart-goals",
+      false
+    ],
+    [
+      "Create Apps Faster with Windsurf",
+      "https://teamtreehouse.com/library/create-apps-faster-with-windsurf",
+      false
+    ],
+    [
+      "Create Tooltips with CSS",
+      "https://teamtreehouse.com/library/create-tooltips-with-css",
+      false
+    ],
+    [
+      "Create a Fullscreen Slider with CSS",
+      "https://teamtreehouse.com/library/create-a-fullscreen-slider-with-css",
+      false
+    ],
+    [
+      "Create a Media Player with MediaElement.js",
+      "https://teamtreehouse.com/library/create-a-media-player-with-mediaelementjs",
+      false
+    ],
+    [
+      "Create a Modal Window with CSS",
+      "https://teamtreehouse.com/library/create-a-modal-window-with-css",
+      false
+    ],
+    [
+      "Create a No-Code REST API Using Xano",
+      "https://teamtreehouse.com/library/create-a-no-code-rest-api-using-xano",
+      false
+    ],
+    [
+      "Create a Portfolio Using Python and Flask",
+      "https://teamtreehouse.com/library/create-a-portfolio-using-python-and-flask",
+      false
+    ],
+    [
+      "Create a Portfolio Using React",
+      "https://teamtreehouse.com/library/create-a-portfolio-using-react",
+      false
+    ],
+    [
+      "Create an Accordion Menu with CSS",
+      "https://teamtreehouse.com/library/create-an-accordion-menu-with-css",
+      false
+    ],
+    [
+      "Creating Micro-Interactions in Figma",
+      "https://teamtreehouse.com/library/creating-micro-interactions-in-figma",
+      false
+    ],
+    [
+      "Creating User Personas",
+      "https://teamtreehouse.com/library/creating-user-personas",
+      false
+    ],
+    [
+      "Creating an Affinity Diagram",
+      "https://teamtreehouse.com/library/creating-an-affinity-diagram",
+      false
+    ],
+    [
+      "Dark Mode in CSS",
+      "https://teamtreehouse.com/library/dark-mode-in-css",
+      false
+    ],
+    [
+      "Dark Mode with React & Tailwind",
+      "https://teamtreehouse.com/library/dark-mode-with-react-and-tailwind",
+      false
+    ],
+    [
+      "Debug Node Applications with Visual Studio Code",
+      "https://teamtreehouse.com/library/debug-node-applications-with-visual-studio-code",
+      false
+    ],
+    [
+      "Debugging Node Applications with Google Chrome",
+      "https://teamtreehouse.com/library/debugging-node-applications-with-google-chrome",
+      false
+    ],
+    [
+      "Debugging with ChatGPT",
+      "https://teamtreehouse.com/library/debugging-with-chatgpt",
+      false
+    ],
+    [
+      "Defining Variables with let and const",
+      "https://teamtreehouse.com/library/defining-variables-with-let-and-const",
+      false
+    ],
+    [
+      "Dependency Management with Composer",
+      "https://teamtreehouse.com/library/dependency-management-with-composer",
+      false
+    ],
+    [
+      "Dependency Management with Gradle",
+      "https://teamtreehouse.com/library/dependency-management-with-gradle",
+      false
+    ],
+    [
+      "Deploy a Node Application to Heroku",
+      "https://teamtreehouse.com/library/deploy-a-node-application-to-heroku",
+      false
+    ],
+    [
+      "Deploying a React App",
+      "https://teamtreehouse.com/library/deploying-a-react-app",
+      false
+    ],
+    [
+      "Design Criticism",
+      "https://teamtreehouse.com/library/design-criticism",
+      true
+    ],
+    [
+      "Design Your Brand Identity with Looka",
+      "https://teamtreehouse.com/library/design-your-brand-identity-with-looka",
+      false
+    ],
+    [
+      "Designing Dynamic UI States",
+      "https://teamtreehouse.com/library/designing-dynamic-ui-states",
+      false
+    ],
+    [
+      "Designing for User Roles",
+      "https://teamtreehouse.com/library/designing-for-user-roles",
+      false
+    ],
+    [
+      "Dunder Main",
+      "https://teamtreehouse.com/library/dunder-main",
+      false
+    ],
+    [
+      "Everyday Innovation: Leveraging ChatGPT in Our Daily Lives",
+      "https://teamtreehouse.com/library/everyday-innovation-leveraging-chatgpt-in-our-daily-lives",
+      false
+    ],
+    [
+      "Exploring JavaScript Conditionals",
+      "https://teamtreehouse.com/library/exploring-javascript-conditionals",
+      false
+    ],
+    [
+      "Full Stack JavaScript Techdegree Portfolio Overview",
+      "https://teamtreehouse.com/library/full-stack-javascript-techdegree-portfolio-overview",
+      false
+    ],
+    [
+      "Generics in Java",
+      "https://teamtreehouse.com/library/generics-in-java",
+      true
+    ],
+    [
+      "Git and GitHub Workflow for Developers",
+      "https://teamtreehouse.com/library/git-and-github-workflow-for-developers",
+      false
+    ],
+    [
+      "GitHub in Workspaces",
+      "https://teamtreehouse.com/library/github-in-workspaces",
+      false
+    ],
+    [
+      "Go from Figma \u2192 No-Code App in WeWeb with AI",
+      "https://teamtreehouse.com/library/go-from-figma-\u2192-no-code-app-in-weweb-with-ai",
+      false
+    ],
+    [
+      "Gulpfile Setup",
+      "https://teamtreehouse.com/library/gulpfile-setup",
+      false
+    ],
+    [
+      "HTML Dialog",
+      "https://teamtreehouse.com/library/html-dialog",
+      false
+    ],
+    [
+      "HTML-Only Accordion",
+      "https://teamtreehouse.com/library/html-only-accordion",
+      false
+    ],
+    [
+      "HTTP: Do you GET it?",
+      "https://teamtreehouse.com/library/http-do-you-get-it",
+      false
+    ],
+    [
+      "Handling Feedback as a UX Designer",
+      "https://teamtreehouse.com/library/handling-feedback-as-a-ux-designer",
+      false
+    ],
+    [
+      "Hello Computer Science",
+      "https://teamtreehouse.com/library/hello-computer-science",
+      false
+    ],
+    [
+      "Hello Full Stack JavaScript",
+      "https://teamtreehouse.com/library/hello-full-stack-javascript",
+      false
+    ],
+    [
+      "Hello UX",
+      "https://teamtreehouse.com/library/hello-ux",
+      false
+    ],
+    [
+      "Hosting a Website with GitHub Pages",
+      "https://teamtreehouse.com/library/hosting-a-website-with-github-pages",
+      false
+    ],
+    [
+      "How To Clone a Repository From GitHub Using Your Terminal",
+      "https://teamtreehouse.com/library/how-to-clone-a-repository-from-github-using-your-terminal",
+      false
+    ],
+    [
+      "How to Adapt Any Work Experience to Fit Any Role",
+      "https://teamtreehouse.com/library/how-to-adapt-any-work-experience-to-fit-any-role",
+      false
+    ],
+    [
+      "How to Add a Favicon",
+      "https://teamtreehouse.com/library/how-to-add-a-favicon",
+      false
+    ],
+    [
+      "How to Create and Distribute an npm Package",
+      "https://teamtreehouse.com/library/how-to-create-and-distribute-an-npm-package",
+      false
+    ],
+    [
+      "How to Give and Receive Feedback",
+      "https://teamtreehouse.com/library/how-to-give-and-receive-feedback",
+      true
+    ],
+    [
+      "How to Install Python (Windows)",
+      "https://teamtreehouse.com/library/how-to-install-python-windows",
+      false
+    ],
+    [
+      "How to Install Python (macOS)",
+      "https://teamtreehouse.com/library/how-to-install-python-macos",
+      false
+    ],
+    [
+      "How to Learn",
+      "https://teamtreehouse.com/library/how-to-learn",
+      false
+    ],
+    [
+      "How to Learn Data Science",
+      "https://teamtreehouse.com/library/how-to-learn-data-science",
+      false
+    ],
+    [
+      "How to Nail Any Interview",
+      "https://teamtreehouse.com/library/how-to-nail-any-interview",
+      false
+    ],
+    [
+      "How to Set Up a React App",
+      "https://teamtreehouse.com/library/how-to-set-up-a-react-app",
+      false
+    ],
+    [
+      "Image Manipulation with Python",
+      "https://teamtreehouse.com/library/image-manipulation-with-python",
+      false
+    ],
+    [
+      "Imposter Syndrome",
+      "https://teamtreehouse.com/library/imposter-syndrome",
+      true
+    ],
+    [
+      "Interfaces in Java",
+      "https://teamtreehouse.com/library/interfaces-in-java",
+      true
+    ],
+    [
+      "Intermediate Spreadsheets",
+      "https://teamtreehouse.com/library/intermediate-spreadsheets",
+      false
+    ],
+    [
+      "Internet Street Smarts",
+      "https://teamtreehouse.com/library/internet-street-smarts",
+      true
+    ],
+    [
+      "Intro to Data Analysis",
+      "https://teamtreehouse.com/library/intro-to-data-analysis",
+      true
+    ],
+    [
+      "Introducing Arrow Function Syntax",
+      "https://teamtreehouse.com/library/introducing-arrow-function-syntax",
+      false
+    ],
+    [
+      "Introducing Google Slides",
+      "https://teamtreehouse.com/library/introducing-google-slides",
+      false
+    ],
+    [
+      "Introducing Large Language Models",
+      "https://teamtreehouse.com/library/introducing-large-language-models",
+      true
+    ],
+    [
+      "Introducing Lovable.dev for No-Code Web App Design",
+      "https://teamtreehouse.com/library/introducing-lovabledev-for-no-code-web-app-design",
+      false
+    ],
+    [
+      "Introducing Microsoft Excel",
+      "https://teamtreehouse.com/library/introducing-microsoft-excel",
+      false
+    ],
+    [
+      "Introducing Progressive Web Apps",
+      "https://teamtreehouse.com/library/introducing-progressive-web-apps",
+      false
+    ],
+    [
+      "Introducing Template Literals",
+      "https://teamtreehouse.com/library/introducing-template-literals",
+      false
+    ],
+    [
+      "Introducing Tuples",
+      "https://teamtreehouse.com/library/introducing-tuples",
+      true
+    ],
+    [
+      "Introducing the Atom Text Editor",
+      "https://teamtreehouse.com/library/introducing-the-atom-text-editor",
+      false
+    ],
+    [
+      "Introducing the VS Code Text Editor",
+      "https://teamtreehouse.com/library/introducing-the-vs-code-text-editor",
+      false
+    ],
+    [
+      "Introduction to Anaconda",
+      "https://teamtreehouse.com/library/introduction-to-anaconda",
+      false
+    ],
+    [
+      "Introduction to GitHub Copilot",
+      "https://teamtreehouse.com/library/introduction-to-github-copilot",
+      false
+    ],
+    [
+      "Introduction to New Relic",
+      "https://teamtreehouse.com/library/introduction-to-new-relic",
+      false
+    ],
+    [
+      "Introduction to PHP7",
+      "https://teamtreehouse.com/library/introduction-to-php7",
+      false
+    ],
+    [
+      "Introduction to REST APIs",
+      "https://teamtreehouse.com/library/introduction-to-rest-apis",
+      true
+    ],
+    [
+      "Java Lambdas",
+      "https://teamtreehouse.com/library/java-lambdas",
+      false
+    ],
+    [
+      "Java Lists",
+      "https://teamtreehouse.com/library/java-lists",
+      true
+    ],
+    [
+      "Java Maps",
+      "https://teamtreehouse.com/library/java-maps",
+      true
+    ],
+    [
+      "JavaScript Accordion",
+      "https://teamtreehouse.com/library/javascript-accordion",
+      false
+    ],
+    [
+      "JavaScript Array Methods: filter()",
+      "https://teamtreehouse.com/library/javascript-array-methods-filter",
+      false
+    ],
+    [
+      "JavaScript Array Methods: find()",
+      "https://teamtreehouse.com/library/javascript-array-methods-find",
+      false
+    ],
+    [
+      "JavaScript Array Methods: forEach()",
+      "https://teamtreehouse.com/library/javascript-array-methods-foreach",
+      false
+    ],
+    [
+      "JavaScript Array Methods: includes()",
+      "https://teamtreehouse.com/library/javascript-array-methods-includes",
+      false
+    ],
+    [
+      "JavaScript Array Methods: map()",
+      "https://teamtreehouse.com/library/javascript-array-methods-map",
+      false
+    ],
+    [
+      "JavaScript Array Methods: reduce()",
+      "https://teamtreehouse.com/library/javascript-array-methods-reduce",
+      false
+    ],
+    [
+      "JavaScript Array Methods: sort()",
+      "https://teamtreehouse.com/library/javascript-array-methods-sort",
+      false
+    ],
+    [
+      "JavaScript Booleans",
+      "https://teamtreehouse.com/library/javascript-booleans",
+      false
+    ],
+    [
+      "JavaScript Emoji Selector Using Fetch",
+      "https://teamtreehouse.com/library/javascript-emoji-selector-using-fetch",
+      false
+    ],
+    [
+      "JavaScript Search",
+      "https://teamtreehouse.com/library/javascript-search",
+      false
+    ],
+    [
+      "JavaScript Tip Calculator Overview",
+      "https://teamtreehouse.com/library/javascript-tip-calculator-overview",
+      false
+    ],
+    [
+      "JavaScript and the Internet of Things",
+      "https://teamtreehouse.com/library/javascript-and-the-internet-of-things",
+      false
+    ],
+    [
+      "Jupyter Notebooks",
+      "https://teamtreehouse.com/library/jupyter-notebooks",
+      false
+    ],
+    [
+      "Key Roles on a Software Team",
+      "https://teamtreehouse.com/library/key-roles-on-a-software-team",
+      false
+    ],
+    [
+      "Learning with Coda",
+      "https://teamtreehouse.com/library/learning-with-coda",
+      false
+    ],
+    [
+      "Linux Servers on VirtualBox",
+      "https://teamtreehouse.com/library/linux-servers-on-virtualbox",
+      false
+    ],
+    [
+      "Logo Design Basics",
+      "https://teamtreehouse.com/library/logo-design-basics",
+      true
+    ],
+    [
+      "MAC: Local PHP Dev Environment",
+      "https://teamtreehouse.com/library/mac-local-php-dev-environment",
+      false
+    ],
+    [
+      "MailChimp API",
+      "https://teamtreehouse.com/library/mailchimp-api",
+      true
+    ],
+    [
+      "Mastering AI-Assisted Design with ChatGPT",
+      "https://teamtreehouse.com/library/mastering-ai-assisted-design-with-chatgpt",
+      false
+    ],
+    [
+      "Measuring Company Performance with MRR, Churn and Lifetime Values",
+      "https://teamtreehouse.com/library/measuring-company-performance-with-mrr-churn-and-lifetime-values",
+      false
+    ],
+    [
+      "Meet Cursor and Experience AI-Driven Coding",
+      "https://teamtreehouse.com/library/meet-cursor-and-experience-ai-driven-coding",
+      false
+    ],
+    [
+      "Monetize Your App with Stripe in 5 Minutes Using Cursor",
+      "https://teamtreehouse.com/library/monetize-your-app-with-stripe-in-5-minutes-using-cursor",
+      false
+    ],
+    [
+      "Neural Networks in a Nutshell",
+      "https://teamtreehouse.com/library/neural-networks-in-a-nutshell",
+      false
+    ],
+    [
+      "No-Code Prompt Engineering",
+      "https://teamtreehouse.com/library/no-code-prompt-engineering",
+      false
+    ],
+    [
+      "Pipenv: The Python Package Manager",
+      "https://teamtreehouse.com/library/pipenv-the-python-package-manager",
+      false
+    ],
+    [
+      "Plan Ahead with Pseudocode",
+      "https://teamtreehouse.com/library/plan-ahead-with-pseudocode",
+      false
+    ],
+    [
+      "Plan and Design Effective No-Code Apps",
+      "https://teamtreehouse.com/library/plan-and-design-effective-no-code-apps",
+      false
+    ],
+    [
+      "Presenting Design Ideas",
+      "https://teamtreehouse.com/library/presenting-design-ideas",
+      false
+    ],
+    [
+      "Presenting an Analysis",
+      "https://teamtreehouse.com/library/presenting-an-analysis",
+      false
+    ],
+    [
+      "Process Sass with Scout-App",
+      "https://teamtreehouse.com/library/process-sass-with-scout-app",
+      false
+    ],
+    [
+      "PyCharm",
+      "https://teamtreehouse.com/library/pycharm",
+      false
+    ],
+    [
+      "Python Decorators",
+      "https://teamtreehouse.com/library/python-decorators",
+      false
+    ],
+    [
+      "Python File I/O",
+      "https://teamtreehouse.com/library/python-file-io",
+      false
+    ],
+    [
+      "Python Libraries for AI",
+      "https://teamtreehouse.com/library/python-libraries-for-ai",
+      false
+    ],
+    [
+      "Python Techdegree Portfolio Overview",
+      "https://teamtreehouse.com/library/python-techdegree-portfolio-overview",
+      false
+    ],
+    [
+      "Python Type Hinting",
+      "https://teamtreehouse.com/library/python-type-hinting",
+      false
+    ],
+    [
+      "Python Virtual Environments",
+      "https://teamtreehouse.com/library/python-virtual-environments",
+      false
+    ],
+    [
+      "REST API Authentication with Express",
+      "https://teamtreehouse.com/library/rest-api-authentication-with-express",
+      false
+    ],
+    [
+      "Receiving UX Feedback by Example",
+      "https://teamtreehouse.com/library/receiving-ux-feedback-by-example",
+      false
+    ],
+    [
+      "Reverse Engineering Code with ChatGPT",
+      "https://teamtreehouse.com/library/reverse-engineering-code-with-chatgpt",
+      false
+    ],
+    [
+      "Ruby Enumerable",
+      "https://teamtreehouse.com/library/ruby-enumerable",
+      false
+    ],
+    [
+      "SQL Commands with ChatGPT",
+      "https://teamtreehouse.com/library/sql-commands-with-chatgpt",
+      false
+    ],
+    [
+      "SQL Window Functions",
+      "https://teamtreehouse.com/library/sql-window-functions",
+      false
+    ],
+    [
+      "SQL to Sequelize with ChatGPT",
+      "https://teamtreehouse.com/library/sql-to-sequelize-with-chatgpt",
+      false
+    ],
+    [
+      "SQLite from the Command Line",
+      "https://teamtreehouse.com/library/sqlite-from-the-command-line",
+      false
+    ],
+    [
+      "Sequelize Model Validation",
+      "https://teamtreehouse.com/library/sequelize-model-validation",
+      false
+    ],
+    [
+      "Setting Up Travis CI with Node.js",
+      "https://teamtreehouse.com/library/setting-up-travis-ci-with-nodejs",
+      false
+    ],
+    [
+      "Shorten Text With CSS",
+      "https://teamtreehouse.com/library/shorten-text-with-css",
+      false
+    ],
+    [
+      "Solving Problems with UX Design",
+      "https://teamtreehouse.com/library/solving-problems-with-ux-design",
+      false
+    ],
+    [
+      "String Manipulation with JavaScript",
+      "https://teamtreehouse.com/library/string-manipulation-with-javascript",
+      false
+    ],
+    [
+      "Structuring Your JavaScript Code",
+      "https://teamtreehouse.com/library/structuring-your-javascript-code",
+      false
+    ],
+    [
+      "Technical Interview Prep: Python Basics",
+      "https://teamtreehouse.com/library/technical-interview-prep-python-basics",
+      true
+    ],
+    [
+      "The 5 Most Important Networking Skills",
+      "https://teamtreehouse.com/library/the-5-most-important-networking-skills",
+      false
+    ],
+    [
+      "The AI Multiverse: Exploring the Subfields of Artificial Intelligence",
+      "https://teamtreehouse.com/library/the-ai-multiverse-exploring-the-subfields-of-artificial-intelligence",
+      false
+    ],
+    [
+      "The Blank Slate",
+      "https://teamtreehouse.com/library/the-blank-slate",
+      false
+    ],
+    [
+      "The CSS calc() Function",
+      "https://teamtreehouse.com/library/the-css-calc-function",
+      false
+    ],
+    [
+      "The JavaScript 'use strict' Statement",
+      "https://teamtreehouse.com/library/the-javascript-use-strict-statement",
+      false
+    ],
+    [
+      "The JavaScript Ecosystem",
+      "https://teamtreehouse.com/library/the-javascript-ecosystem",
+      true
+    ],
+    [
+      "Translating Pseudocode to JavaScript Code",
+      "https://teamtreehouse.com/library/translating-pseudocode-to-javascript-code",
+      false
+    ],
+    [
+      "Treehouse Features: Quizzes",
+      "https://teamtreehouse.com/library/treehouse-features-quizzes",
+      false
+    ],
+    [
+      "Treehouse Features: Workspaces",
+      "https://teamtreehouse.com/library/treehouse-features-workspaces",
+      false
+    ],
+    [
+      "Treehouse Student Orientation",
+      "https://teamtreehouse.com/library/treehouse-student-orientation",
+      false
+    ],
+    [
+      "Turn Ideas Into Code with Replit Agent",
+      "https://teamtreehouse.com/library/turn-ideas-into-code-with-replit-agent",
+      false
+    ],
+    [
+      "Understanding Closures in JavaScript",
+      "https://teamtreehouse.com/library/understanding-closures-in-javascript",
+      false
+    ],
+    [
+      "Understanding Express Middleware",
+      "https://teamtreehouse.com/library/understanding-express-middleware",
+      false
+    ],
+    [
+      "Understanding MVC",
+      "https://teamtreehouse.com/library/understanding-mvc",
+      false
+    ],
+    [
+      "Unlocking Learning Potential with ChatGPT",
+      "https://teamtreehouse.com/library/unlocking-learning-potential-with-chatgpt",
+      false
+    ],
+    [
+      "Using Create React App",
+      "https://teamtreehouse.com/library/using-create-react-app",
+      false
+    ],
+    [
+      "Using Create React Native App",
+      "https://teamtreehouse.com/library/using-create-react-native-app",
+      false
+    ],
+    [
+      "Using Local Storage With JavaScript",
+      "https://teamtreehouse.com/library/using-local-storage-with-javascript",
+      false
+    ],
+    [
+      "Using Treehouse Workspaces",
+      "https://teamtreehouse.com/library/using-treehouse-workspaces",
+      false
+    ],
+    [
+      "Using npm as a Task Runner",
+      "https://teamtreehouse.com/library/using-npm-as-a-task-runner",
+      false
+    ],
+    [
+      "Using the Geolocation API in JavaScript",
+      "https://teamtreehouse.com/library/using-the-geolocation-api-in-javascript",
+      false
+    ],
+    [
+      "Using the Requests Library",
+      "https://teamtreehouse.com/library/using-the-requests-library",
+      false
+    ],
+    [
+      "What Is AI? What Is ChatGPT?",
+      "https://teamtreehouse.com/library/what-is-ai-what-is-chatgpt",
+      false
+    ],
+    [
+      "What Is an MVP?",
+      "https://teamtreehouse.com/library/what-is-an-mvp",
+      false
+    ],
+    [
+      "What's New in Python 3.6?",
+      "https://teamtreehouse.com/library/whats-new-in-python-36",
+      false
+    ],
+    [
+      "What's New in React 16",
+      "https://teamtreehouse.com/library/whats-new-in-react-16",
+      false
+    ],
+    [
+      "Why We Exist: Our Mission",
+      "https://teamtreehouse.com/library/why-we-exist-our-mission",
+      false
+    ],
+    [
+      "Will AI Replace Developers?",
+      "https://teamtreehouse.com/library/will-ai-replace-developers",
+      false
+    ],
+    [
+      "Windows: Local PHP Dev Environment",
+      "https://teamtreehouse.com/library/windows-local-php-dev-environment",
+      false
+    ],
+    [
+      "forEach() vs. map() - What\u2019s the Difference?",
+      "https://teamtreehouse.com/library/foreach-vs-map-what\u2019s-the-difference",
+      false
+    ]
+  ],
+  "practices": [
+    [
+      "Practice Arrow Functions in JavaScript",
+      "https://teamtreehouse.com/library/practice-arrow-functions-in-javascript",
+      false
+    ],
+    [
+      "Practice Basic Arrays in JavaScript",
+      "https://teamtreehouse.com/library/practice-basic-arrays-in-javascript",
+      false
+    ],
+    [
+      "Practice Basic JavaScript Functions",
+      "https://teamtreehouse.com/library/practice-basic-javascript-functions",
+      false
+    ],
+    [
+      "Practice Basic Math Calculations in Python",
+      "https://teamtreehouse.com/library/practice-basic-math-calculations-in-python",
+      false
+    ],
+    [
+      "Practice Basic Variables, Input & Output in JavaScript",
+      "https://teamtreehouse.com/library/practice-basic-variables-input-and-output-in-javascript",
+      false
+    ],
+    [
+      "Practice Basic jQuery Methods",
+      "https://teamtreehouse.com/library/practice-basic-jquery-methods",
+      false
+    ],
+    [
+      "Practice CSS Box Model Basics",
+      "https://teamtreehouse.com/library/practice-css-box-model-basics",
+      false
+    ],
+    [
+      "Practice CSS Floats",
+      "https://teamtreehouse.com/library/practice-css-floats",
+      false
+    ],
+    [
+      "Practice CSS Grid: Columns, Rows and Gaps",
+      "https://teamtreehouse.com/library/practice-css-grid-columns-rows-and-gaps",
+      false
+    ],
+    [
+      "Practice CSS Length Units",
+      "https://teamtreehouse.com/library/practice-css-length-units",
+      false
+    ],
+    [
+      "Practice CSS Media Queries",
+      "https://teamtreehouse.com/library/practice-css-media-queries",
+      false
+    ],
+    [
+      "Practice CSS Selectors",
+      "https://teamtreehouse.com/library/practice-css-selectors",
+      false
+    ],
+    [
+      "Practice Classes in JavaScript",
+      "https://teamtreehouse.com/library/practice-classes-in-javascript",
+      true
+    ],
+    [
+      "Practice Cleaning Data",
+      "https://teamtreehouse.com/library/practice-cleaning-data",
+      false
+    ],
+    [
+      "Practice Column Selection and Aliasing with SQL",
+      "https://teamtreehouse.com/library/practice-column-selection-and-aliasing-with-sql",
+      false
+    ],
+    [
+      "Practice Comparisons in Python",
+      "https://teamtreehouse.com/library/practice-comparisons-in-python",
+      false
+    ],
+    [
+      "Practice Completing a Profile",
+      "https://teamtreehouse.com/library/practice-completing-a-profile",
+      false
+    ],
+    [
+      "Practice Creating UX Content",
+      "https://teamtreehouse.com/library/practice-creating-ux-content",
+      false
+    ],
+    [
+      "Practice Creating a Paywall",
+      "https://teamtreehouse.com/library/practice-creating-a-paywall",
+      false
+    ],
+    [
+      "Practice Creating a Sitemap",
+      "https://teamtreehouse.com/library/practice-creating-a-sitemap",
+      false
+    ],
+    [
+      "Practice Creating and Indexing Lists",
+      "https://teamtreehouse.com/library/practice-creating-and-indexing-lists",
+      false
+    ],
+    [
+      "Practice Creating and Using Functions in Python",
+      "https://teamtreehouse.com/library/practice-creating-and-using-functions-in-python",
+      true
+    ],
+    [
+      "Practice DOM Manipulation: Checkboxes",
+      "https://teamtreehouse.com/library/practice-dom-manipulation-checkboxes",
+      false
+    ],
+    [
+      "Practice DOM Manipulation: Form Validation",
+      "https://teamtreehouse.com/library/practice-dom-manipulation-form-validation",
+      false
+    ],
+    [
+      "Practice DOM Manipulation: Modal",
+      "https://teamtreehouse.com/library/practice-dom-manipulation-modal",
+      false
+    ],
+    [
+      "Practice Data Pagination",
+      "https://teamtreehouse.com/library/practice-data-pagination",
+      false
+    ],
+    [
+      "Practice Data Visualization",
+      "https://teamtreehouse.com/library/practice-data-visualization",
+      false
+    ],
+    [
+      "Practice Design Criticism",
+      "https://teamtreehouse.com/library/practice-design-criticism",
+      false
+    ],
+    [
+      "Practice Designing a Product Card",
+      "https://teamtreehouse.com/library/practice-designing-a-product-card",
+      false
+    ],
+    [
+      "Practice Dynamic Select Menus",
+      "https://teamtreehouse.com/library/practice-dynamic-select-menus",
+      false
+    ],
+    [
+      "Practice Empathy Maps",
+      "https://teamtreehouse.com/library/practice-empathy-maps",
+      false
+    ],
+    [
+      "Practice Emulating Built-ins",
+      "https://teamtreehouse.com/library/practice-emulating-built-ins",
+      false
+    ],
+    [
+      "Practice Enhancing Design with CSS",
+      "https://teamtreehouse.com/library/practice-enhancing-design-with-css",
+      false
+    ],
+    [
+      "Practice Error Handling",
+      "https://teamtreehouse.com/library/practice-error-handling",
+      false
+    ],
+    [
+      "Practice Error Handling in Express",
+      "https://teamtreehouse.com/library/practice-error-handling-in-express",
+      false
+    ],
+    [
+      "Practice ExpressJS: Middleware",
+      "https://teamtreehouse.com/library/practice-expressjs-middleware",
+      false
+    ],
+    [
+      "Practice Fetch API",
+      "https://teamtreehouse.com/library/practice-fetch-api",
+      false
+    ],
+    [
+      "Practice File Paths",
+      "https://teamtreehouse.com/library/practice-file-paths",
+      false
+    ],
+    [
+      "Practice Filtering Paginated Data",
+      "https://teamtreehouse.com/library/practice-filtering-paginated-data",
+      false
+    ],
+    [
+      "Practice Flexible CSS Grid Layout",
+      "https://teamtreehouse.com/library/practice-flexible-css-grid-layout",
+      false
+    ],
+    [
+      "Practice Getters and Setters in JavaScript",
+      "https://teamtreehouse.com/library/practice-getters-and-setters-in-javascript",
+      true
+    ],
+    [
+      "Practice Grid Template Areas",
+      "https://teamtreehouse.com/library/practice-grid-template-areas",
+      false
+    ],
+    [
+      "Practice Handling Events in jQuery",
+      "https://teamtreehouse.com/library/practice-handling-events-in-jquery",
+      false
+    ],
+    [
+      "Practice Hashing Passwords in JavaScript",
+      "https://teamtreehouse.com/library/practice-hashing-passwords-in-javascript",
+      false
+    ],
+    [
+      "Practice Hashing Passwords in PHP",
+      "https://teamtreehouse.com/library/practice-hashing-passwords-in-php",
+      false
+    ],
+    [
+      "Practice Hooks in React",
+      "https://teamtreehouse.com/library/practice-hooks-in-react",
+      false
+    ],
+    [
+      "Practice If and Else If Statements in JavaScript",
+      "https://teamtreehouse.com/library/practice-if-and-else-if-statements-in-javascript",
+      false
+    ],
+    [
+      "Practice Importing and Exporting Modules in Node.js",
+      "https://teamtreehouse.com/library/practice-importing-and-exporting-modules-in-nodejs",
+      false
+    ],
+    [
+      "Practice Including PHP with HTML",
+      "https://teamtreehouse.com/library/practice-including-php-with-html",
+      false
+    ],
+    [
+      "Practice Input and Output in Java",
+      "https://teamtreehouse.com/library/practice-input-and-output-in-java",
+      false
+    ],
+    [
+      "Practice Input and Output in Python",
+      "https://teamtreehouse.com/library/practice-input-and-output-in-python",
+      false
+    ],
+    [
+      "Practice Input and Output in Ruby",
+      "https://teamtreehouse.com/library/practice-input-and-output-in-ruby",
+      false
+    ],
+    [
+      "Practice Java Arrays",
+      "https://teamtreehouse.com/library/practice-java-arrays",
+      false
+    ],
+    [
+      "Practice Java Objects",
+      "https://teamtreehouse.com/library/practice-java-objects",
+      false
+    ],
+    [
+      "Practice Java Objects - Word Guessing Game",
+      "https://teamtreehouse.com/library/practice-java-objects-word-guessing-game",
+      true
+    ],
+    [
+      "Practice JavaScript Basics: Conditional Strings",
+      "https://teamtreehouse.com/library/practice-javascript-basics-conditional-strings",
+      false
+    ],
+    [
+      "Practice JavaScript Loops",
+      "https://teamtreehouse.com/library/practice-javascript-loops",
+      false
+    ],
+    [
+      "Practice JavaScript Math Methods",
+      "https://teamtreehouse.com/library/practice-javascript-math-methods",
+      false
+    ],
+    [
+      "Practice Journey Maps",
+      "https://teamtreehouse.com/library/practice-journey-maps",
+      false
+    ],
+    [
+      "Practice Let and Const in JavaScript",
+      "https://teamtreehouse.com/library/practice-let-and-const-in-javascript",
+      false
+    ],
+    [
+      "Practice Manipulating the DOM",
+      "https://teamtreehouse.com/library/practice-manipulating-the-dom",
+      false
+    ],
+    [
+      "Practice Media Queries",
+      "https://teamtreehouse.com/library/practice-media-queries",
+      false
+    ],
+    [
+      "Practice OOP Vocabulary",
+      "https://teamtreehouse.com/library/practice-oop-vocabulary",
+      false
+    ],
+    [
+      "Practice Object Basics in JavaScript",
+      "https://teamtreehouse.com/library/practice-object-basics-in-javascript",
+      true
+    ],
+    [
+      "Practice Object Interaction",
+      "https://teamtreehouse.com/library/practice-object-interaction",
+      true
+    ],
+    [
+      "Practice Object Literals in JavaScript",
+      "https://teamtreehouse.com/library/practice-object-literals-in-javascript",
+      false
+    ],
+    [
+      "Practice PHP Number Variables",
+      "https://teamtreehouse.com/library/practice-php-number-variables",
+      false
+    ],
+    [
+      "Practice PHP String Manipulation",
+      "https://teamtreehouse.com/library/practice-php-string-manipulation",
+      false
+    ],
+    [
+      "Practice PHP if/else Statements",
+      "https://teamtreehouse.com/library/practice-php-ifelse-statements",
+      false
+    ],
+    [
+      "Practice Prototyping",
+      "https://teamtreehouse.com/library/practice-prototyping",
+      false
+    ],
+    [
+      "Practice Prototyping in Figma",
+      "https://teamtreehouse.com/library/practice-prototyping-in-figma",
+      false
+    ],
+    [
+      "Practice Python While Loops",
+      "https://teamtreehouse.com/library/practice-python-while-loops",
+      false
+    ],
+    [
+      "Practice React Component Rendering",
+      "https://teamtreehouse.com/library/practice-react-component-rendering",
+      false
+    ],
+    [
+      "Practice Ruby Methods",
+      "https://teamtreehouse.com/library/practice-ruby-methods",
+      false
+    ],
+    [
+      "Practice Ruby Numeric Types",
+      "https://teamtreehouse.com/library/practice-ruby-numeric-types",
+      false
+    ],
+    [
+      "Practice Selecting DOM Elements",
+      "https://teamtreehouse.com/library/practice-selecting-dom-elements",
+      false
+    ],
+    [
+      "Practice Semantic HTML",
+      "https://teamtreehouse.com/library/practice-semantic-html",
+      false
+    ],
+    [
+      "Practice Serving Static Files in Express",
+      "https://teamtreehouse.com/library/practice-serving-static-files-in-express",
+      false
+    ],
+    [
+      "Practice Setting Up a Python Project",
+      "https://teamtreehouse.com/library/practice-setting-up-a-python-project",
+      false
+    ],
+    [
+      "Practice Simple WHERE Clauses with SQL",
+      "https://teamtreehouse.com/library/practice-simple-where-clauses-with-sql",
+      false
+    ],
+    [
+      "Practice Sketching",
+      "https://teamtreehouse.com/library/practice-sketching",
+      false
+    ],
+    [
+      "Practice State in React",
+      "https://teamtreehouse.com/library/practice-state-in-react",
+      false
+    ],
+    [
+      "Practice Storyboarding",
+      "https://teamtreehouse.com/library/practice-storyboarding",
+      false
+    ],
+    [
+      "Practice Strings in Ruby",
+      "https://teamtreehouse.com/library/practice-strings-in-ruby",
+      false
+    ],
+    [
+      "Practice Structuring and Grouping Content",
+      "https://teamtreehouse.com/library/practice-structuring-and-grouping-content",
+      false
+    ],
+    [
+      "Practice Template Literals",
+      "https://teamtreehouse.com/library/practice-template-literals",
+      false
+    ],
+    [
+      "Practice Traversing the DOM",
+      "https://teamtreehouse.com/library/practice-traversing-the-dom",
+      false
+    ],
+    [
+      "Practice Using A Design System",
+      "https://teamtreehouse.com/library/practice-using-a-design-system",
+      false
+    ],
+    [
+      "Practice Using Data with Pug Templates",
+      "https://teamtreehouse.com/library/practice-using-data-with-pug-templates",
+      false
+    ],
+    [
+      "Practice Using Strings and Lists in Python",
+      "https://teamtreehouse.com/library/practice-using-strings-and-lists-in-python",
+      false
+    ],
+    [
+      "Practice Vue.js List Rendering",
+      "https://teamtreehouse.com/library/practice-vuejs-list-rendering",
+      false
+    ],
+    [
+      "Practice Vue.js Templating",
+      "https://teamtreehouse.com/library/practice-vuejs-templating",
+      false
+    ],
+    [
+      "Practice Web Accessibility: Checkboxes",
+      "https://teamtreehouse.com/library/practice-web-accessibility-checkboxes",
+      false
+    ],
+    [
+      "Practice Wireframing",
+      "https://teamtreehouse.com/library/practice-wireframing",
+      false
+    ],
+    [
+      "Practice Working with jQuery Collections",
+      "https://teamtreehouse.com/library/practice-working-with-jquery-collections",
+      false
+    ],
+    [
+      "Practice Writing Loops in Python",
+      "https://teamtreehouse.com/library/practice-writing-loops-in-python",
+      false
+    ],
+    [
+      "Practice forEach in JavaScript",
+      "https://teamtreehouse.com/library/practice-foreach-in-javascript",
+      true
+    ],
+    [
+      "Practice the CSS Box Model",
+      "https://teamtreehouse.com/library/practice-the-css-box-model",
+      false
+    ]
+  ],
+  "bonus": [
+    [
+      "Auto User Search with JavaScript - Treehouse Live",
+      "https://teamtreehouse.com/library/auto-user-search-with-javascript-treehouse-live",
+      false
+    ],
+    [
+      "Build an Interactive Settings Panel - Treehouse Live",
+      "https://teamtreehouse.com/library/build-an-interactive-settings-panel-treehouse-live",
+      false
+    ],
+    [
+      "CSS-Only Facebook Reactions UI - Treehouse Live",
+      "https://teamtreehouse.com/library/css-only-facebook-reactions-ui-treehouse-live",
+      false
+    ],
+    [
+      "Code & Chill Livestreams",
+      "https://teamtreehouse.com/library/code-and-chill-livestreams",
+      false
+    ],
+    [
+      "Create a Chat App UI - Treehouse Live",
+      "https://teamtreehouse.com/library/create-a-chat-app-ui-treehouse-live",
+      false
+    ],
+    [
+      "Design and Development",
+      "https://teamtreehouse.com/library/design-and-development",
+      false
+    ],
+    [
+      "Dev Team Show",
+      "https://teamtreehouse.com/library/dev-team-show",
+      false
+    ],
+    [
+      "In the Wild",
+      "https://teamtreehouse.com/library/in-the-wild",
+      false
+    ],
+    [
+      "Live Q&A with Nick Pettit and Jason Seifer",
+      "https://teamtreehouse.com/library/live-qanda-with-nick-pettit-and-jason-seifer",
+      false
+    ],
+    [
+      "Takeaways",
+      "https://teamtreehouse.com/library/takeaways",
+      false
+    ],
+    [
+      "The Treehouse Show",
+      "https://teamtreehouse.com/library/the-treehouse-show",
+      false
+    ],
+    [
+      "The Treehouse Show (2012 - 2015)",
+      "https://teamtreehouse.com/library/the-treehouse-show-2012-2015",
+      false
+    ],
+    [
+      "Treehouse Festival December 2020",
+      "https://teamtreehouse.com/library/treehouse-festival-december-2020",
+      false
+    ],
+    [
+      "Treehouse Festival July 2020",
+      "https://teamtreehouse.com/library/treehouse-festival-july-2020",
+      false
+    ],
+    [
+      "Treehouse Festival June 2021",
+      "https://teamtreehouse.com/library/treehouse-festival-june-2021",
+      false
+    ],
+    [
+      "Treehouse Friends",
+      "https://teamtreehouse.com/library/treehouse-friends",
+      false
+    ],
+    [
+      "Treehouse Guest Speaker Series",
+      "https://teamtreehouse.com/library/treehouse-guest-speaker-series",
+      false
+    ],
+    [
+      "Treehouse Live",
+      "https://teamtreehouse.com/library/treehouse-live",
+      false
+    ],
+    [
+      "Treehouse Quick Tips",
+      "https://teamtreehouse.com/library/treehouse-quick-tips",
+      false
+    ],
+    [
+      "Treehouse Reviews",
+      "https://teamtreehouse.com/library/treehouse-reviews",
+      false
+    ],
+    [
+      "Web Design Q&A",
+      "https://teamtreehouse.com/library/web-design-qanda",
+      false
+    ],
+    [
+      "Web Design Q&A with Nick",
+      "https://teamtreehouse.com/library/web-design-qanda-with-nick",
+      false
+    ]
+  ]
+}

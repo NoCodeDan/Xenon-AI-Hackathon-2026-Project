@@ -1,0 +1,8 @@
+
+.env.local
+
+# clerk configuration (can include secrets)
+/.clerk/
+node_modules
+.next/
+tsconfig.tsbuildinfo

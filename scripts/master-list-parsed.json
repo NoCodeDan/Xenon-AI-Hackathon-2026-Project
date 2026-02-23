@@ -1,0 +1,5443 @@
+[
+  {
+    "title": "Front End Web Development",
+    "url": "https://teamtreehouse.com/tracks/front-end-web-development",
+    "type": "track",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 2880,
+    "skillLevel": "Beginner",
+    "description": "Learn to code websites using HTML, CSS, and JavaScript. Build beautiful, interactive websites by learning the fundamentals of HTML, CSS, and JavaScript — three common coding languages on which all modern websites are built."
+  },
+  {
+    "title": "Full Stack JavaScript",
+    "url": "https://teamtreehouse.com/tracks/full-stack-javascript",
+    "type": "track",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 2220,
+    "skillLevel": "Beginner",
+    "description": "Learn JavaScript, Node.js, and Express to become a professional JavaScript developer."
+  },
+  {
+    "title": "Beginning Python",
+    "url": "https://teamtreehouse.com/tracks/beginning-python",
+    "type": "track",
+    "topicSlug": "python",
+    "estimatedMinutes": 900,
+    "skillLevel": "Beginner",
+    "description": "Learn the general purpose programming language Python and build large and small applications."
+  },
+  {
+    "title": "Beginning SQL",
+    "url": "https://teamtreehouse.com/tracks/beginning-sql",
+    "type": "track",
+    "topicSlug": "databases",
+    "estimatedMinutes": 660,
+    "skillLevel": "Beginner",
+    "description": "Learn the basics of SQL, the language for communicating with relational databases."
+  },
+  {
+    "title": "Web Design",
+    "url": "https://teamtreehouse.com/tracks/web-design",
+    "type": "track",
+    "topicSlug": "design",
+    "estimatedMinutes": 2460,
+    "skillLevel": "Beginner",
+    "description": "Learn everything necessary to build basic websites with web design fundamentals."
+  },
+  {
+    "title": "Learn React",
+    "url": "https://teamtreehouse.com/tracks/learn-react",
+    "type": "track",
+    "topicSlug": "react",
+    "estimatedMinutes": 660,
+    "skillLevel": "Beginner",
+    "description": "Learn React, a popular JavaScript library for building user interfaces."
+  },
+  {
+    "title": "Beginning JavaScript",
+    "url": "https://teamtreehouse.com/tracks/beginning-javascript",
+    "type": "track",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 1140,
+    "skillLevel": "Beginner",
+    "description": "Learn the fundamentals of JavaScript, one of the most popular programming languages."
+  },
+  {
+    "title": "Beginning Data Science",
+    "url": "https://teamtreehouse.com/tracks/beginning-data-science",
+    "type": "track",
+    "topicSlug": "data-analysis",
+    "estimatedMinutes": 1560,
+    "skillLevel": "Beginner",
+    "description": "Learn the fundamentals of data science — terms, tools, and techniques."
+  },
+  {
+    "title": "Beginning C#",
+    "url": "https://teamtreehouse.com/tracks/beginning-c",
+    "type": "track",
+    "topicSlug": "computer-science",
+    "estimatedMinutes": 660,
+    "skillLevel": "Beginner",
+    "description": "Learn the C# programming language and the .NET Framework."
+  },
+  {
+    "title": "Learn to Code for Beginners",
+    "url": "https://teamtreehouse.com/tracks/learn-to-code-for-beginners",
+    "type": "track",
+    "topicSlug": "learning-resources",
+    "estimatedMinutes": 180,
+    "skillLevel": "Beginner",
+    "description": "Make a career change into tech — start here with coding fundamentals."
+  },
+  {
+    "title": "Beginning Java",
+    "url": "https://teamtreehouse.com/tracks/beginning-java",
+    "type": "track",
+    "topicSlug": "java",
+    "estimatedMinutes": 780,
+    "skillLevel": "Beginner",
+    "description": "Java is a very mature language used in places that require reliability and scale."
+  },
+  {
+    "title": "Digital Literacy",
+    "url": "https://teamtreehouse.com/tracks/digital-literacy",
+    "type": "track",
+    "topicSlug": "digital-literacy",
+    "estimatedMinutes": 840,
+    "skillLevel": "Beginner",
+    "description": "Basic computing principles and foundational knowledge for the digital age."
+  },
+  {
+    "title": "Full Stack Foundations",
+    "url": "https://teamtreehouse.com/tracks/full-stack-foundations",
+    "type": "track",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 2220,
+    "skillLevel": "Beginner",
+    "description": "Learn a wide variety of in-demand skills across front and back end programming."
+  },
+  {
+    "title": "Beginning PHP",
+    "url": "https://teamtreehouse.com/tracks/beginning-php",
+    "type": "track",
+    "topicSlug": "php",
+    "estimatedMinutes": 1320,
+    "skillLevel": "Beginner",
+    "description": "PHP is a back-end programming language for creating dynamic web sites."
+  },
+  {
+    "title": "UX: Research Process",
+    "url": "https://teamtreehouse.com/tracks/ux-research-process",
+    "type": "track",
+    "topicSlug": "design",
+    "estimatedMinutes": 540,
+    "skillLevel": "Beginner",
+    "description": "Learn UX Research fundamentals, from thinking like a researcher to executing studies."
+  },
+  {
+    "title": "Intermediate Python",
+    "url": "https://teamtreehouse.com/tracks/intermediate-python",
+    "type": "track",
+    "topicSlug": "python",
+    "estimatedMinutes": 660,
+    "skillLevel": "Beginner",
+    "description": "Deep dive into local Python development tips, tricks, and industry best practices."
+  },
+  {
+    "title": "UX: Interaction Design",
+    "url": "https://teamtreehouse.com/tracks/ux-interaction-design",
+    "type": "track",
+    "topicSlug": "design",
+    "estimatedMinutes": 600,
+    "skillLevel": "Beginner",
+    "description": "Important product design concepts and interaction design fundamentals."
+  },
+  {
+    "title": "Beginning Data Analysis",
+    "url": "https://teamtreehouse.com/tracks/beginning-data-analysis",
+    "type": "track",
+    "topicSlug": "data-analysis",
+    "estimatedMinutes": 480,
+    "skillLevel": "Beginner",
+    "description": "Everything you need to get started with Data Analysis."
+  },
+  {
+    "title": "Algorithms and Data Structures",
+    "url": "https://teamtreehouse.com/tracks/algorithms-and-data-structures",
+    "type": "track",
+    "topicSlug": "computer-science",
+    "estimatedMinutes": 420,
+    "skillLevel": "Beginner",
+    "description": "Fundamental algorithms and data structures in computer science."
+  },
+  {
+    "title": "Learn HTML",
+    "url": "https://teamtreehouse.com/tracks/learn-html",
+    "type": "track",
+    "topicSlug": "html",
+    "estimatedMinutes": 660,
+    "skillLevel": "Beginner",
+    "description": "Build the structure of web pages using HTML (HyperText Markup Language)."
+  },
+  {
+    "title": "Design and Build a Website",
+    "url": "https://teamtreehouse.com/tracks/design-and-build-a-website",
+    "type": "track",
+    "topicSlug": "design",
+    "estimatedMinutes": 1020,
+    "skillLevel": "Beginner",
+    "description": "Basics you need to get your website up and running."
+  },
+  {
+    "title": "Design Skills for Web Developers",
+    "url": "https://teamtreehouse.com/tracks/design-skills-for-web-developers",
+    "type": "track",
+    "topicSlug": "design",
+    "estimatedMinutes": 960,
+    "skillLevel": "Beginner",
+    "description": "Speak the same language as your design team and facilitate better collaboration."
+  },
+  {
+    "title": "Rails Development",
+    "url": "https://teamtreehouse.com/tracks/rails-development",
+    "type": "track",
+    "topicSlug": "ruby",
+    "estimatedMinutes": 1320,
+    "skillLevel": "Beginner",
+    "description": "Ruby on Rails, a popular web application framework written in Ruby."
+  },
+  {
+    "title": "UX: Visual Design Process",
+    "url": "https://teamtreehouse.com/tracks/ux-visual-design-process",
+    "type": "track",
+    "topicSlug": "design",
+    "estimatedMinutes": 720,
+    "skillLevel": "Beginner",
+    "description": "Various methods of iterating on a design idea, from sketching to mockups."
+  },
+  {
+    "title": "Computer Science Basics",
+    "url": "https://teamtreehouse.com/tracks/computer-science-basics",
+    "type": "track",
+    "topicSlug": "computer-science",
+    "estimatedMinutes": 420,
+    "skillLevel": "Beginner",
+    "description": "Foundational CS skills for technical engineering and development."
+  },
+  {
+    "title": "Intermediate Java",
+    "url": "https://teamtreehouse.com/tracks/intermediate-java",
+    "type": "track",
+    "topicSlug": "java",
+    "estimatedMinutes": 420,
+    "skillLevel": "Beginner",
+    "description": "Intermediate Java concepts for building more complex applications."
+  },
+  {
+    "title": "Object-Oriented PHP",
+    "url": "https://teamtreehouse.com/tracks/objectoriented-php-2",
+    "type": "track",
+    "topicSlug": "php",
+    "estimatedMinutes": 780,
+    "skillLevel": "Beginner",
+    "description": "Modern application development in PHP using Objects, Templates, and best practices."
+  },
+  {
+    "title": "Start Your Coding Journey",
+    "url": "https://teamtreehouse.com/tracks/start-your-coding-journey",
+    "type": "track",
+    "topicSlug": "learning-resources",
+    "estimatedMinutes": 1980,
+    "skillLevel": "Beginner",
+    "description": "An overview of different programming languages and where to begin."
+  },
+  {
+    "title": "Intermediate PHP",
+    "url": "https://teamtreehouse.com/tracks/intermediate-php",
+    "type": "track",
+    "topicSlug": "php",
+    "estimatedMinutes": 1020,
+    "skillLevel": "Beginner",
+    "description": "Broaden PHP skills to build data-driven sites with Relational Databases."
+  },
+  {
+    "title": "Product Management Basics",
+    "url": "https://teamtreehouse.com/tracks/product-management-basics",
+    "type": "track",
+    "topicSlug": "professional-growth",
+    "estimatedMinutes": 960,
+    "skillLevel": "Beginner",
+    "description": "Product Management is a fast-growing career field in tech."
+  },
+  {
+    "title": "Practice Front End Web Development",
+    "url": "https://teamtreehouse.com/tracks/practice-front-end-web-development",
+    "type": "track",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 120,
+    "skillLevel": "Beginner",
+    "description": "Practice coding websites using HTML, CSS, and JavaScript."
+  },
+  {
+    "title": "Learn Ruby",
+    "url": "https://teamtreehouse.com/tracks/learn-ruby",
+    "type": "track",
+    "topicSlug": "ruby",
+    "estimatedMinutes": 840,
+    "skillLevel": "Beginner",
+    "description": "Ruby, a popular programming language used for everything from CLI tools to web apps."
+  },
+  {
+    "title": "Introduction to Project Management",
+    "url": "https://teamtreehouse.com/tracks/introduction-to-project-management",
+    "type": "track",
+    "topicSlug": "professional-growth",
+    "estimatedMinutes": 720,
+    "skillLevel": "Beginner",
+    "description": "Project management guided curriculum for developing key skills."
+  },
+  {
+    "title": "Exploring Flask with SQLAlchemy",
+    "url": "https://teamtreehouse.com/tracks/exploring-flask-with-sqlalchemy",
+    "type": "track",
+    "topicSlug": "python",
+    "estimatedMinutes": 1020,
+    "skillLevel": "Beginner",
+    "description": "Learn the web framework Flask to build web apps and sites using Python."
+  },
+  {
+    "title": "Beginning Security",
+    "url": "https://teamtreehouse.com/tracks/beginning-security",
+    "type": "track",
+    "topicSlug": "security",
+    "estimatedMinutes": 240,
+    "skillLevel": "Beginner",
+    "description": "Learn the basics of securing yourself, your data, and your applications online."
+  },
+  {
+    "title": "Skills for a Modern Entrepreneur or Business Owner",
+    "url": "https://teamtreehouse.com/tracks/skills-for-a-modern-entrepreneur-or-business-owner",
+    "type": "track",
+    "topicSlug": "professional-growth",
+    "estimatedMinutes": 1860,
+    "skillLevel": "Beginner",
+    "description": "Mix of modern skills required to run a successful business."
+  },
+  {
+    "title": "STEM Learning - for Kids!",
+    "url": "https://teamtreehouse.com/tracks/stem-learning-for-kids",
+    "type": "track",
+    "topicSlug": "coding-for-kids",
+    "estimatedMinutes": 300,
+    "skillLevel": "Beginner",
+    "description": "Fundamentals of technology with a kid-friendly curriculum."
+  },
+  {
+    "title": "Web Programming Skills for Graphic Designers",
+    "url": "https://teamtreehouse.com/tracks/web-programming-skills-for-graphic-designers",
+    "type": "track",
+    "topicSlug": "html",
+    "estimatedMinutes": 2160,
+    "skillLevel": "Beginner",
+    "description": "Front End Web Development basics for graphic designers."
+  },
+  {
+    "title": "Introduction to Marketing and Sales Analytics",
+    "url": "https://teamtreehouse.com/tracks/introduction-to-marketing-and-sales-analytics",
+    "type": "track",
+    "topicSlug": "data-analysis",
+    "estimatedMinutes": 540,
+    "skillLevel": "Beginner",
+    "description": "How data drives the bottom line — important metrics to track and analyze."
+  },
+  {
+    "title": "Treehouse Career Toolbox",
+    "url": "https://teamtreehouse.com/tracks/treehouse-career-toolbox",
+    "type": "track",
+    "topicSlug": "professional-growth",
+    "estimatedMinutes": 120,
+    "skillLevel": "Beginner",
+    "description": "Build the skills you need to land a job in tech."
+  },
+  {
+    "title": "Exploring Flask with Peewee",
+    "url": "https://teamtreehouse.com/tracks/exploring-flask-with-peewee",
+    "type": "track",
+    "topicSlug": "python",
+    "estimatedMinutes": 1140,
+    "skillLevel": "Beginner",
+    "description": "Learn Flask to build web apps and sites using Python with Peewee ORM."
+  },
+  {
+    "title": "AI for Programmers",
+    "url": "https://teamtreehouse.com/tracks/ai-for-programmers",
+    "type": "track",
+    "topicSlug": "ai",
+    "estimatedMinutes": 120,
+    "skillLevel": "Beginner",
+    "description": "Dive into the world of artificial intelligence as a programmer."
+  },
+  {
+    "title": "AI for Designers",
+    "url": "https://teamtreehouse.com/tracks/ai-for-designers",
+    "type": "track",
+    "topicSlug": "ai",
+    "estimatedMinutes": 240,
+    "skillLevel": "Beginner",
+    "description": "Exploring the fusion of artificial intelligence and design."
+  },
+  {
+    "title": "College Credit: Introduction to HTML and CSS",
+    "url": "https://teamtreehouse.com/tracks/college-credit-introduction-to-html-and-css",
+    "type": "track",
+    "topicSlug": "college-credit",
+    "estimatedMinutes": 960,
+    "skillLevel": "Beginner",
+    "description": "CS 180 with UPI — earn accredited college credits learning HTML and CSS."
+  },
+  {
+    "title": "College Credit: Introduction to JavaScript",
+    "url": "https://teamtreehouse.com/tracks/college-credit-introduction-to-javascript",
+    "type": "track",
+    "topicSlug": "college-credit",
+    "estimatedMinutes": 960,
+    "skillLevel": "Beginner",
+    "description": "CS 190 with UPI — earn accredited college credits learning JavaScript."
+  },
+  {
+    "title": "College Credit: Programming in Python",
+    "url": "https://teamtreehouse.com/tracks/college-credit-programming-in-python",
+    "type": "track",
+    "topicSlug": "college-credit",
+    "estimatedMinutes": 960,
+    "skillLevel": "Beginner",
+    "description": "CS 230 with UPI — earn accredited college credits learning Python."
+  },
+  {
+    "title": "College Credit: Cybersecurity",
+    "url": "https://teamtreehouse.com/tracks/college-credit-cybersecurity",
+    "type": "track",
+    "topicSlug": "college-credit",
+    "estimatedMinutes": 840,
+    "skillLevel": "Beginner",
+    "description": "CS 270 with UPI — earn accredited college credits in Cybersecurity."
+  },
+  {
+    "title": "AI for Everyone: Build Powerful Apps Without Coding",
+    "url": "https://teamtreehouse.com/tracks/ai-for-everyone-build-powerful-apps-without-coding",
+    "type": "track",
+    "topicSlug": "vibe-coding",
+    "estimatedMinutes": 300,
+    "skillLevel": "Beginner",
+    "description": "AI-driven no-code development workshop series."
+  },
+  {
+    "title": "Skills for Modern Marketing & Business",
+    "url": "https://teamtreehouse.com/tracks/skills-for-modern-marketing-business",
+    "type": "track",
+    "topicSlug": "digital-literacy",
+    "estimatedMinutes": 1620,
+    "skillLevel": "Beginner",
+    "description": "Marketing courses in audience analytics, SEO, content strategy, and more."
+  },
+  {
+    "title": "A Social Network with Flask",
+    "url": "https://teamtreehouse.com/library/a-social-network-with-flask",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 262
+  },
+  {
+    "title": "AI Chatbot Comparison: Google Bard, Bing AI, Claude, ChatGPT",
+    "url": "https://teamtreehouse.com/library/ai-chatbot-comparison-google-bard-bing-ai-claude-chatgpt",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 104
+  },
+  {
+    "title": "AI Tools for Designers",
+    "url": "https://teamtreehouse.com/library/ai-tools-for-designers",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 52
+  },
+  {
+    "title": "AJAX Basics",
+    "url": "https://teamtreehouse.com/library/ajax-basics-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 149
+  },
+  {
+    "title": "AWS with S3",
+    "url": "https://teamtreehouse.com/library/aws-with-s3",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 52
+  },
+  {
+    "title": "Accessibility For Web Developers",
+    "url": "https://teamtreehouse.com/library/accessibility-for-web-developers",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 91
+  },
+  {
+    "title": "Accessibility for UX Designers",
+    "url": "https://teamtreehouse.com/library/accessibility-for-ux-designers-2",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 90
+  },
+  {
+    "title": "Adobe Illustrator for Web Design",
+    "url": "https://teamtreehouse.com/library/adobe-illustrator-for-web-design",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 172
+  },
+  {
+    "title": "Algorithms: Sorting and Searching",
+    "url": "https://teamtreehouse.com/library/algorithms-sorting-and-searching",
+    "type": "course",
+    "topicSlug": "computer-science",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 119
+  },
+  {
+    "title": "Analyzing Books with Pandas",
+    "url": "https://teamtreehouse.com/library/analyzing-books-with-pandas",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 33
+  },
+  {
+    "title": "Animating SVG with CSS",
+    "url": "https://teamtreehouse.com/library/animating-svg-with-css",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 85
+  },
+  {
+    "title": "Asynchronous Programming with JavaScript",
+    "url": "https://teamtreehouse.com/library/asynchronous-programming-with-javascript",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 121
+  },
+  {
+    "title": "Basic Error Handling in PHP",
+    "url": "https://teamtreehouse.com/library/basic-error-handling-in-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 36
+  },
+  {
+    "title": "Basic Object-Oriented Python",
+    "url": "https://teamtreehouse.com/library/basic-objectoriented-python",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 127
+  },
+  {
+    "title": "Bootstrap Basics",
+    "url": "https://teamtreehouse.com/library/bootstrap-basics",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 141
+  },
+  {
+    "title": "Brand Identity Basics",
+    "url": "https://teamtreehouse.com/library/brand-identity-basics",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 55
+  },
+  {
+    "title": "Browser Persistent Data with PHP",
+    "url": "https://teamtreehouse.com/library/browser-persistent-data-with-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 49
+  },
+  {
+    "title": "Build Your Own CRM in Lovable Step-by-Step",
+    "url": "https://teamtreehouse.com/library/build-your-own-crm-in-lovable-stepbystep",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 52
+  },
+  {
+    "title": "Build a Basic PHP Website",
+    "url": "https://teamtreehouse.com/library/build-a-basic-php-website-2",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 165
+  },
+  {
+    "title": "Build a Chatbot with Watson APIs",
+    "url": "https://teamtreehouse.com/library/build-a-chatbot-with-watson-apis",
+    "type": "course",
+    "topicSlug": "apis",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 128
+  },
+  {
+    "title": "Build a No-Code Web App with Softr",
+    "url": "https://teamtreehouse.com/library/build-a-nocode-web-app-with-softr",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Build a REST API in Spark",
+    "url": "https://teamtreehouse.com/library/build-a-rest-api-in-spark",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 115
+  },
+  {
+    "title": "Build a REST API with Laravel",
+    "url": "https://teamtreehouse.com/library/build-a-rest-api-with-laravel",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 113
+  },
+  {
+    "title": "Build a REST API with PHP",
+    "url": "https://teamtreehouse.com/library/build-a-rest-api-with-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 103
+  },
+  {
+    "title": "Build a Side Business with AI Tools",
+    "url": "https://teamtreehouse.com/library/build-a-side-business-with-ai-tools",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "Build a Simple Dynamic Site with Node.js",
+    "url": "https://teamtreehouse.com/library/build-a-simple-dynamic-site-with-nodejs",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 122
+  },
+  {
+    "title": "Build a To-Do List App with Replit Agent",
+    "url": "https://teamtreehouse.com/library/build-a-todo-list-app-with-replit-agent",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 90
+  },
+  {
+    "title": "Build an Address Book in Ruby",
+    "url": "https://teamtreehouse.com/library/build-an-address-book-in-ruby",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 109
+  },
+  {
+    "title": "Build an Instagram Clone in Adalo",
+    "url": "https://teamtreehouse.com/library/build-an-instagram-clone-in-adalo",
+    "type": "course",
+    "topicSlug": "nocode",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 311
+  },
+  {
+    "title": "Build and Deploy a Landing Page Using Bolt",
+    "url": "https://teamtreehouse.com/library/build-and-deploy-a-landing-page-using-bolt",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 55
+  },
+  {
+    "title": "Building a Portfolio",
+    "url": "https://teamtreehouse.com/library/building-a-portfolio",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 78
+  },
+  {
+    "title": "CRUD Operations with PHP",
+    "url": "https://teamtreehouse.com/library/crud-operations-with-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 142
+  },
+  {
+    "title": "CSS Basics",
+    "url": "https://teamtreehouse.com/library/css-basics-5",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 191
+  },
+  {
+    "title": "CSS Best Practices",
+    "url": "https://teamtreehouse.com/library/css-best-practices",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 33
+  },
+  {
+    "title": "CSS Flexbox Layout",
+    "url": "https://teamtreehouse.com/library/css-flexbox-layout",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 105
+  },
+  {
+    "title": "CSS Grid Layout",
+    "url": "https://teamtreehouse.com/library/css-grid-layout",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 111
+  },
+  {
+    "title": "CSS Layout",
+    "url": "https://teamtreehouse.com/library/css-layout",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 160
+  },
+  {
+    "title": "CSS Selectors",
+    "url": "https://teamtreehouse.com/library/css-selectors",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 166
+  },
+  {
+    "title": "CSS Selectors Quickstart",
+    "url": "https://teamtreehouse.com/library/css-selectors-quickstart",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 95
+  },
+  {
+    "title": "CSS Transitions and Transforms",
+    "url": "https://teamtreehouse.com/library/css-transitions-and-transforms",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 185
+  },
+  {
+    "title": "CSS to Sass",
+    "url": "https://teamtreehouse.com/library/css-to-sass",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 117
+  },
+  {
+    "title": "CSS3 Master Class",
+    "url": "https://teamtreehouse.com/library/css3-master-class",
+    "type": "course",
+    "topicSlug": "html",
+    "estimatedMinutes": 75
+  },
+  {
+    "title": "Callback Functions in JavaScript",
+    "url": "https://teamtreehouse.com/library/callback-functions-in-javascript",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 60
+  },
+  {
+    "title": "Careers Foundations",
+    "url": "https://teamtreehouse.com/library/careers-foundations",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 243
+  },
+  {
+    "title": "Careers in the Tech Industry",
+    "url": "https://teamtreehouse.com/library/careers-in-the-tech-industry",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 59
+  },
+  {
+    "title": "Code Racer",
+    "url": "https://teamtreehouse.com/library/code-racer",
+    "type": "course",
+    "topicSlug": "game-development",
+    "estimatedMinutes": 141
+  },
+  {
+    "title": "Collaborating with Developers",
+    "url": "https://teamtreehouse.com/library/collaborating-with-developers",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 72
+  },
+  {
+    "title": "Combining Data for Analysis",
+    "url": "https://teamtreehouse.com/library/combining-data-for-analysis",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 45
+  },
+  {
+    "title": "Computer Basics",
+    "url": "https://teamtreehouse.com/library/computer-basics",
+    "type": "course",
+    "topicSlug": "digital-literacy",
+    "estimatedMinutes": 55
+  },
+  {
+    "title": "Conducting User Interviews",
+    "url": "https://teamtreehouse.com/library/conducting-user-interviews",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 42
+  },
+  {
+    "title": "Continuous Integration with Jenkins",
+    "url": "https://teamtreehouse.com/library/continuous-integration-with-jenkins",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 124
+  },
+  {
+    "title": "Copyright Basics",
+    "url": "https://teamtreehouse.com/library/copyright-basics",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 100
+  },
+  {
+    "title": "Create AR Effects for TikTok with Effect House",
+    "url": "https://teamtreehouse.com/library/create-ar-effects-for-tiktok-with-effect-house",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 34
+  },
+  {
+    "title": "Create a Portfolio Using HTML and CSS",
+    "url": "https://teamtreehouse.com/library/create-a-portfolio-using-html-and-css",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 53
+  },
+  {
+    "title": "Creating Mockups",
+    "url": "https://teamtreehouse.com/library/creating-mockups",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Creating User Experiences",
+    "url": "https://teamtreehouse.com/library/creating-user-experiences",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 94
+  },
+  {
+    "title": "Creating Wireframe and Photoshop Mockups",
+    "url": "https://teamtreehouse.com/library/creating-wireframe-and-photoshop-mockups",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 73
+  },
+  {
+    "title": "Creating a CSS Marquee",
+    "url": "https://teamtreehouse.com/library/creating-a-css-marquee",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 50
+  },
+  {
+    "title": "Creating and Modifying Database Tables",
+    "url": "https://teamtreehouse.com/library/creating-and-modifying-database-tables",
+    "type": "course",
+    "topicSlug": "databases",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 40
+  },
+  {
+    "title": "DOM Scripting By Example",
+    "url": "https://teamtreehouse.com/library/dom-scripting-by-example",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 114
+  },
+  {
+    "title": "Data Analysis Basics",
+    "url": "https://teamtreehouse.com/library/data-analysis-basics",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 75
+  },
+  {
+    "title": "Data Fetching in React",
+    "url": "https://teamtreehouse.com/library/data-fetching-in-react",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 43
+  },
+  {
+    "title": "Data Relationships with SQL and Sequelize",
+    "url": "https://teamtreehouse.com/library/data-relationships-with-sql-and-sequelize-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 92
+  },
+  {
+    "title": "Data Visualization Foundations",
+    "url": "https://teamtreehouse.com/library/data-visualization-foundations",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 76
+  },
+  {
+    "title": "Data Visualization with Bokeh",
+    "url": "https://teamtreehouse.com/library/data-visualization-with-bokeh",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 67
+  },
+  {
+    "title": "Data Visualization with Excel",
+    "url": "https://teamtreehouse.com/library/data-visualization-with-excel",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 90
+  },
+  {
+    "title": "Data Visualization with Google Sheets",
+    "url": "https://teamtreehouse.com/library/data-visualization-with-google-sheets",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 42
+  },
+  {
+    "title": "Data from APIs",
+    "url": "https://teamtreehouse.com/library/data-from-apis",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 33
+  },
+  {
+    "title": "Debugging CSS with Chrome DevTools",
+    "url": "https://teamtreehouse.com/library/debugging-css-with-chrome-devtools",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "Debugging JavaScript in the Browser",
+    "url": "https://teamtreehouse.com/library/debugging-javascript-in-the-browser",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 39
+  },
+  {
+    "title": "Design Foundations",
+    "url": "https://teamtreehouse.com/library/design-foundations",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 166
+  },
+  {
+    "title": "Designing Interactions",
+    "url": "https://teamtreehouse.com/library/designing-interactions",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 64
+  },
+  {
+    "title": "Designing Interfaces in PHP",
+    "url": "https://teamtreehouse.com/library/designing-interfaces-in-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 137
+  },
+  {
+    "title": "Designing Layouts",
+    "url": "https://teamtreehouse.com/library/designing-layouts",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 52
+  },
+  {
+    "title": "Designing with Generative AI",
+    "url": "https://teamtreehouse.com/library/designing-with-generative-ai",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 111
+  },
+  {
+    "title": "Digital Media Through Photoshop",
+    "url": "https://teamtreehouse.com/library/digital-media-through-photoshop",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 102
+  },
+  {
+    "title": "Enhancing Design with CSS",
+    "url": "https://teamtreehouse.com/library/enhancing-design-with-css",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 136
+  },
+  {
+    "title": "Environment Variables with PHP",
+    "url": "https://teamtreehouse.com/library/environment-variables-with-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 44
+  },
+  {
+    "title": "Ethical Design",
+    "url": "https://teamtreehouse.com/library/ethical-design",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 173
+  },
+  {
+    "title": "Evaluating Design",
+    "url": "https://teamtreehouse.com/library/evaluating-design",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 145
+  },
+  {
+    "title": "Exercise Your Creative",
+    "url": "https://teamtreehouse.com/library/exercise-your-creative",
+    "type": "course",
+    "topicSlug": "coding-for-kids",
+    "estimatedMinutes": 105
+  },
+  {
+    "title": "Express Basics",
+    "url": "https://teamtreehouse.com/library/express-basics-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 247
+  },
+  {
+    "title": "Extending Object-Oriented PHP",
+    "url": "https://teamtreehouse.com/library/extending-objectoriented-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 83
+  },
+  {
+    "title": "Feeling Loopy with Java",
+    "url": "https://teamtreehouse.com/library/feeling-loopy-with-java",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 38
+  },
+  {
+    "title": "File Handling with PHP",
+    "url": "https://teamtreehouse.com/library/file-handling-with-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 101
+  },
+  {
+    "title": "Financial Statement Basics",
+    "url": "https://teamtreehouse.com/library/financial-statement-basics",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 85
+  },
+  {
+    "title": "Flask Basics",
+    "url": "https://teamtreehouse.com/library/flask-basics",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 189
+  },
+  {
+    "title": "Flask REST API",
+    "url": "https://teamtreehouse.com/library/flask-rest-api",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 146
+  },
+  {
+    "title": "Flask with SQLAlchemy Basics",
+    "url": "https://teamtreehouse.com/library/flask-with-sqlalchemy-basics",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 150
+  },
+  {
+    "title": "Fluid Grids",
+    "url": "https://teamtreehouse.com/library/fluid-grids",
+    "type": "course",
+    "topicSlug": "html",
+    "estimatedMinutes": 78
+  },
+  {
+    "title": "Front End Web Optimization Workflow",
+    "url": "https://teamtreehouse.com/library/front-end-web-optimization-workflow",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 128
+  },
+  {
+    "title": "Functional Programming with Python",
+    "url": "https://teamtreehouse.com/library/functional-programming-with-python",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 53
+  },
+  {
+    "title": "Functional Python",
+    "url": "https://teamtreehouse.com/library/functional-python",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 158
+  },
+  {
+    "title": "Functions, Packing, and Unpacking",
+    "url": "https://teamtreehouse.com/library/functions-packing-and-unpacking",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 65
+  },
+  {
+    "title": "Game Development with Phaser",
+    "url": "https://teamtreehouse.com/library/game-development-with-phaser",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 282
+  },
+  {
+    "title": "Getting Started With ES2015",
+    "url": "https://teamtreehouse.com/library/getting-started-with-es2015-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 49
+  },
+  {
+    "title": "Getting Started With Human Interface Guidelines",
+    "url": "https://teamtreehouse.com/library/getting-started-with-human-interface-guidelines",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 39
+  },
+  {
+    "title": "Getting Started With Material Design",
+    "url": "https://teamtreehouse.com/library/getting-started-with-material-design",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 46
+  },
+  {
+    "title": "Getting Started in Adalo",
+    "url": "https://teamtreehouse.com/library/getting-started-in-adalo",
+    "type": "course",
+    "topicSlug": "nocode",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 36
+  },
+  {
+    "title": "Getting Started with PHP Unit Testing",
+    "url": "https://teamtreehouse.com/library/getting-started-with-php-unit-testing",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 91
+  },
+  {
+    "title": "Getting Started with TypeScript",
+    "url": "https://teamtreehouse.com/library/getting-started-with-typescript",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 43
+  },
+  {
+    "title": "Getting Started with WeWeb",
+    "url": "https://teamtreehouse.com/library/getting-started-with-weweb",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 32
+  },
+  {
+    "title": "Git Branches and Merging",
+    "url": "https://teamtreehouse.com/library/git-branches-and-merging",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 101
+  },
+  {
+    "title": "GitHub Basics",
+    "url": "https://teamtreehouse.com/library/github-basics",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 139
+  },
+  {
+    "title": "Go Language Overview",
+    "url": "https://teamtreehouse.com/library/go-language-overview",
+    "type": "course",
+    "topicSlug": "go",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 166
+  },
+  {
+    "title": "HTML Basics",
+    "url": "https://teamtreehouse.com/library/html-basics-2",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 183
+  },
+  {
+    "title": "HTML Forms",
+    "url": "https://teamtreehouse.com/library/html-forms",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 157
+  },
+  {
+    "title": "HTML Tables",
+    "url": "https://teamtreehouse.com/library/html-tables",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 59
+  },
+  {
+    "title": "HTML Video and Audio",
+    "url": "https://teamtreehouse.com/library/html-video-and-audio-2",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 79
+  },
+  {
+    "title": "HTML5 Mobile Web Applications",
+    "url": "https://teamtreehouse.com/library/html5-mobile-web-applications",
+    "type": "course",
+    "topicSlug": "html",
+    "estimatedMinutes": 278
+  },
+  {
+    "title": "HTTP Basics",
+    "url": "https://teamtreehouse.com/library/http-basics",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 67
+  },
+  {
+    "title": "Hello Front-End Web Development (FEWD)",
+    "url": "https://teamtreehouse.com/library/hello-frontend-web-development-fewd",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 33
+  },
+  {
+    "title": "Hello Python",
+    "url": "https://teamtreehouse.com/library/hello-python",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 33
+  },
+  {
+    "title": "Hello Swift & SwiftUI",
+    "url": "https://teamtreehouse.com/library/hello-swift-swiftui",
+    "type": "course",
+    "topicSlug": "swift",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 40
+  },
+  {
+    "title": "Hibernate Basics",
+    "url": "https://teamtreehouse.com/library/hibernate-basics",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 129
+  },
+  {
+    "title": "How the Internet Works",
+    "url": "https://teamtreehouse.com/library/how-the-internet-works",
+    "type": "course",
+    "topicSlug": "digital-literacy",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "How the Web Works",
+    "url": "https://teamtreehouse.com/library/how-the-web-works",
+    "type": "course",
+    "topicSlug": "digital-literacy",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "How to Build a Google Chrome Extension: Strong Password Generator",
+    "url": "https://teamtreehouse.com/library/how-to-build-a-google-chrome-extension-strong-password-generator",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "How to Freelance",
+    "url": "https://teamtreehouse.com/library/how-to-freelance",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 172
+  },
+  {
+    "title": "How to Have 1:1's",
+    "url": "https://teamtreehouse.com/library/how-to-have-11s",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 41
+  },
+  {
+    "title": "How to Land Your Dream Job",
+    "url": "https://teamtreehouse.com/library/how-to-land-your-dream-job",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "estimatedMinutes": 119
+  },
+  {
+    "title": "How to Make a Favicon",
+    "url": "https://teamtreehouse.com/library/how-to-make-a-favicon",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "How to Market Your Business",
+    "url": "https://teamtreehouse.com/library/how-to-market-your-business",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 192
+  },
+  {
+    "title": "How to Run a Web Design Business",
+    "url": "https://teamtreehouse.com/library/how-to-run-a-web-design-business",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 125
+  },
+  {
+    "title": "How to Start a Business",
+    "url": "https://teamtreehouse.com/library/how-to-start-a-business",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 195
+  },
+  {
+    "title": "How to Use Treehouse",
+    "url": "https://teamtreehouse.com/library/how-to-use-treehouse",
+    "type": "course",
+    "topicSlug": "learning-resources",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 47
+  },
+  {
+    "title": "How to Write a Business Plan",
+    "url": "https://teamtreehouse.com/library/how-to-write-a-business-plan",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 58
+  },
+  {
+    "title": "Important Skills for Professional Success",
+    "url": "https://teamtreehouse.com/library/important-skills-for-professional-success",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 40
+  },
+  {
+    "title": "Information Architecture",
+    "url": "https://teamtreehouse.com/library/information-architecture",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 122
+  },
+  {
+    "title": "Inheritance in Java",
+    "url": "https://teamtreehouse.com/library/inheritance-in-java",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 42
+  },
+  {
+    "title": "Integrating PHP with Databases",
+    "url": "https://teamtreehouse.com/library/integrating-php-with-databases",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 243
+  },
+  {
+    "title": "Interacting with the DOM",
+    "url": "https://teamtreehouse.com/library/interacting-with-the-dom",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 66
+  },
+  {
+    "title": "Intermediate Excel",
+    "url": "https://teamtreehouse.com/library/intermediate-excel",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 60
+  },
+  {
+    "title": "Intermediate Selenium WebDriver",
+    "url": "https://teamtreehouse.com/library/intermediate-selenium-webdriver",
+    "type": "course",
+    "topicSlug": "quality-assurance",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 66
+  },
+  {
+    "title": "Intro to Design Thinking",
+    "url": "https://teamtreehouse.com/library/intro-to-design-thinking",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 75
+  },
+  {
+    "title": "Intro to Gender & Sexuality",
+    "url": "https://teamtreehouse.com/library/intro-to-gender-sexuality",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 46
+  },
+  {
+    "title": "Intro to Java Web Development with Spark",
+    "url": "https://teamtreehouse.com/library/intro-to-java-web-development-with-spark",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 145
+  },
+  {
+    "title": "Intro to Seaborn",
+    "url": "https://teamtreehouse.com/library/intro-to-seaborn",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 76
+  },
+  {
+    "title": "Introducing Coda",
+    "url": "https://teamtreehouse.com/library/introducing-coda",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 32
+  },
+  {
+    "title": "Introducing Dictionaries",
+    "url": "https://teamtreehouse.com/library/introducing-dictionaries",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 36
+  },
+  {
+    "title": "Introducing ES2015",
+    "url": "https://teamtreehouse.com/library/introducing-es2015",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 112
+  },
+  {
+    "title": "Introducing JavaScript",
+    "url": "https://teamtreehouse.com/library/introducing-javascript",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 70
+  },
+  {
+    "title": "Introducing Lists",
+    "url": "https://teamtreehouse.com/library/introducing-lists",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 105
+  },
+  {
+    "title": "Introducing MVC Frameworks in PHP",
+    "url": "https://teamtreehouse.com/library/introducing-mvc-frameworks-in-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 72
+  },
+  {
+    "title": "Introducing UXPin Merge",
+    "url": "https://teamtreehouse.com/library/introducing-uxpin-merge",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 79
+  },
+  {
+    "title": "Introduction to Algorithms",
+    "url": "https://teamtreehouse.com/library/introduction-to-algorithms",
+    "type": "course",
+    "topicSlug": "computer-science",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 134
+  },
+  {
+    "title": "Introduction to Application Security",
+    "url": "https://teamtreehouse.com/library/introduction-to-application-security",
+    "type": "course",
+    "topicSlug": "security",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 72
+  },
+  {
+    "title": "Introduction to Big Data",
+    "url": "https://teamtreehouse.com/library/introduction-to-big-data",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 51
+  },
+  {
+    "title": "Introduction to Churn and Lifetime Value (LTV) Analysis",
+    "url": "https://teamtreehouse.com/library/introduction-to-churn-and-lifetime-value-ltv-analysis",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 59
+  },
+  {
+    "title": "Introduction to Computer Vision",
+    "url": "https://teamtreehouse.com/library/introduction-to-computer-vision",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 44
+  },
+  {
+    "title": "Introduction to Data Security",
+    "url": "https://teamtreehouse.com/library/introduction-to-data-security",
+    "type": "course",
+    "topicSlug": "security",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 48
+  },
+  {
+    "title": "Introduction to Data Structures",
+    "url": "https://teamtreehouse.com/library/introduction-to-data-structures",
+    "type": "course",
+    "topicSlug": "computer-science",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 163
+  },
+  {
+    "title": "Introduction to Data Visualization with Matplotlib",
+    "url": "https://teamtreehouse.com/library/introduction-to-data-visualization-with-matplotlib",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 75
+  },
+  {
+    "title": "Introduction to Design Patterns",
+    "url": "https://teamtreehouse.com/library/introduction-to-design-patterns",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Introduction to Design Systems",
+    "url": "https://teamtreehouse.com/library/introduction-to-design-systems",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 76
+  },
+  {
+    "title": "Introduction to Docker",
+    "url": "https://teamtreehouse.com/library/introduction-to-docker",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 103
+  },
+  {
+    "title": "Introduction to Front End Performance Optimization",
+    "url": "https://teamtreehouse.com/library/introduction-to-front-end-performance-optimization",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 92
+  },
+  {
+    "title": "Introduction to Git",
+    "url": "https://teamtreehouse.com/library/introduction-to-git",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 186
+  },
+  {
+    "title": "Introduction to GraphQL",
+    "url": "https://teamtreehouse.com/library/introduction-to-graphql",
+    "type": "course",
+    "topicSlug": "apis",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 72
+  },
+  {
+    "title": "Introduction to HTML and CSS",
+    "url": "https://teamtreehouse.com/library/introduction-to-html-and-css-2",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 142
+  },
+  {
+    "title": "Introduction to NLP",
+    "url": "https://teamtreehouse.com/library/introduction-to-nlp",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 32
+  },
+  {
+    "title": "Introduction to NumPy",
+    "url": "https://teamtreehouse.com/library/introduction-to-numpy",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 154
+  },
+  {
+    "title": "Introduction to PostCSS",
+    "url": "https://teamtreehouse.com/library/introduction-to-postcss",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 49
+  },
+  {
+    "title": "Introduction to Product Design",
+    "url": "https://teamtreehouse.com/library/introduction-to-product-design",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 56
+  },
+  {
+    "title": "Introduction to QA Engineering",
+    "url": "https://teamtreehouse.com/library/introduction-to-qa-engineering",
+    "type": "course",
+    "topicSlug": "quality-assurance",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 163
+  },
+  {
+    "title": "Introduction to Regular Expressions",
+    "url": "https://teamtreehouse.com/library/introduction-to-regular-expressions-2",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 36
+  },
+  {
+    "title": "Introduction to Ruby on Rails 7",
+    "url": "https://teamtreehouse.com/library/introduction-to-ruby-on-rails-7",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 123
+  },
+  {
+    "title": "Introduction to Selenium",
+    "url": "https://teamtreehouse.com/library/introduction-to-selenium",
+    "type": "course",
+    "topicSlug": "quality-assurance",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 132
+  },
+  {
+    "title": "Introduction to User Authentication in PHP",
+    "url": "https://teamtreehouse.com/library/introduction-to-user-authentication-in-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 98
+  },
+  {
+    "title": "Introduction to Wireframing",
+    "url": "https://teamtreehouse.com/library/introduction-to-wireframing",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 131
+  },
+  {
+    "title": "Introduction to pandas",
+    "url": "https://teamtreehouse.com/library/introduction-to-pandas",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 201
+  },
+  {
+    "title": "Introduction to the Terminal",
+    "url": "https://teamtreehouse.com/library/introduction-to-the-terminal",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 112
+  },
+  {
+    "title": "Java Annotations",
+    "url": "https://teamtreehouse.com/library/java-annotations",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 118
+  },
+  {
+    "title": "Java Arrays",
+    "url": "https://teamtreehouse.com/library/java-arrays",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 80
+  },
+  {
+    "title": "Java Basics",
+    "url": "https://teamtreehouse.com/library/java-basics",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 133
+  },
+  {
+    "title": "Java Data Structures",
+    "url": "https://teamtreehouse.com/library/java-data-structures",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 240
+  },
+  {
+    "title": "Java Loops",
+    "url": "https://teamtreehouse.com/library/java-loops",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 48
+  },
+  {
+    "title": "Java Objects",
+    "url": "https://teamtreehouse.com/library/java-objects",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 136
+  },
+  {
+    "title": "JavaScript Array Iteration Methods",
+    "url": "https://teamtreehouse.com/library/javascript-array-iteration-methods",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 100
+  },
+  {
+    "title": "JavaScript Arrays",
+    "url": "https://teamtreehouse.com/library/javascript-arrays",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 123
+  },
+  {
+    "title": "JavaScript Basics",
+    "url": "https://teamtreehouse.com/library/javascript-basics",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 234
+  },
+  {
+    "title": "JavaScript Data Fetching",
+    "url": "https://teamtreehouse.com/library/javascript-data-fetching",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 83
+  },
+  {
+    "title": "JavaScript Functions",
+    "url": "https://teamtreehouse.com/library/javascript-functions",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 128
+  },
+  {
+    "title": "JavaScript Loops",
+    "url": "https://teamtreehouse.com/library/javascript-loops",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 76
+  },
+  {
+    "title": "JavaScript Numbers",
+    "url": "https://teamtreehouse.com/library/javascript-numbers",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 83
+  },
+  {
+    "title": "JavaScript Objects",
+    "url": "https://teamtreehouse.com/library/javascript-objects-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 67
+  },
+  {
+    "title": "JavaScript Quickstart",
+    "url": "https://teamtreehouse.com/library/javascript-quickstart",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 97
+  },
+  {
+    "title": "JavaScript Unit Testing",
+    "url": "https://teamtreehouse.com/library/javascript-unit-testing",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 194
+  },
+  {
+    "title": "JavaScript and the DOM",
+    "url": "https://teamtreehouse.com/library/javascript-and-the-dom-3",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 138
+  },
+  {
+    "title": "Laravel Basics",
+    "url": "https://teamtreehouse.com/library/laravel-basics-2",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 78
+  },
+  {
+    "title": "Learn React Panel",
+    "url": "https://teamtreehouse.com/library/learn-react-panel",
+    "type": "course",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 45
+  },
+  {
+    "title": "Local Development Environments",
+    "url": "https://teamtreehouse.com/library/local-development-environments",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 128
+  },
+  {
+    "title": "Machine Learning Basics",
+    "url": "https://teamtreehouse.com/library/machine-learning-basics",
+    "type": "course",
+    "topicSlug": "machine-learning",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 58
+  },
+  {
+    "title": "Markdown Basics",
+    "url": "https://teamtreehouse.com/library/markdown-basics",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 59
+  },
+  {
+    "title": "Media Queries",
+    "url": "https://teamtreehouse.com/library/media-queries",
+    "type": "course",
+    "topicSlug": "css",
+    "estimatedMinutes": 60
+  },
+  {
+    "title": "Mobile-First CSS Layout",
+    "url": "https://teamtreehouse.com/library/mobilefirst-css-layout",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 38
+  },
+  {
+    "title": "Mockups for Responsive Design",
+    "url": "https://teamtreehouse.com/library/mockups-for-responsive-design",
+    "type": "course",
+    "topicSlug": "design",
+    "estimatedMinutes": 60
+  },
+  {
+    "title": "Modifying Data with SQL",
+    "url": "https://teamtreehouse.com/library/modifying-data-with-sql",
+    "type": "course",
+    "topicSlug": "databases",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 79
+  },
+  {
+    "title": "Modular CSS with Sass",
+    "url": "https://teamtreehouse.com/library/modular-css-with-sass",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 193
+  },
+  {
+    "title": "Navigate Unfamiliar Code with AI",
+    "url": "https://teamtreehouse.com/library/navigate-unfamiliar-code-with-ai",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 41
+  },
+  {
+    "title": "Node.js Basics",
+    "url": "https://teamtreehouse.com/library/nodejs-basics-3",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 68
+  },
+  {
+    "title": "Object-Oriented JavaScript",
+    "url": "https://teamtreehouse.com/library/objectoriented-javascript-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 111
+  },
+  {
+    "title": "Object-Oriented JavaScript: Challenge",
+    "url": "https://teamtreehouse.com/library/objectoriented-javascript-challenge",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 132
+  },
+  {
+    "title": "Object-Oriented PHP Basics",
+    "url": "https://teamtreehouse.com/library/objectoriented-php-basics-2",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 203
+  },
+  {
+    "title": "Object-Oriented Python",
+    "url": "https://teamtreehouse.com/library/objectoriented-python-2",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 215
+  },
+  {
+    "title": "Observer Design Pattern using Java",
+    "url": "https://teamtreehouse.com/library/observer-design-pattern-using-java",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 58
+  },
+  {
+    "title": "PHP & Databases with PDO",
+    "url": "https://teamtreehouse.com/library/php-databases-with-pdo",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 88
+  },
+  {
+    "title": "PHP Arrays and Control Structures",
+    "url": "https://teamtreehouse.com/library/php-arrays-and-control-structures",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 193
+  },
+  {
+    "title": "PHP Basics",
+    "url": "https://teamtreehouse.com/library/php-basics-2",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 159
+  },
+  {
+    "title": "PHP Functions",
+    "url": "https://teamtreehouse.com/library/php-functions-2",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 66
+  },
+  {
+    "title": "PHP Standards and Best Practices",
+    "url": "https://teamtreehouse.com/library/php-standards-and-best-practices",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 125
+  },
+  {
+    "title": "PHP User Authentication",
+    "url": "https://teamtreehouse.com/library/php-user-authentication",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 157
+  },
+  {
+    "title": "Pagination with GitHub Copilot",
+    "url": "https://teamtreehouse.com/library/pagination-with-github-copilot",
+    "type": "course",
+    "topicSlug": "ai",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 42
+  },
+  {
+    "title": "Preparing Data for Analysis",
+    "url": "https://teamtreehouse.com/library/preparing-data-for-analysis",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 79
+  },
+  {
+    "title": "Presentation Skills",
+    "url": "https://teamtreehouse.com/library/presentation-skills-2",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 43
+  },
+  {
+    "title": "Prototyping in the Browser",
+    "url": "https://teamtreehouse.com/library/prototyping-in-the-browser",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 59
+  },
+  {
+    "title": "Prototyping with Adobe XD",
+    "url": "https://teamtreehouse.com/library/prototyping-with-adobe-xd",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 71
+  },
+  {
+    "title": "Prototyping with Figma",
+    "url": "https://teamtreehouse.com/library/prototyping-with-figma",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 71
+  },
+  {
+    "title": "Python Basics",
+    "url": "https://teamtreehouse.com/library/python-basics-3",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 234
+  },
+  {
+    "title": "Python Comprehensions",
+    "url": "https://teamtreehouse.com/library/python-comprehensions",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 43
+  },
+  {
+    "title": "Python Dates and Times",
+    "url": "https://teamtreehouse.com/library/python-dates-and-times",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 138
+  },
+  {
+    "title": "Python Sequences",
+    "url": "https://teamtreehouse.com/library/python-sequences",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 65
+  },
+  {
+    "title": "Python Sets",
+    "url": "https://teamtreehouse.com/library/python-sets",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 95
+  },
+  {
+    "title": "Python Testing",
+    "url": "https://teamtreehouse.com/library/python-testing",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 77
+  },
+  {
+    "title": "Python for File Systems",
+    "url": "https://teamtreehouse.com/library/python-for-file-systems",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 115
+  },
+  {
+    "title": "Python for Kids",
+    "url": "https://teamtreehouse.com/library/python-for-kids",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 132
+  },
+  {
+    "title": "Querying Relational Databases",
+    "url": "https://teamtreehouse.com/library/querying-relational-databases",
+    "type": "course",
+    "topicSlug": "databases",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 145
+  },
+  {
+    "title": "REST API Validation with Express",
+    "url": "https://teamtreehouse.com/library/rest-api-validation-with-express-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 51
+  },
+  {
+    "title": "REST APIs with Express",
+    "url": "https://teamtreehouse.com/library/rest-apis-with-express",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 101
+  },
+  {
+    "title": "Rails 8 Course - Beginner to Intermediate",
+    "url": "https://teamtreehouse.com/library/rails-8-course-beginner-to-intermediate",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 132
+  },
+  {
+    "title": "Rapid Website Prototyping",
+    "url": "https://teamtreehouse.com/library/rapid-website-prototyping",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 34
+  },
+  {
+    "title": "React Authentication",
+    "url": "https://teamtreehouse.com/library/react-authentication-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 106
+  },
+  {
+    "title": "React Basics",
+    "url": "https://teamtreehouse.com/library/react-basics-4",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 133
+  },
+  {
+    "title": "React Components",
+    "url": "https://teamtreehouse.com/library/react-components-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 145
+  },
+  {
+    "title": "React Context API",
+    "url": "https://teamtreehouse.com/library/react-context-api",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 54
+  },
+  {
+    "title": "React Hooks",
+    "url": "https://teamtreehouse.com/library/react-hooks",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 70
+  },
+  {
+    "title": "React Router v6 Basics",
+    "url": "https://teamtreehouse.com/library/react-router-v6-basics",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 91
+  },
+  {
+    "title": "React by Example",
+    "url": "https://teamtreehouse.com/library/react-by-example",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 113
+  },
+  {
+    "title": "Regular Expressions in JavaScript",
+    "url": "https://teamtreehouse.com/library/regular-expressions-in-javascript",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 87
+  },
+  {
+    "title": "Regular Expressions in Python",
+    "url": "https://teamtreehouse.com/library/regular-expressions-in-python",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 110
+  },
+  {
+    "title": "Relational Databases With SQLAlchemy",
+    "url": "https://teamtreehouse.com/library/relational-databases-with-sqlalchemy",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 42
+  },
+  {
+    "title": "Reporting with SQL",
+    "url": "https://teamtreehouse.com/library/reporting-with-sql",
+    "type": "course",
+    "topicSlug": "databases",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 167
+  },
+  {
+    "title": "Researching User Needs",
+    "url": "https://teamtreehouse.com/library/researching-user-needs",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 143
+  },
+  {
+    "title": "Responsive Design",
+    "url": "https://teamtreehouse.com/library/responsive-design",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 49
+  },
+  {
+    "title": "Responsive Images",
+    "url": "https://teamtreehouse.com/library/responsive-images",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 65
+  },
+  {
+    "title": "Responsive Layouts",
+    "url": "https://teamtreehouse.com/library/responsive-layouts",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 47
+  },
+  {
+    "title": "Ruby Basics",
+    "url": "https://teamtreehouse.com/library/ruby-basics-2",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 169
+  },
+  {
+    "title": "Ruby Blocks",
+    "url": "https://teamtreehouse.com/library/ruby-blocks",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 96
+  },
+  {
+    "title": "Ruby Collections",
+    "url": "https://teamtreehouse.com/library/ruby-collections",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 106
+  },
+  {
+    "title": "Ruby Loops",
+    "url": "https://teamtreehouse.com/library/ruby-loops",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 79
+  },
+  {
+    "title": "Ruby Modules",
+    "url": "https://teamtreehouse.com/library/ruby-modules",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 125
+  },
+  {
+    "title": "Ruby Objects and Classes",
+    "url": "https://teamtreehouse.com/library/ruby-objects-and-classes",
+    "type": "course",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 121
+  },
+  {
+    "title": "SQL Basics",
+    "url": "https://teamtreehouse.com/library/sql-basics",
+    "type": "course",
+    "topicSlug": "databases",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 173
+  },
+  {
+    "title": "SQL Reporting by Example",
+    "url": "https://teamtreehouse.com/library/sql-reporting-by-example",
+    "type": "course",
+    "topicSlug": "databases",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 64
+  },
+  {
+    "title": "SQLAlchemy Basics",
+    "url": "https://teamtreehouse.com/library/sqlalchemy-basics",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 190
+  },
+  {
+    "title": "SVG Basics",
+    "url": "https://teamtreehouse.com/library/svg-basics",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 46
+  },
+  {
+    "title": "SVG Workflow and Tools",
+    "url": "https://teamtreehouse.com/library/svg-workflow-and-tools",
+    "type": "course",
+    "topicSlug": "html",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 31
+  },
+  {
+    "title": "Sass Basics",
+    "url": "https://teamtreehouse.com/library/sass-basics-2",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 247
+  },
+  {
+    "title": "Scraping Data From the Web",
+    "url": "https://teamtreehouse.com/library/scraping-data-from-the-web",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 70
+  },
+  {
+    "title": "Scrum Basics",
+    "url": "https://teamtreehouse.com/library/scrum-basics",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 107
+  },
+  {
+    "title": "Security Literacy",
+    "url": "https://teamtreehouse.com/library/security-literacy",
+    "type": "course",
+    "topicSlug": "security",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 83
+  },
+  {
+    "title": "Sketch Basics",
+    "url": "https://teamtreehouse.com/library/sketch-basics",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 121
+  },
+  {
+    "title": "Soft Skills",
+    "url": "https://teamtreehouse.com/library/soft-skills",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 212
+  },
+  {
+    "title": "Spreadsheet Basics",
+    "url": "https://teamtreehouse.com/library/spreadsheet-basics",
+    "type": "course",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 138
+  },
+  {
+    "title": "Structuring Your Code",
+    "url": "https://teamtreehouse.com/library/structuring-your-code",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 56
+  },
+  {
+    "title": "Supercharge Your Figma Workflow with AI Plugins",
+    "url": "https://teamtreehouse.com/library/supercharge-your-figma-workflow-with-ai-plugins",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 50
+  },
+  {
+    "title": "Technical Interviewing",
+    "url": "https://teamtreehouse.com/library/technical-interviewing",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 50
+  },
+  {
+    "title": "Templating with Twig",
+    "url": "https://teamtreehouse.com/library/templating-with-twig",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 72
+  },
+  {
+    "title": "The 4-Step Career Checklist",
+    "url": "https://teamtreehouse.com/library/the-4step-career-checklist",
+    "type": "course",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 79
+  },
+  {
+    "title": "The Complete Guide to Publishing Your No-Code Apps with Adalo",
+    "url": "https://teamtreehouse.com/library/the-complete-guide-to-publishing-your-nocode-apps-with-adalo",
+    "type": "course",
+    "topicSlug": "nocode",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 145
+  },
+  {
+    "title": "The Landscape of JavaScript",
+    "url": "https://teamtreehouse.com/library/the-landscape-of-javascript",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 45
+  },
+  {
+    "title": "Tkinter",
+    "url": "https://teamtreehouse.com/library/tkinter",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 40
+  },
+  {
+    "title": "Treehouse Club: CSS",
+    "url": "https://teamtreehouse.com/library/treehouse-club-css",
+    "type": "course",
+    "topicSlug": "css",
+    "estimatedMinutes": 56
+  },
+  {
+    "title": "Treehouse Club: HTML",
+    "url": "https://teamtreehouse.com/library/treehouse-club-html",
+    "type": "course",
+    "topicSlug": "html",
+    "estimatedMinutes": 44
+  },
+  {
+    "title": "Treehouse Club: JavaScript",
+    "url": "https://teamtreehouse.com/library/treehouse-club-javascript",
+    "type": "course",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 54
+  },
+  {
+    "title": "Treehouse Features: Code Challenges",
+    "url": "https://teamtreehouse.com/library/treehouse-features-code-challenges",
+    "type": "course",
+    "topicSlug": "learning-resources",
+    "skillLevel": "Beginner"
+  },
+  {
+    "title": "TypeScript Basics",
+    "url": "https://teamtreehouse.com/library/typescript-basics",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 199
+  },
+  {
+    "title": "Typography for Designers",
+    "url": "https://teamtreehouse.com/library/typography-for-designers",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 182
+  },
+  {
+    "title": "UX Content Strategy",
+    "url": "https://teamtreehouse.com/library/ux-content-strategy",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 128
+  },
+  {
+    "title": "UX Design Patterns",
+    "url": "https://teamtreehouse.com/library/ux-design-patterns-2",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 78
+  },
+  {
+    "title": "Unit Testing in Java",
+    "url": "https://teamtreehouse.com/library/unit-testing-in-java",
+    "type": "course",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 122
+  },
+  {
+    "title": "Unity Basics",
+    "url": "https://teamtreehouse.com/library/unity-basics",
+    "type": "course",
+    "topicSlug": "game-development",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 150
+  },
+  {
+    "title": "Usability Foundations",
+    "url": "https://teamtreehouse.com/library/usability-foundations",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 90
+  },
+  {
+    "title": "Usability Testing",
+    "url": "https://teamtreehouse.com/library/usability-testing",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 63
+  },
+  {
+    "title": "User Authentication With Express and Mongo",
+    "url": "https://teamtreehouse.com/library/user-authentication-with-express-and-mongo",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 137
+  },
+  {
+    "title": "User Onboarding",
+    "url": "https://teamtreehouse.com/library/user-onboarding",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "Using CSS Variables",
+    "url": "https://teamtreehouse.com/library/using-css-variables",
+    "type": "course",
+    "topicSlug": "css",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Using Cookies and JWTs for Secure Authentication",
+    "url": "https://teamtreehouse.com/library/using-cookies-and-jwts-for-secure-authentication",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 71
+  },
+  {
+    "title": "Using Databases in Python",
+    "url": "https://teamtreehouse.com/library/using-databases-in-python",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 118
+  },
+  {
+    "title": "Using SQL ORMs with Node.js",
+    "url": "https://teamtreehouse.com/library/using-sql-orms-with-nodejs",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 100
+  },
+  {
+    "title": "Using SQL and Node.js with Sequelize",
+    "url": "https://teamtreehouse.com/library/using-sql-and-nodejs-with-sequelize",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 44
+  },
+  {
+    "title": "Using Sequelize ORM With Express",
+    "url": "https://teamtreehouse.com/library/using-sequelize-orm-with-express",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Using jQuery Plugins",
+    "url": "https://teamtreehouse.com/library/using-jquery-plugins",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 92
+  },
+  {
+    "title": "Using the Angular CLI",
+    "url": "https://teamtreehouse.com/library/using-the-angular-cli",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Using the GitHub API with PHP",
+    "url": "https://teamtreehouse.com/library/using-the-github-api-with-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 58
+  },
+  {
+    "title": "Visual Design Foundations",
+    "url": "https://teamtreehouse.com/library/visual-design-foundations",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "Vue.js Basics",
+    "url": "https://teamtreehouse.com/library/vuejs-basics",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 141
+  },
+  {
+    "title": "Web Accessibility Compliance",
+    "url": "https://teamtreehouse.com/library/web-accessibility-compliance",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 124
+  },
+  {
+    "title": "Web Design Process",
+    "url": "https://teamtreehouse.com/library/web-design-process",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 43
+  },
+  {
+    "title": "Web Typography",
+    "url": "https://teamtreehouse.com/library/web-typography",
+    "type": "course",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 260
+  },
+  {
+    "title": "Website Optimization",
+    "url": "https://teamtreehouse.com/library/website-optimization",
+    "type": "course",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 89
+  },
+  {
+    "title": "Working with $_GET and $_POST in PHP",
+    "url": "https://teamtreehouse.com/library/working-with-get-and-post-in-php",
+    "type": "course",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 44
+  },
+  {
+    "title": "Write Better Python",
+    "url": "https://teamtreehouse.com/library/write-better-python",
+    "type": "course",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 70
+  },
+  {
+    "title": "jQuery Basics",
+    "url": "https://teamtreehouse.com/library/jquery-basics-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 174
+  },
+  {
+    "title": "npm Basics",
+    "url": "https://teamtreehouse.com/library/npm-basics-2",
+    "type": "course",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 44
+  },
+  {
+    "title": "A Developer's Adventure with AI",
+    "url": "https://teamtreehouse.com/library/a-developers-adventure-with-ai",
+    "type": "workshop",
+    "topicSlug": "coding-for-kids",
+    "estimatedMinutes": 2
+  },
+  {
+    "title": "AI Tools Treehouse Developers Love",
+    "url": "https://teamtreehouse.com/library/ai-tools-treehouse-developers-love",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "AI Tools for No-Code Development",
+    "url": "https://teamtreehouse.com/library/ai-tools-for-nocode-development",
+    "type": "workshop",
+    "topicSlug": "nocode",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "AI Tools for Sitemapping and Wireframing",
+    "url": "https://teamtreehouse.com/library/ai-tools-for-sitemapping-and-wireframing",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "AI-Powered VS Code Extensions",
+    "url": "https://teamtreehouse.com/library/aipowered-vs-code-extensions",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Animated Hamburger Menu",
+    "url": "https://teamtreehouse.com/library/animated-hamburger-menu",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "App Deployment Accounts",
+    "url": "https://teamtreehouse.com/library/app-deployment-accounts",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 25
+  },
+  {
+    "title": "App Planning & Organization with Adalo",
+    "url": "https://teamtreehouse.com/library/app-planning-organization-with-adalo",
+    "type": "workshop",
+    "topicSlug": "nocode",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 24
+  },
+  {
+    "title": "Asynchronous Code in Express",
+    "url": "https://teamtreehouse.com/library/asynchronous-code-in-express",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 24
+  },
+  {
+    "title": "Automate Your Work with Zapier",
+    "url": "https://teamtreehouse.com/library/automate-your-work-with-zapier",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "Basic Exception Handling with PHP",
+    "url": "https://teamtreehouse.com/library/basic-exception-handling-with-php",
+    "type": "workshop",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Basic JavaScript Array Methods",
+    "url": "https://teamtreehouse.com/library/basic-javascript-array-methods",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Basic Math for Data Analysis",
+    "url": "https://teamtreehouse.com/library/basic-math-for-data-analysis",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 25
+  },
+  {
+    "title": "Basic Statistics for Data Analysis",
+    "url": "https://teamtreehouse.com/library/basic-statistics-for-data-analysis",
+    "type": "workshop",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Before and After: Color",
+    "url": "https://teamtreehouse.com/library/before-and-after-color",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Before and After: Layout",
+    "url": "https://teamtreehouse.com/library/before-and-after-layout",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Before and After: Typography",
+    "url": "https://teamtreehouse.com/library/before-and-after-typography",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Build & Launch an App in 30 Minutes with Cursor",
+    "url": "https://teamtreehouse.com/library/build-launch-an-app-in-30-minutes-with-cursor",
+    "type": "workshop",
+    "topicSlug": "nocode",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 29
+  },
+  {
+    "title": "Build Your Own AI Image Generator",
+    "url": "https://teamtreehouse.com/library/build-your-own-ai-image-generator",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Build a Basic ChatGPT Clone with Vanilla JavaScript",
+    "url": "https://teamtreehouse.com/library/build-a-basic-chatgpt-clone-with-vanilla-javascript",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Build a ChatGPT Discord Bot",
+    "url": "https://teamtreehouse.com/library/build-a-chatgpt-discord-bot",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Build a Cross-Platform Desktop Application with Electron",
+    "url": "https://teamtreehouse.com/library/build-a-crossplatform-desktop-application-with-electron",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Build a Fully Functional AI SaaS in 10 Minutes for Free",
+    "url": "https://teamtreehouse.com/library/build-a-fully-functional-ai-saas-in-10-minutes-for-free",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Build a Responsive Navigation with Flexbox",
+    "url": "https://teamtreehouse.com/library/build-a-responsive-navigation-with-flexbox",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Build a Weather App in Less Than 3 Minutes",
+    "url": "https://teamtreehouse.com/library/build-a-weather-app-in-less-than-3-minutes",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Building a React App with ChatGPT",
+    "url": "https://teamtreehouse.com/library/building-a-react-app-with-chatgpt",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 28
+  },
+  {
+    "title": "CSS Blend Modes",
+    "url": "https://teamtreehouse.com/library/css-blend-modes",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "CSS Clipping Paths",
+    "url": "https://teamtreehouse.com/library/css-clipping-paths",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 12
+  },
+  {
+    "title": "CSS Masks",
+    "url": "https://teamtreehouse.com/library/css-masks",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "CSS-Only Toggle",
+    "url": "https://teamtreehouse.com/library/cssonly-toggle",
+    "type": "workshop",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "CSV and JSON in Python",
+    "url": "https://teamtreehouse.com/library/csv-and-json-in-python",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Can ChatGPT Build a Website?",
+    "url": "https://teamtreehouse.com/library/can-chatgpt-build-a-website",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Career Self-Assessment with C.C. Chapman",
+    "url": "https://teamtreehouse.com/library/career-selfassessment-with-cc-chapman",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 16
+  },
+  {
+    "title": "ChatGPT for Beginners",
+    "url": "https://teamtreehouse.com/library/chatgpt-for-beginners",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "ChatGPT for Designers",
+    "url": "https://teamtreehouse.com/library/chatgpt-for-designers",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "ChatGPT: Code Interpreter",
+    "url": "https://teamtreehouse.com/library/chatgpt-code-interpreter",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Code Coverage with Istanbul",
+    "url": "https://teamtreehouse.com/library/code-coverage-with-istanbul",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Collecting Design Inspiration",
+    "url": "https://teamtreehouse.com/library/collecting-design-inspiration",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Common Table Expressions Using WITH",
+    "url": "https://teamtreehouse.com/library/common-table-expressions-using-with",
+    "type": "workshop",
+    "topicSlug": "databases",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Computer Fundamentals (Mac)",
+    "url": "https://teamtreehouse.com/library/computer-fundamentals-mac",
+    "type": "workshop",
+    "topicSlug": "digital-literacy",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Computer Fundamentals (Windows)",
+    "url": "https://teamtreehouse.com/library/computer-fundamentals-windows",
+    "type": "workshop",
+    "topicSlug": "digital-literacy",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Copy to Clipboard",
+    "url": "https://teamtreehouse.com/library/copy-to-clipboard",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 1
+  },
+  {
+    "title": "Crafting SMART Goals",
+    "url": "https://teamtreehouse.com/library/crafting-smart-goals",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Create Apps Faster with Windsurf",
+    "url": "https://teamtreehouse.com/library/create-apps-faster-with-windsurf",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Create Tooltips with CSS",
+    "url": "https://teamtreehouse.com/library/create-tooltips-with-css",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Create a Fullscreen Slider with CSS",
+    "url": "https://teamtreehouse.com/library/create-a-fullscreen-slider-with-css",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 16
+  },
+  {
+    "title": "Create a Media Player with MediaElement.js",
+    "url": "https://teamtreehouse.com/library/create-a-media-player-with-mediaelementjs",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "Create a Modal Window with CSS",
+    "url": "https://teamtreehouse.com/library/create-a-modal-window-with-css",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Create a No-Code REST API Using Xano",
+    "url": "https://teamtreehouse.com/library/create-a-nocode-rest-api-using-xano",
+    "type": "workshop",
+    "topicSlug": "apis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 25
+  },
+  {
+    "title": "Create a Portfolio Using Python and Flask",
+    "url": "https://teamtreehouse.com/library/create-a-portfolio-using-python-and-flask",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 28
+  },
+  {
+    "title": "Create a Portfolio Using React",
+    "url": "https://teamtreehouse.com/library/create-a-portfolio-using-react",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 24
+  },
+  {
+    "title": "Create an Accordion Menu with CSS",
+    "url": "https://teamtreehouse.com/library/create-an-accordion-menu-with-css",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Creating Micro-Interactions in Figma",
+    "url": "https://teamtreehouse.com/library/creating-microinteractions-in-figma",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 29
+  },
+  {
+    "title": "Creating User Personas",
+    "url": "https://teamtreehouse.com/library/creating-user-personas",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Creating an Affinity Diagram",
+    "url": "https://teamtreehouse.com/library/creating-an-affinity-diagram",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Dark Mode in CSS",
+    "url": "https://teamtreehouse.com/library/dark-mode-in-css",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Dark Mode with React & Tailwind",
+    "url": "https://teamtreehouse.com/library/dark-mode-with-react-tailwind",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Debug Node Applications with Visual Studio Code",
+    "url": "https://teamtreehouse.com/library/debug-node-applications-with-visual-studio-code",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Debugging Node Applications with Google Chrome",
+    "url": "https://teamtreehouse.com/library/debugging-node-applications-with-google-chrome",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Debugging with ChatGPT",
+    "url": "https://teamtreehouse.com/library/debugging-with-chatgpt",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Defining Variables with let and const",
+    "url": "https://teamtreehouse.com/library/defining-variables-with-let-and-const",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Dependency Management with Composer",
+    "url": "https://teamtreehouse.com/library/dependency-management-with-composer",
+    "type": "workshop",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 26
+  },
+  {
+    "title": "Dependency Management with Gradle",
+    "url": "https://teamtreehouse.com/library/dependency-management-with-gradle",
+    "type": "workshop",
+    "topicSlug": "java",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "Deploy a Node Application to Heroku",
+    "url": "https://teamtreehouse.com/library/deploy-a-node-application-to-heroku",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 12
+  },
+  {
+    "title": "Deploying a React App",
+    "url": "https://teamtreehouse.com/library/deploying-a-react-app",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 19
+  },
+  {
+    "title": "Design Criticism",
+    "url": "https://teamtreehouse.com/library/design-criticism",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Design Your Brand Identity with Looka",
+    "url": "https://teamtreehouse.com/library/design-your-brand-identity-with-looka",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Designing Dynamic UI States",
+    "url": "https://teamtreehouse.com/library/designing-dynamic-ui-states",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 25
+  },
+  {
+    "title": "Designing for User Roles",
+    "url": "https://teamtreehouse.com/library/designing-for-user-roles",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Dunder Main",
+    "url": "https://teamtreehouse.com/library/dunder-main",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 17
+  },
+  {
+    "title": "Everyday Innovation: Leveraging ChatGPT in Our Daily Lives",
+    "url": "https://teamtreehouse.com/library/everyday-innovation-leveraging-chatgpt-in-our-daily-lives",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Exploring JavaScript Conditionals",
+    "url": "https://teamtreehouse.com/library/exploring-javascript-conditionals",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 25
+  },
+  {
+    "title": "Full Stack JavaScript Techdegree Portfolio Overview",
+    "url": "https://teamtreehouse.com/library/full-stack-javascript-techdegree-portfolio-overview",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Generics in Java",
+    "url": "https://teamtreehouse.com/library/generics-in-java",
+    "type": "workshop",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 17
+  },
+  {
+    "title": "Git and GitHub Workflow for Developers",
+    "url": "https://teamtreehouse.com/library/git-and-github-workflow-for-developers",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "GitHub in Workspaces",
+    "url": "https://teamtreehouse.com/library/github-in-workspaces",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "Go from Figma → No-Code App in WeWeb with AI",
+    "url": "https://teamtreehouse.com/library/go-from-figma-nocode-app-in-weweb-with-ai",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Gulpfile Setup",
+    "url": "https://teamtreehouse.com/library/gulpfile-setup",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "HTML Dialog",
+    "url": "https://teamtreehouse.com/library/html-dialog",
+    "type": "workshop",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "HTML-Only Accordion",
+    "url": "https://teamtreehouse.com/library/htmlonly-accordion",
+    "type": "workshop",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "HTTP: Do you GET it?",
+    "url": "https://teamtreehouse.com/library/http-do-you-get-it",
+    "type": "workshop",
+    "topicSlug": "digital-literacy",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "Handling Feedback as a UX Designer",
+    "url": "https://teamtreehouse.com/library/handling-feedback-as-a-ux-designer",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 26
+  },
+  {
+    "title": "Hello Computer Science",
+    "url": "https://teamtreehouse.com/library/hello-computer-science",
+    "type": "workshop",
+    "topicSlug": "computer-science",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 20
+  },
+  {
+    "title": "Hello Full Stack JavaScript",
+    "url": "https://teamtreehouse.com/library/hello-full-stack-javascript",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Hello UX",
+    "url": "https://teamtreehouse.com/library/hello-ux",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "Hosting a Website with GitHub Pages",
+    "url": "https://teamtreehouse.com/library/hosting-a-website-with-github-pages",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "How To Clone a Repository From GitHub Using Your Terminal",
+    "url": "https://teamtreehouse.com/library/how-to-clone-a-repository-from-github-using-your-terminal",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 2
+  },
+  {
+    "title": "How to Adapt Any Work Experience to Fit Any Role",
+    "url": "https://teamtreehouse.com/library/how-to-adapt-any-work-experience-to-fit-any-role",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "How to Add a Favicon",
+    "url": "https://teamtreehouse.com/library/how-to-add-a-favicon",
+    "type": "workshop",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 1
+  },
+  {
+    "title": "How to Create and Distribute an npm Package",
+    "url": "https://teamtreehouse.com/library/how-to-create-and-distribute-an-npm-package",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "How to Give and Receive Feedback",
+    "url": "https://teamtreehouse.com/library/how-to-give-and-receive-feedback",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 29
+  },
+  {
+    "title": "How to Install Python (Windows)",
+    "url": "https://teamtreehouse.com/library/how-to-install-python-windows",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "How to Install Python (macOS)",
+    "url": "https://teamtreehouse.com/library/how-to-install-python-macos",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "How to Learn",
+    "url": "https://teamtreehouse.com/library/how-to-learn",
+    "type": "workshop",
+    "topicSlug": "coding-for-kids",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "How to Learn Data Science",
+    "url": "https://teamtreehouse.com/library/how-to-learn-data-science",
+    "type": "workshop",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "How to Nail Any Interview",
+    "url": "https://teamtreehouse.com/library/how-to-nail-any-interview",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "How to Set Up a React App",
+    "url": "https://teamtreehouse.com/library/how-to-set-up-a-react-app",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "Image Manipulation with Python",
+    "url": "https://teamtreehouse.com/library/image-manipulation-with-python",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 23
+  },
+  {
+    "title": "Imposter Syndrome",
+    "url": "https://teamtreehouse.com/library/imposter-syndrome",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Interfaces in Java",
+    "url": "https://teamtreehouse.com/library/interfaces-in-java",
+    "type": "workshop",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 19
+  },
+  {
+    "title": "Intermediate Spreadsheets",
+    "url": "https://teamtreehouse.com/library/intermediate-spreadsheets",
+    "type": "workshop",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 26
+  },
+  {
+    "title": "Internet Street Smarts",
+    "url": "https://teamtreehouse.com/library/internet-street-smarts",
+    "type": "workshop",
+    "topicSlug": "security",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 26
+  },
+  {
+    "title": "Intro to Data Analysis",
+    "url": "https://teamtreehouse.com/library/intro-to-data-analysis",
+    "type": "workshop",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 16
+  },
+  {
+    "title": "Introducing Arrow Function Syntax",
+    "url": "https://teamtreehouse.com/library/introducing-arrow-function-syntax",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Introducing Google Slides",
+    "url": "https://teamtreehouse.com/library/introducing-google-slides",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Introducing Large Language Models",
+    "url": "https://teamtreehouse.com/library/introducing-large-language-models",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 20
+  },
+  {
+    "title": "Introducing Lovable.dev for No-Code Web App Design",
+    "url": "https://teamtreehouse.com/library/introducing-lovabledev-for-nocode-web-app-design",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Introducing Microsoft Excel",
+    "url": "https://teamtreehouse.com/library/introducing-microsoft-excel",
+    "type": "workshop",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Introducing Progressive Web Apps",
+    "url": "https://teamtreehouse.com/library/introducing-progressive-web-apps",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Introducing Template Literals",
+    "url": "https://teamtreehouse.com/library/introducing-template-literals",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "Introducing Tuples",
+    "url": "https://teamtreehouse.com/library/introducing-tuples",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Introducing the Atom Text Editor",
+    "url": "https://teamtreehouse.com/library/introducing-the-atom-text-editor",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Introducing the VS Code Text Editor",
+    "url": "https://teamtreehouse.com/library/introducing-the-vs-code-text-editor",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Introduction to Anaconda",
+    "url": "https://teamtreehouse.com/library/introduction-to-anaconda",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Introduction to GitHub Copilot",
+    "url": "https://teamtreehouse.com/library/introduction-to-github-copilot",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Introduction to New Relic",
+    "url": "https://teamtreehouse.com/library/introduction-to-new-relic",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 20
+  },
+  {
+    "title": "Introduction to PHP7",
+    "url": "https://teamtreehouse.com/library/introduction-to-php7",
+    "type": "workshop",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "Introduction to REST APIs",
+    "url": "https://teamtreehouse.com/library/introduction-to-rest-apis",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "Java Lambdas",
+    "url": "https://teamtreehouse.com/library/java-lambdas",
+    "type": "workshop",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 16
+  },
+  {
+    "title": "Java Lists",
+    "url": "https://teamtreehouse.com/library/java-lists",
+    "type": "workshop",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Java Maps",
+    "url": "https://teamtreehouse.com/library/java-maps",
+    "type": "workshop",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "JavaScript Accordion",
+    "url": "https://teamtreehouse.com/library/javascript-accordion",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "JavaScript Array Methods: filter()",
+    "url": "https://teamtreehouse.com/library/javascript-array-methods-filter",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "JavaScript Array Methods: find()",
+    "url": "https://teamtreehouse.com/library/javascript-array-methods-find",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "JavaScript Array Methods: forEach()",
+    "url": "https://teamtreehouse.com/library/javascript-array-methods-foreach",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 16
+  },
+  {
+    "title": "JavaScript Array Methods: includes()",
+    "url": "https://teamtreehouse.com/library/javascript-array-methods-includes",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 2
+  },
+  {
+    "title": "JavaScript Array Methods: map()",
+    "url": "https://teamtreehouse.com/library/javascript-array-methods-map",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "JavaScript Array Methods: reduce()",
+    "url": "https://teamtreehouse.com/library/javascript-array-methods-reduce",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "JavaScript Array Methods: sort()",
+    "url": "https://teamtreehouse.com/library/javascript-array-methods-sort",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "JavaScript Booleans",
+    "url": "https://teamtreehouse.com/library/javascript-booleans",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 17
+  },
+  {
+    "title": "JavaScript Emoji Selector Using Fetch",
+    "url": "https://teamtreehouse.com/library/javascript-emoji-selector-using-fetch",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "JavaScript Search",
+    "url": "https://teamtreehouse.com/library/javascript-search",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "JavaScript Tip Calculator Overview",
+    "url": "https://teamtreehouse.com/library/javascript-tip-calculator-overview",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "JavaScript and the Internet of Things",
+    "url": "https://teamtreehouse.com/library/javascript-and-the-internet-of-things",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Jupyter Notebooks",
+    "url": "https://teamtreehouse.com/library/jupyter-notebooks",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Key Roles on a Software Team",
+    "url": "https://teamtreehouse.com/library/key-roles-on-a-software-team",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 17
+  },
+  {
+    "title": "Learning with Coda",
+    "url": "https://teamtreehouse.com/library/learning-with-coda",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 24
+  },
+  {
+    "title": "Linux Servers on VirtualBox",
+    "url": "https://teamtreehouse.com/library/linux-servers-on-virtualbox",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "Logo Design Basics",
+    "url": "https://teamtreehouse.com/library/logo-design-basics",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "MAC: Local PHP Dev Environment",
+    "url": "https://teamtreehouse.com/library/mac-local-php-dev-environment",
+    "type": "workshop",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "MailChimp API",
+    "url": "https://teamtreehouse.com/library/mailchimp-api",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 29
+  },
+  {
+    "title": "Mastering AI-Assisted Design with ChatGPT",
+    "url": "https://teamtreehouse.com/library/mastering-aiassisted-design-with-chatgpt",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "Measuring Company Performance with MRR, Churn and Lifetime Values",
+    "url": "https://teamtreehouse.com/library/measuring-company-performance-with-mrr-churn-and-lifetime-values",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 24
+  },
+  {
+    "title": "Meet Cursor and Experience AI-Driven Coding",
+    "url": "https://teamtreehouse.com/library/meet-cursor-and-experience-aidriven-coding",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Monetize Your App with Stripe in 5 Minutes Using Cursor",
+    "url": "https://teamtreehouse.com/library/monetize-your-app-with-stripe-in-5-minutes-using-cursor",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Neural Networks in a Nutshell",
+    "url": "https://teamtreehouse.com/library/neural-networks-in-a-nutshell",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "No-Code Prompt Engineering",
+    "url": "https://teamtreehouse.com/library/nocode-prompt-engineering",
+    "type": "workshop",
+    "topicSlug": "nocode",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 29
+  },
+  {
+    "title": "Pipenv: The Python Package Manager",
+    "url": "https://teamtreehouse.com/library/pipenv-the-python-package-manager",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 12
+  },
+  {
+    "title": "Plan Ahead with Pseudocode",
+    "url": "https://teamtreehouse.com/library/plan-ahead-with-pseudocode",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 28
+  },
+  {
+    "title": "Plan and Design Effective No-Code Apps",
+    "url": "https://teamtreehouse.com/library/plan-and-design-effective-nocode-apps",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Presenting Design Ideas",
+    "url": "https://teamtreehouse.com/library/presenting-design-ideas",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 17
+  },
+  {
+    "title": "Presenting an Analysis",
+    "url": "https://teamtreehouse.com/library/presenting-an-analysis",
+    "type": "workshop",
+    "topicSlug": "data-analysis",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 16
+  },
+  {
+    "title": "Process Sass with Scout-App",
+    "url": "https://teamtreehouse.com/library/process-sass-with-scoutapp",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "PyCharm",
+    "url": "https://teamtreehouse.com/library/pycharm",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Python Decorators",
+    "url": "https://teamtreehouse.com/library/python-decorators",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 23
+  },
+  {
+    "title": "Python File I/O",
+    "url": "https://teamtreehouse.com/library/python-file-io",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Python Libraries for AI",
+    "url": "https://teamtreehouse.com/library/python-libraries-for-ai",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Python Techdegree Portfolio Overview",
+    "url": "https://teamtreehouse.com/library/python-techdegree-portfolio-overview",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Python Type Hinting",
+    "url": "https://teamtreehouse.com/library/python-type-hinting",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Python Virtual Environments",
+    "url": "https://teamtreehouse.com/library/python-virtual-environments",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "REST API Authentication with Express",
+    "url": "https://teamtreehouse.com/library/rest-api-authentication-with-express",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "Receiving UX Feedback by Example",
+    "url": "https://teamtreehouse.com/library/receiving-ux-feedback-by-example",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Reverse Engineering Code with ChatGPT",
+    "url": "https://teamtreehouse.com/library/reverse-engineering-code-with-chatgpt",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "Ruby Enumerable",
+    "url": "https://teamtreehouse.com/library/ruby-enumerable",
+    "type": "workshop",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "SQL Commands with ChatGPT",
+    "url": "https://teamtreehouse.com/library/sql-commands-with-chatgpt",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 19
+  },
+  {
+    "title": "SQL Window Functions",
+    "url": "https://teamtreehouse.com/library/sql-window-functions",
+    "type": "workshop",
+    "topicSlug": "databases",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 27
+  },
+  {
+    "title": "SQL to Sequelize with ChatGPT",
+    "url": "https://teamtreehouse.com/library/sql-to-sequelize-with-chatgpt",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "SQLite from the Command Line",
+    "url": "https://teamtreehouse.com/library/sqlite-from-the-command-line",
+    "type": "workshop",
+    "topicSlug": "databases",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Sequelize Model Validation",
+    "url": "https://teamtreehouse.com/library/sequelize-model-validation",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "Setting Up Travis CI with Node.js",
+    "url": "https://teamtreehouse.com/library/setting-up-travis-ci-with-nodejs",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Advanced",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Shorten Text With CSS",
+    "url": "https://teamtreehouse.com/library/shorten-text-with-css",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 2
+  },
+  {
+    "title": "Solving Problems with UX Design",
+    "url": "https://teamtreehouse.com/library/solving-problems-with-ux-design",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "String Manipulation with JavaScript",
+    "url": "https://teamtreehouse.com/library/string-manipulation-with-javascript",
+    "type": "workshop",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 19
+  },
+  {
+    "title": "Structuring Your JavaScript Code",
+    "url": "https://teamtreehouse.com/library/structuring-your-javascript-code",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 16
+  },
+  {
+    "title": "Technical Interview Prep: Python Basics",
+    "url": "https://teamtreehouse.com/library/technical-interview-prep-python-basics",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "The 5 Most Important Networking Skills",
+    "url": "https://teamtreehouse.com/library/the-5-most-important-networking-skills",
+    "type": "workshop",
+    "topicSlug": "professional-growth",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "The AI Multiverse: Exploring the Subfields of Artificial Intelligence",
+    "url": "https://teamtreehouse.com/library/the-ai-multiverse-exploring-the-subfields-of-artificial-intelligence",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "The Blank Slate",
+    "url": "https://teamtreehouse.com/library/the-blank-slate",
+    "type": "workshop",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "The CSS calc() Function",
+    "url": "https://teamtreehouse.com/library/the-css-calc-function",
+    "type": "workshop",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "The JavaScript 'use strict' Statement",
+    "url": "https://teamtreehouse.com/library/the-javascript-use-strict-statement",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 18
+  },
+  {
+    "title": "The JavaScript Ecosystem",
+    "url": "https://teamtreehouse.com/library/the-javascript-ecosystem",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 29
+  },
+  {
+    "title": "Translating Pseudocode to JavaScript Code",
+    "url": "https://teamtreehouse.com/library/translating-pseudocode-to-javascript-code",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Treehouse Features: Quizzes",
+    "url": "https://teamtreehouse.com/library/treehouse-features-quizzes",
+    "type": "workshop",
+    "topicSlug": "learning-resources",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 1
+  },
+  {
+    "title": "Treehouse Features: Workspaces",
+    "url": "https://teamtreehouse.com/library/treehouse-features-workspaces",
+    "type": "workshop",
+    "topicSlug": "learning-resources",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 1
+  },
+  {
+    "title": "Treehouse Student Orientation",
+    "url": "https://teamtreehouse.com/library/treehouse-student-orientation",
+    "type": "workshop",
+    "topicSlug": "learning-resources",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Turn Ideas Into Code with Replit Agent",
+    "url": "https://teamtreehouse.com/library/turn-ideas-into-code-with-replit-agent",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Understanding Closures in JavaScript",
+    "url": "https://teamtreehouse.com/library/understanding-closures-in-javascript",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Understanding Express Middleware",
+    "url": "https://teamtreehouse.com/library/understanding-express-middleware",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 23
+  },
+  {
+    "title": "Understanding MVC",
+    "url": "https://teamtreehouse.com/library/understanding-mvc",
+    "type": "workshop",
+    "topicSlug": "development-tools",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Unlocking Learning Potential with ChatGPT",
+    "url": "https://teamtreehouse.com/library/unlocking-learning-potential-with-chatgpt",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "Using Create React App",
+    "url": "https://teamtreehouse.com/library/using-create-react-app",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Using Create React Native App",
+    "url": "https://teamtreehouse.com/library/using-create-react-native-app",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 17
+  },
+  {
+    "title": "Using Local Storage With JavaScript",
+    "url": "https://teamtreehouse.com/library/using-local-storage-with-javascript",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Using Treehouse Workspaces",
+    "url": "https://teamtreehouse.com/library/using-treehouse-workspaces",
+    "type": "workshop",
+    "topicSlug": "learning-resources",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 26
+  },
+  {
+    "title": "Using npm as a Task Runner",
+    "url": "https://teamtreehouse.com/library/using-npm-as-a-task-runner",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Using the Geolocation API in JavaScript",
+    "url": "https://teamtreehouse.com/library/using-the-geolocation-api-in-javascript",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 20
+  },
+  {
+    "title": "Using the Requests Library",
+    "url": "https://teamtreehouse.com/library/using-the-requests-library",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "What Is AI? What Is ChatGPT?",
+    "url": "https://teamtreehouse.com/library/what-is-ai-what-is-chatgpt",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 2
+  },
+  {
+    "title": "What Is an MVP?",
+    "url": "https://teamtreehouse.com/library/what-is-an-mvp",
+    "type": "workshop",
+    "topicSlug": "digital-literacy",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "What's New in Python 3.6?",
+    "url": "https://teamtreehouse.com/library/whats-new-in-python-36",
+    "type": "workshop",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "What's New in React 16",
+    "url": "https://teamtreehouse.com/library/whats-new-in-react-16",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 26
+  },
+  {
+    "title": "Why We Exist: Our Mission",
+    "url": "https://teamtreehouse.com/library/why-we-exist-our-mission",
+    "type": "workshop",
+    "topicSlug": "learning-resources",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Will AI Replace Developers?",
+    "url": "https://teamtreehouse.com/library/will-ai-replace-developers",
+    "type": "workshop",
+    "topicSlug": "ai",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Windows: Local PHP Dev Environment",
+    "url": "https://teamtreehouse.com/library/windows-local-php-dev-environment",
+    "type": "workshop",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "forEach() vs. map() - What's the Difference?",
+    "url": "https://teamtreehouse.com/library/foreach-vs-map-whats-the-difference",
+    "type": "workshop",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Arrow Functions in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-arrow-functions-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Basic Arrays in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-basic-arrays-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 26
+  },
+  {
+    "title": "Practice Basic JavaScript Functions",
+    "url": "https://teamtreehouse.com/library/practice-basic-javascript-functions",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Basic Math Calculations in Python",
+    "url": "https://teamtreehouse.com/library/practice-basic-math-calculations-in-python",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Basic Variables, Input & Output in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-basic-variables-input-output-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice Basic jQuery Methods",
+    "url": "https://teamtreehouse.com/library/practice-basic-jquery-methods",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice CSS Box Model Basics",
+    "url": "https://teamtreehouse.com/library/practice-css-box-model-basics",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice CSS Floats",
+    "url": "https://teamtreehouse.com/library/practice-css-floats",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice CSS Grid: Columns, Rows and Gaps",
+    "url": "https://teamtreehouse.com/library/practice-css-grid-columns-rows-and-gaps",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice CSS Length Units",
+    "url": "https://teamtreehouse.com/library/practice-css-length-units",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice CSS Media Queries",
+    "url": "https://teamtreehouse.com/library/practice-css-media-queries",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice CSS Selectors",
+    "url": "https://teamtreehouse.com/library/practice-css-selectors",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Classes in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-classes-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 19
+  },
+  {
+    "title": "Practice Cleaning Data",
+    "url": "https://teamtreehouse.com/library/practice-cleaning-data",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 13
+  },
+  {
+    "title": "Practice Column Selection and Aliasing with SQL",
+    "url": "https://teamtreehouse.com/library/practice-column-selection-and-aliasing-with-sql",
+    "type": "practice",
+    "topicSlug": "databases",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Comparisons in Python",
+    "url": "https://teamtreehouse.com/library/practice-comparisons-in-python",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice Completing a Profile",
+    "url": "https://teamtreehouse.com/library/practice-completing-a-profile",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 2
+  },
+  {
+    "title": "Practice Creating UX Content",
+    "url": "https://teamtreehouse.com/library/practice-creating-ux-content",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Practice Creating a Paywall",
+    "url": "https://teamtreehouse.com/library/practice-creating-a-paywall",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Practice Creating a Sitemap",
+    "url": "https://teamtreehouse.com/library/practice-creating-a-sitemap",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Creating and Indexing Lists",
+    "url": "https://teamtreehouse.com/library/practice-creating-and-indexing-lists",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Creating and Using Functions in Python",
+    "url": "https://teamtreehouse.com/library/practice-creating-and-using-functions-in-python",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 12
+  },
+  {
+    "title": "Practice DOM Manipulation: Checkboxes",
+    "url": "https://teamtreehouse.com/library/practice-dom-manipulation-checkboxes",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice DOM Manipulation: Form Validation",
+    "url": "https://teamtreehouse.com/library/practice-dom-manipulation-form-validation",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice DOM Manipulation: Modal",
+    "url": "https://teamtreehouse.com/library/practice-dom-manipulation-modal",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Data Pagination",
+    "url": "https://teamtreehouse.com/library/practice-data-pagination",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Practice Data Visualization",
+    "url": "https://teamtreehouse.com/library/practice-data-visualization",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 24
+  },
+  {
+    "title": "Practice Design Criticism",
+    "url": "https://teamtreehouse.com/library/practice-design-criticism",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Designing a Product Card",
+    "url": "https://teamtreehouse.com/library/practice-designing-a-product-card",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Dynamic Select Menus",
+    "url": "https://teamtreehouse.com/library/practice-dynamic-select-menus",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Empathy Maps",
+    "url": "https://teamtreehouse.com/library/practice-empathy-maps",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Emulating Built-ins",
+    "url": "https://teamtreehouse.com/library/practice-emulating-builtins",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Enhancing Design with CSS",
+    "url": "https://teamtreehouse.com/library/practice-enhancing-design-with-css",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Practice Error Handling",
+    "url": "https://teamtreehouse.com/library/practice-error-handling",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "Practice Error Handling in Express",
+    "url": "https://teamtreehouse.com/library/practice-error-handling-in-express",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "Practice ExpressJS: Middleware",
+    "url": "https://teamtreehouse.com/library/practice-expressjs-middleware",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Fetch API",
+    "url": "https://teamtreehouse.com/library/practice-fetch-api",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice File Paths",
+    "url": "https://teamtreehouse.com/library/practice-file-paths",
+    "type": "practice",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Practice Filtering Paginated Data",
+    "url": "https://teamtreehouse.com/library/practice-filtering-paginated-data",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Flexible CSS Grid Layout",
+    "url": "https://teamtreehouse.com/library/practice-flexible-css-grid-layout",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice Getters and Setters in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-getters-and-setters-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Practice Grid Template Areas",
+    "url": "https://teamtreehouse.com/library/practice-grid-template-areas",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Handling Events in jQuery",
+    "url": "https://teamtreehouse.com/library/practice-handling-events-in-jquery",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Hashing Passwords in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-hashing-passwords-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Hashing Passwords in PHP",
+    "url": "https://teamtreehouse.com/library/practice-hashing-passwords-in-php",
+    "type": "practice",
+    "topicSlug": "php",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Hooks in React",
+    "url": "https://teamtreehouse.com/library/practice-hooks-in-react",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Practice If and Else If Statements in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-if-and-else-if-statements-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Importing and Exporting Modules in Node.js",
+    "url": "https://teamtreehouse.com/library/practice-importing-and-exporting-modules-in-nodejs",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Practice Including PHP with HTML",
+    "url": "https://teamtreehouse.com/library/practice-including-php-with-html",
+    "type": "practice",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Input and Output in Java",
+    "url": "https://teamtreehouse.com/library/practice-input-and-output-in-java",
+    "type": "practice",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Input and Output in Python",
+    "url": "https://teamtreehouse.com/library/practice-input-and-output-in-python",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Input and Output in Ruby",
+    "url": "https://teamtreehouse.com/library/practice-input-and-output-in-ruby",
+    "type": "practice",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Java Arrays",
+    "url": "https://teamtreehouse.com/library/practice-java-arrays",
+    "type": "practice",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Java Objects",
+    "url": "https://teamtreehouse.com/library/practice-java-objects",
+    "type": "practice",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Java Objects - Word Guessing Game",
+    "url": "https://teamtreehouse.com/library/practice-java-objects-word-guessing-game",
+    "type": "practice",
+    "topicSlug": "java",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 104
+  },
+  {
+    "title": "Practice JavaScript Basics: Conditional Strings",
+    "url": "https://teamtreehouse.com/library/practice-javascript-basics-conditional-strings",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice JavaScript Loops",
+    "url": "https://teamtreehouse.com/library/practice-javascript-loops",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Practice JavaScript Math Methods",
+    "url": "https://teamtreehouse.com/library/practice-javascript-math-methods",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Journey Maps",
+    "url": "https://teamtreehouse.com/library/practice-journey-maps",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Let and Const in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-let-and-const-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Manipulating the DOM",
+    "url": "https://teamtreehouse.com/library/practice-manipulating-the-dom",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Media Queries",
+    "url": "https://teamtreehouse.com/library/practice-media-queries",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice OOP Vocabulary",
+    "url": "https://teamtreehouse.com/library/practice-oop-vocabulary",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Object Basics in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-object-basics-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 21
+  },
+  {
+    "title": "Practice Object Interaction",
+    "url": "https://teamtreehouse.com/library/practice-object-interaction",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "Practice Object Literals in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-object-literals-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 20
+  },
+  {
+    "title": "Practice PHP Number Variables",
+    "url": "https://teamtreehouse.com/library/practice-php-number-variables",
+    "type": "practice",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice PHP String Manipulation",
+    "url": "https://teamtreehouse.com/library/practice-php-string-manipulation",
+    "type": "practice",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice PHP if/else Statements",
+    "url": "https://teamtreehouse.com/library/practice-php-ifelse-statements",
+    "type": "practice",
+    "topicSlug": "php",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Prototyping",
+    "url": "https://teamtreehouse.com/library/practice-prototyping",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice Prototyping in Figma",
+    "url": "https://teamtreehouse.com/library/practice-prototyping-in-figma",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 14
+  },
+  {
+    "title": "Practice Python While Loops",
+    "url": "https://teamtreehouse.com/library/practice-python-while-loops",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Practice React Component Rendering",
+    "url": "https://teamtreehouse.com/library/practice-react-component-rendering",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Practice Ruby Methods",
+    "url": "https://teamtreehouse.com/library/practice-ruby-methods",
+    "type": "practice",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 4
+  },
+  {
+    "title": "Practice Ruby Numeric Types",
+    "url": "https://teamtreehouse.com/library/practice-ruby-numeric-types",
+    "type": "practice",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice Selecting DOM Elements",
+    "url": "https://teamtreehouse.com/library/practice-selecting-dom-elements",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 8
+  },
+  {
+    "title": "Practice Semantic HTML",
+    "url": "https://teamtreehouse.com/library/practice-semantic-html",
+    "type": "practice",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice Serving Static Files in Express",
+    "url": "https://teamtreehouse.com/library/practice-serving-static-files-in-express",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "Practice Setting Up a Python Project",
+    "url": "https://teamtreehouse.com/library/practice-setting-up-a-python-project",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 11
+  },
+  {
+    "title": "Practice Simple WHERE Clauses with SQL",
+    "url": "https://teamtreehouse.com/library/practice-simple-where-clauses-with-sql",
+    "type": "practice",
+    "topicSlug": "databases",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice Sketching",
+    "url": "https://teamtreehouse.com/library/practice-sketching",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 7
+  },
+  {
+    "title": "Practice State in React",
+    "url": "https://teamtreehouse.com/library/practice-state-in-react",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 15
+  },
+  {
+    "title": "Practice Storyboarding",
+    "url": "https://teamtreehouse.com/library/practice-storyboarding",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 2
+  },
+  {
+    "title": "Practice Strings in Ruby",
+    "url": "https://teamtreehouse.com/library/practice-strings-in-ruby",
+    "type": "practice",
+    "topicSlug": "ruby",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Practice Structuring and Grouping Content",
+    "url": "https://teamtreehouse.com/library/practice-structuring-and-grouping-content",
+    "type": "practice",
+    "topicSlug": "html",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Practice Template Literals",
+    "url": "https://teamtreehouse.com/library/practice-template-literals",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Traversing the DOM",
+    "url": "https://teamtreehouse.com/library/practice-traversing-the-dom",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Using A Design System",
+    "url": "https://teamtreehouse.com/library/practice-using-a-design-system",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Practice Using Data with Pug Templates",
+    "url": "https://teamtreehouse.com/library/practice-using-data-with-pug-templates",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Intermediate",
+    "estimatedMinutes": 10
+  },
+  {
+    "title": "Practice Using Strings and Lists in Python",
+    "url": "https://teamtreehouse.com/library/practice-using-strings-and-lists-in-python",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Practice Vue.js List Rendering",
+    "url": "https://teamtreehouse.com/library/practice-vuejs-list-rendering",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "Practice Vue.js Templating",
+    "url": "https://teamtreehouse.com/library/practice-vuejs-templating",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Practice Web Accessibility: Checkboxes",
+    "url": "https://teamtreehouse.com/library/practice-web-accessibility-checkboxes",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 3
+  },
+  {
+    "title": "Practice Wireframing",
+    "url": "https://teamtreehouse.com/library/practice-wireframing",
+    "type": "practice",
+    "topicSlug": "design",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Practice Working with jQuery Collections",
+    "url": "https://teamtreehouse.com/library/practice-working-with-jquery-collections",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Practice Writing Loops in Python",
+    "url": "https://teamtreehouse.com/library/practice-writing-loops-in-python",
+    "type": "practice",
+    "topicSlug": "python",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 22
+  },
+  {
+    "title": "Practice forEach in JavaScript",
+    "url": "https://teamtreehouse.com/library/practice-foreach-in-javascript",
+    "type": "practice",
+    "topicSlug": "javascript",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 30
+  },
+  {
+    "title": "Practice the CSS Box Model",
+    "url": "https://teamtreehouse.com/library/practice-the-css-box-model",
+    "type": "practice",
+    "topicSlug": "css",
+    "skillLevel": "Beginner",
+    "estimatedMinutes": 6
+  },
+  {
+    "title": "Auto User Search with JavaScript - Treehouse Live",
+    "url": "https://teamtreehouse.com/library/auto-user-search-with-javascript-treehouse-live",
+    "type": "bonus",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 35
+  },
+  {
+    "title": "Build an Interactive Settings Panel - Treehouse Live",
+    "url": "https://teamtreehouse.com/library/build-an-interactive-settings-panel-treehouse-live",
+    "type": "bonus",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 33
+  },
+  {
+    "title": "CSS-Only Facebook Reactions UI - Treehouse Live",
+    "url": "https://teamtreehouse.com/library/cssonly-facebook-reactions-ui-treehouse-live",
+    "type": "bonus",
+    "topicSlug": "html",
+    "estimatedMinutes": 37
+  },
+  {
+    "title": "Code & Chill Livestreams",
+    "url": "https://teamtreehouse.com/library/code-chill-livestreams",
+    "type": "bonus",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 2657
+  },
+  {
+    "title": "Create a Chat App UI - Treehouse Live",
+    "url": "https://teamtreehouse.com/library/create-a-chat-app-ui-treehouse-live",
+    "type": "bonus",
+    "topicSlug": "javascript",
+    "estimatedMinutes": 38
+  },
+  {
+    "title": "Design and Development",
+    "url": "https://teamtreehouse.com/library/design-and-development",
+    "type": "bonus",
+    "topicSlug": "css",
+    "estimatedMinutes": 406
+  },
+  {
+    "title": "Dev Team Show",
+    "url": "https://teamtreehouse.com/library/dev-team-show",
+    "type": "bonus",
+    "topicSlug": "development-tools",
+    "estimatedMinutes": 192
+  },
+  {
+    "title": "In the Wild",
+    "url": "https://teamtreehouse.com/library/in-the-wild",
+    "type": "bonus",
+    "topicSlug": "design",
+    "estimatedMinutes": 5
+  },
+  {
+    "title": "Live Q&A with Nick Pettit and Jason Seifer",
+    "url": "https://teamtreehouse.com/library/live-qa-with-nick-pettit-and-jason-seifer",
+    "type": "bonus",
+    "topicSlug": "design",
+    "estimatedMinutes": 48
+  },
+  {
+    "title": "Takeaways",
+    "url": "https://teamtreehouse.com/library/takeaways",
+    "type": "bonus",
+    "topicSlug": "java",
+    "estimatedMinutes": 9
+  },
+  {
+    "title": "The Treehouse Show",
+    "url": "https://teamtreehouse.com/library/the-treehouse-show",
+    "type": "bonus",
+    "topicSlug": "html",
+    "estimatedMinutes": 339
+  },
+  {
+    "title": "The Treehouse Show (2012 - 2015)",
+    "url": "https://teamtreehouse.com/library/the-treehouse-show-2012-2015",
+    "type": "bonus",
+    "topicSlug": "html",
+    "estimatedMinutes": 1856
+  },
+  {
+    "title": "Treehouse Festival December 2020",
+    "url": "https://teamtreehouse.com/library/treehouse-festival-december-2020",
+    "type": "bonus",
+    "topicSlug": "html",
+    "estimatedMinutes": 722
+  },
+  {
+    "title": "Treehouse Festival July 2020",
+    "url": "https://teamtreehouse.com/library/treehouse-festival-july-2020",
+    "type": "bonus",
+    "topicSlug": "html",
+    "estimatedMinutes": 775
+  },
+  {
+    "title": "Treehouse Festival June 2021",
+    "url": "https://teamtreehouse.com/library/treehouse-festival-june-2021",
+    "type": "bonus",
+    "topicSlug": "html",
+    "estimatedMinutes": 859
+  },
+  {
+    "title": "Treehouse Friends",
+    "url": "https://teamtreehouse.com/library/treehouse-friends",
+    "type": "bonus",
+    "topicSlug": "css",
+    "estimatedMinutes": 603
+  },
+  {
+    "title": "Treehouse Guest Speaker Series",
+    "url": "https://teamtreehouse.com/library/treehouse-guest-speaker-series",
+    "type": "bonus",
+    "topicSlug": "computer-science",
+    "estimatedMinutes": 407
+  },
+  {
+    "title": "Treehouse Live",
+    "url": "https://teamtreehouse.com/library/treehouse-live",
+    "type": "bonus",
+    "topicSlug": "learning-resources",
+    "estimatedMinutes": 236
+  },
+  {
+    "title": "Treehouse Quick Tips",
+    "url": "https://teamtreehouse.com/library/treehouse-quick-tips",
+    "type": "bonus",
+    "topicSlug": "html",
+    "estimatedMinutes": 229
+  },
+  {
+    "title": "Treehouse Reviews",
+    "url": "https://teamtreehouse.com/library/treehouse-reviews",
+    "type": "bonus",
+    "topicSlug": "design",
+    "estimatedMinutes": 196
+  },
+  {
+    "title": "Web Design Q&A",
+    "url": "https://teamtreehouse.com/library/web-design-qa",
+    "type": "bonus",
+    "topicSlug": "design",
+    "estimatedMinutes": 61
+  },
+  {
+    "title": "Web Design Q&A with Nick",
+    "url": "https://teamtreehouse.com/library/web-design-qa-with-nick",
+    "type": "bonus",
+    "topicSlug": "design",
+    "estimatedMinutes": 16
+  }
+]
