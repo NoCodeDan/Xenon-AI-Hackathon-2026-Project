@@ -120,6 +120,16 @@ export default defineSchema({
     .index("by_grade", ["grade"])
     .index("by_score", ["overallScore"]),
 
+  contentBookmarks: defineTable({
+    userId: v.id("users"),
+    contentId: v.id("contentItems"),
+    priority: v.union(v.literal("low"), v.literal("medium"), v.literal("high")),
+    createdAt: v.number(),
+  })
+    .index("by_user", ["userId"])
+    .index("by_content", ["contentId"])
+    .index("by_user_content", ["userId", "contentId"]),
+
   contentRequests: defineTable({
     title: v.string(),
     normalizedTitle: v.string(),
@@ -170,6 +180,95 @@ export default defineSchema({
     requestIdUpvoted: v.optional(v.id("contentRequests")),
     createdAt: v.number(),
   }).index("by_session", ["sessionId"]),
+
+  ogCache: defineTable({
+    url: v.string(),
+    title: v.optional(v.string()),
+    description: v.optional(v.string()),
+    image: v.optional(v.string()),
+    siteName: v.optional(v.string()),
+    failed: v.boolean(),
+    fetchedAt: v.number(),
+  }).index("by_url", ["url"]),
+
+  // ─── Market Intelligence tables ──────────────────────────────────────
+
+  marketTrendSignals: defineTable({
+    topicSlug: v.string(),
+    source: v.union(
+      v.literal("github_trending"),
+      v.literal("stackoverflow"),
+      v.literal("job_postings"),
+      v.literal("google_trends"),
+      v.literal("ai_synthesized")
+    ),
+    signalName: v.string(),
+    signalScore: v.number(),
+    rawData: v.optional(v.string()),
+    fetchedAt: v.number(),
+  })
+    .index("by_source", ["source"])
+    .index("by_topic", ["topicSlug"])
+    .index("by_fetched", ["fetchedAt"]),
+
+  competitorCoverage: defineTable({
+    competitor: v.union(
+      v.literal("codecademy"),
+      v.literal("freecodecamp"),
+      v.literal("udemy")
+    ),
+    topicSlug: v.string(),
+    topicLabel: v.string(),
+    coverageLevel: v.union(
+      v.literal("deep"),
+      v.literal("moderate"),
+      v.literal("shallow"),
+      v.literal("none")
+    ),
+    contentCount: v.optional(v.number()),
+    sourceUrl: v.optional(v.string()),
+    fetchedAt: v.number(),
+  })
+    .index("by_competitor", ["competitor"])
+    .index("by_topic", ["topicSlug"])
+    .index("by_competitor_topic", ["competitor", "topicSlug"]),
+
+  jobMarketDemand: defineTable({
+    topicSlug: v.string(),
+    topicLabel: v.string(),
+    demandScore: v.number(),
+    jobPostingCount: v.optional(v.number()),
+    avgSalarySignal: v.optional(v.string()),
+    growthTrend: v.union(
+      v.literal("rising"),
+      v.literal("stable"),
+      v.literal("declining")
+    ),
+    fetchedAt: v.number(),
+  })
+    .index("by_topic", ["topicSlug"])
+    .index("by_demand", ["demandScore"])
+    .index("by_fetched", ["fetchedAt"]),
+
+  marketIntelSnapshots: defineTable({
+    overallAlignmentScore: v.number(),
+    trendGapCount: v.number(),
+    competitorGapCount: v.number(),
+    jobAlignmentScore: v.number(),
+    topGaps: v.array(
+      v.object({
+        topicLabel: v.string(),
+        gapType: v.string(),
+        severity: v.union(
+          v.literal("critical"),
+          v.literal("high"),
+          v.literal("medium"),
+          v.literal("low")
+        ),
+      })
+    ),
+    createdAt: v.number(),
+  }).index("by_created", ["createdAt"]),
 
   librarySnapshots: defineTable({
     totalContent: v.number(),

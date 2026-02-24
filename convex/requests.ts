@@ -94,9 +94,11 @@ export const getLeaderboard = query({
   },
   handler: async (ctx, args) => {
     const limit = args.limit ?? 10;
-    const allRequests = await ctx.db.query("contentRequests").collect();
-    allRequests.sort((a, b) => b.voteCount - a.voteCount);
-    return allRequests.slice(0, limit);
+    return await ctx.db
+      .query("contentRequests")
+      .withIndex("by_votes")
+      .order("desc")
+      .take(limit);
   },
 });
 

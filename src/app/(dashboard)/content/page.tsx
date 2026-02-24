@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useCallback, useEffect, Suspense } from "react";
+import React, { useMemo, useState, useCallback, useEffect, Suspense, memo } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery, usePaginatedQuery } from "convex/react";
@@ -35,7 +35,29 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Search, ArrowUpDown, ArrowUp, ArrowDown, Loader2, Clock, PanelLeftOpen, PanelLeftClose, Library } from "lucide-react";
+import {
+  Search,
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
+  Loader2,
+  Clock,
+  PanelLeftOpen,
+  PanelLeftClose,
+  Library,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  TrendingUp,
+  Target,
+  Users,
+  AlertTriangle,
+  CircleAlert,
+  Lightbulb,
+  Gauge,
+  Bookmark,
+} from "lucide-react";
+import { BookmarkButton } from "@/components/bookmark-button";
 import { cn } from "@/lib/utils";
 import {
   TREEHOUSE_TOPICS,
@@ -278,31 +300,501 @@ function SortIcon({ column, sortKey, sortDir }: { column: SortKey; sortKey: Sort
 // Inner content (needs Suspense boundary for useSearchParams)
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Score bar for expanded row detail
+// ---------------------------------------------------------------------------
+
+function ScoreBar({ label, value, icon: Icon, colorClass }: {
+  label: string;
+  value: number;
+  icon: React.ElementType;
+  colorClass: string;
+}) {
+  const pct = Math.min(100, Math.max(0, value));
+  return (
+    <div className="space-y-1">
+      <div className="flex items-center justify-between text-xs">
+        <span className="flex items-center gap-1 text-muted-foreground">
+          <Icon className="size-3" />
+          {label}
+        </span>
+        <span className="font-medium tabular-nums">{value.toFixed(1)}</span>
+      </div>
+      <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+        <div className={cn("h-full rounded-full transition-all", colorClass)} style={{ width: `${pct}%` }} />
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Expanded detail card — fetches full score on demand
+// ---------------------------------------------------------------------------
+
+function ExpandedRowDetail({ item }: { item: any }) {
+  const latestScore = useQuery(
+    api.grades.getHistory,
+    item.latestGrade ? { contentId: item._id } : "skip"
+  );
+
+  const score = latestScore && latestScore.length > 0 ? latestScore[0] : null;
+
+  return (
+    <div className="bg-muted/30 border-t px-6 py-4">
+      <div className="grid gap-4 md:grid-cols-3">
+        {/* Left column — description + meta */}
+        <div className="space-y-3 md:col-span-1">
+          {item.description && (
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {item.description}
+            </p>
+          )}
+          {!item.description && (
+            <p className="text-sm text-muted-foreground italic">No description available.</p>
+          )}
+
+          <div className="flex flex-wrap gap-2">
+            {item.topicName && (
+              <Badge variant="outline" className={topicBadgeColor[item.category ?? ""] ?? DEFAULT_BADGE_COLOR}>
+                {item.topicName}
+              </Badge>
+            )}
+            <Badge variant="outline" className={typeBadgeColor[item.type as ContentType] ?? ""}>
+              {item.type}
+            </Badge>
+            {item.skillLevel && (
+              <Badge variant="outline" className={skillLevelColor[item.skillLevel as SkillLevel] ?? ""}>
+                {item.skillLevel}
+              </Badge>
+            )}
+          </div>
+
+          <div className="space-y-1 text-xs text-muted-foreground">
+            {item.estimatedMinutes && (
+              <div className="flex items-center gap-1.5">
+                <Clock className="size-3" />
+                Duration: {formatDuration(item.estimatedMinutes)}
+              </div>
+            )}
+            <div className="flex items-center gap-1.5">
+              <Clock className="size-3" />
+              Updated: {formatRelativeDate(item.updatedAt)}
+            </div>
+            {item.publishedAt && (
+              <div className="flex items-center gap-1.5">
+                <Clock className="size-3" />
+                Published: {new Date(item.publishedAt).toLocaleDateString()}
+              </div>
+            )}
+          </div>
+
+          <div className="flex items-center gap-2 pt-1">
+            <Link href={`/content/${item._id}`}>
+              <Button variant="outline" size="sm" className="gap-1.5 text-xs">
+                Full Details
+                <ExternalLink className="size-3" />
+              </Button>
+            </Link>
+            {item.url && (
+              <a href={item.url} target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="sm" className="gap-1.5 text-xs text-emerald-600 hover:text-emerald-700">
+                  View on Treehouse
+                  <ExternalLink className="size-3" />
+                </Button>
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Middle column — grade breakdown */}
+        <div className="space-y-3 md:col-span-1">
+          {item.latestGrade ? (
+            <>
+              <div className="flex items-center gap-3">
+                <GradeBadge grade={item.latestGrade.grade} score={item.latestGrade.overallScore} />
+                <div>
+                  <div className="text-lg font-bold tabular-nums">{item.latestGrade.overallScore.toFixed(1)}</div>
+                  <div className="text-xs text-muted-foreground">Overall Score</div>
+                </div>
+              </div>
+
+              {score ? (
+                <div className="space-y-2.5">
+                  <ScoreBar label="Recency" value={score.recencyScore} icon={TrendingUp} colorClass="bg-emerald-500" />
+                  <ScoreBar label="Alignment" value={score.alignmentScore} icon={Target} colorClass="bg-emerald-500" />
+                  <ScoreBar label="Demand" value={score.demandScore} icon={Users} colorClass="bg-violet-500" />
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground pt-1">
+                    <Gauge className="size-3" />
+                    <span>Velocity: <span className="font-mono font-medium text-foreground">{score.velocityMultiplier.toFixed(2)}x</span></span>
+                    <span className="mx-1">&middot;</span>
+                    <span>Confidence: <span className="font-medium text-foreground">{(score.confidence * 100).toFixed(0)}%</span></span>
+                  </div>
+                </div>
+              ) : latestScore === undefined ? (
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-3/4" />
+                </div>
+              ) : null}
+            </>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-6 text-center">
+              <p className="text-sm text-muted-foreground">Not yet graded</p>
+            </div>
+          )}
+        </div>
+
+        {/* Right column — issues & recommendations */}
+        <div className="space-y-3 md:col-span-1">
+          {score ? (
+            <>
+              {score.outdatedTopics.length > 0 && (
+                <div className="space-y-1.5">
+                  <h4 className="flex items-center gap-1 text-xs font-medium text-orange-700">
+                    <AlertTriangle className="size-3" />
+                    Outdated Topics
+                  </h4>
+                  <div className="flex flex-wrap gap-1">
+                    {score.outdatedTopics.map((topic: string) => (
+                      <Badge key={topic} variant="outline" className="text-[10px] border-orange-200 bg-orange-50 text-orange-700">
+                        {topic}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {score.missingTopics.length > 0 && (
+                <div className="space-y-1.5">
+                  <h4 className="flex items-center gap-1 text-xs font-medium text-red-700">
+                    <CircleAlert className="size-3" />
+                    Missing Topics
+                  </h4>
+                  <div className="flex flex-wrap gap-1">
+                    {score.missingTopics.map((topic: string) => (
+                      <Badge key={topic} variant="outline" className="text-[10px] border-red-200 bg-red-50 text-red-700">
+                        {topic}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {score.recommendedAction && (
+                <div className="rounded-lg border bg-background p-2.5 space-y-1">
+                  <h4 className="flex items-center gap-1 text-xs font-medium">
+                    <Lightbulb className="size-3 text-amber-500" />
+                    Recommended Action
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {score.recommendedAction}
+                  </p>
+                </div>
+              )}
+
+              {score.outdatedTopics.length === 0 && score.missingTopics.length === 0 && !score.recommendedAction && (
+                <div className="flex flex-col items-center justify-center py-6 text-center">
+                  <p className="text-xs text-muted-foreground">No issues detected</p>
+                </div>
+              )}
+            </>
+          ) : item.latestGrade && latestScore === undefined ? (
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-3/4" />
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-6 text-center">
+              <p className="text-xs text-muted-foreground">Grade to see analysis</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Content row with expandable detail card
+// ---------------------------------------------------------------------------
+
+const ContentRow = memo(function ContentRow({ item, isExpanded, onToggle }: { item: any; isExpanded: boolean; onToggle: () => void }) {
+  // Keep content mounted during the close animation so the height can animate to 0
+  const [showContent, setShowContent] = useState(isExpanded);
+
+  useEffect(() => {
+    if (isExpanded) {
+      setShowContent(true);
+    }
+    // When closing, showContent stays true until the transition ends
+  }, [isExpanded]);
+
+  const handleTransitionEnd = useCallback(() => {
+    if (!isExpanded) {
+      setShowContent(false);
+    }
+  }, [isExpanded]);
+
+  return (
+    <>
+      <TableRow
+        className={cn("group cursor-pointer transition-colors", isExpanded && "bg-muted/40")}
+        onClick={onToggle}
+      >
+        <TableCell className="max-w-xs truncate font-medium">
+          <div className="flex items-center gap-1.5">
+            {isExpanded ? (
+              <ChevronUp className="size-3.5 shrink-0 text-muted-foreground" />
+            ) : (
+              <ChevronDown className="size-3.5 shrink-0 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+            )}
+            <span className="truncate">{item.title}</span>
+          </div>
+        </TableCell>
+        <TableCell>
+          {item.topicName ? (
+            <Badge variant="outline" className={topicBadgeColor[item.category ?? ""] ?? DEFAULT_BADGE_COLOR}>
+              {item.topicName}
+            </Badge>
+          ) : (
+            <span className="text-xs text-muted-foreground">--</span>
+          )}
+        </TableCell>
+        <TableCell>
+          <Badge variant="outline" className={typeBadgeColor[item.type as ContentType] ?? ""}>
+            {item.type}
+          </Badge>
+        </TableCell>
+        <TableCell>
+          {item.skillLevel ? (
+            <Badge variant="outline" className={skillLevelColor[item.skillLevel as SkillLevel] ?? ""}>
+              {item.skillLevel}
+            </Badge>
+          ) : (
+            <span className="text-xs text-muted-foreground">--</span>
+          )}
+        </TableCell>
+        <TableCell className="text-muted-foreground whitespace-nowrap">
+          {item.estimatedMinutes ? (
+            <span className="flex items-center gap-1 text-sm">
+              <Clock className="size-3" />
+              {formatDuration(item.estimatedMinutes)}
+            </span>
+          ) : (
+            <span className="text-xs">--</span>
+          )}
+        </TableCell>
+        <TableCell>
+          {item.latestGrade ? (
+            <GradeBadge grade={item.latestGrade.grade} size="sm" />
+          ) : (
+            <span className="text-xs text-muted-foreground">--</span>
+          )}
+        </TableCell>
+        <TableCell className="tabular-nums">
+          {item.latestGrade ? item.latestGrade.overallScore.toFixed(1) : "--"}
+        </TableCell>
+        <TableCell className="text-muted-foreground">
+          {formatRelativeDate(item.updatedAt)}
+        </TableCell>
+        <TableCell>
+          <BookmarkButton contentId={item._id} size="sm" />
+        </TableCell>
+        <TableCell>
+          <Link
+            href={`/content/${item._id}`}
+            className="text-sm text-emerald-600 hover:underline opacity-0 group-hover:opacity-100 transition-opacity"
+            onClick={(e) => e.stopPropagation()}
+          >
+            View
+          </Link>
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell colSpan={10} className="p-0">
+          <div
+            className="grid transition-[grid-template-rows,opacity] duration-300 ease-out"
+            style={{
+              gridTemplateRows: isExpanded ? "1fr" : "0fr",
+              opacity: isExpanded ? 1 : 0,
+            }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            <div className="overflow-hidden">
+              {showContent && <ExpandedRowDetail item={item} />}
+            </div>
+          </div>
+        </TableCell>
+      </TableRow>
+    </>
+  );
+});
+
+// ---------------------------------------------------------------------------
+// Reusable content table
+// ---------------------------------------------------------------------------
+
+function ContentTable({
+  rows,
+  sortKey,
+  sortDir,
+  toggleSort,
+}: {
+  rows: any[];
+  sortKey: SortKey;
+  sortDir: SortDir;
+  toggleSort: (key: SortKey) => void;
+}) {
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  return (
+    <div className="rounded-md border">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("title")}>
+              Title
+              <SortIcon column="title" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("topic")}>
+              Topic
+              <SortIcon column="topic" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("type")}>
+              Type
+              <SortIcon column="type" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("level")}>
+              Level
+              <SortIcon column="level" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("duration")}>
+              Duration
+              <SortIcon column="duration" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("grade")}>
+              Grade
+              <SortIcon column="grade" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("score")}>
+              Score
+              <SortIcon column="score" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead className="cursor-pointer select-none" onClick={() => toggleSort("updatedAt")}>
+              Updated
+              <SortIcon column="updatedAt" sortKey={sortKey} sortDir={sortDir} />
+            </TableHead>
+            <TableHead>
+              <Bookmark className="size-3.5 text-muted-foreground" />
+            </TableHead>
+            <TableHead>Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rows.length === 0 ? (
+            <TableRow>
+              <TableCell colSpan={10} className="py-12 text-center text-muted-foreground">
+                No content items found.
+              </TableCell>
+            </TableRow>
+          ) : (
+            rows.map((item) => (
+              <ContentRow
+                key={item._id}
+                item={item}
+                isExpanded={expandedId === item._id}
+                onToggle={() => setExpandedId(expandedId === item._id ? null : item._id)}
+              />
+            ))
+          )}
+        </TableBody>
+      </Table>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Debounce hook
+// ---------------------------------------------------------------------------
+
+function useDebouncedValue<T>(value: T, delay: number): T {
+  const [debounced, setDebounced] = useState(value);
+  useEffect(() => {
+    const timer = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+  return debounced;
+}
+
+// ---------------------------------------------------------------------------
+// Section type grouping config
+// ---------------------------------------------------------------------------
+
+const CONTENT_SECTIONS: { type: ContentType; label: string; icon: string }[] = [
+  { type: "course", label: "Courses", icon: "📚" },
+  { type: "track", label: "Tracks", icon: "🛤️" },
+  { type: "workshop", label: "Workshops", icon: "🔧" },
+  { type: "practice", label: "Practice", icon: "💪" },
+];
+
+const OTHER_TYPES = new Set<string>(["stage", "video", "bonus"]);
+
 function ContentTableInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // URL-param-based filter state
-  const searchTerm = searchParams.get("q") ?? "";
+  // URL-param-based filter state (non-search)
   const typeFilter = (searchParams.get("type") ?? "all") as ContentType | "all";
   const gradeFilter = (searchParams.get("grade") ?? "all") as GradeLetter | "all";
   const categoryFilter = searchParams.get("category") ?? "all";
+
+  // Bookmarked filter
+  const [bookmarkedOnly, setBookmarkedOnly] = useState(false);
+  const myBookmarks = useQuery(
+    api.bookmarks.getMyBookmarks,
+    bookmarkedOnly ? {} : "skip"
+  );
+  const bookmarkedContentIds = useMemo(() => {
+    if (!myBookmarks) return null;
+    return new Set(myBookmarks.map((b) => b.contentId));
+  }, [myBookmarks]);
+
+  // Local search state — fully client-side, no URL navigation at all
+  const [searchInput, setSearchInput] = useState("");
+  const debouncedSearch = useDebouncedValue(searchInput, 300);
 
   // Client-side sort state
   const [sortKey, setSortKey] = useState<SortKey>("updatedAt");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
 
+  // Are we filtering by topic?
+  const isTopicFiltered = categoryFilter !== "all";
+
   // Convex queries — stats + distribution (lightweight)
   const stats = useQuery(api.content.getContentStats);
   const gradeDistribution = useQuery(api.grades.getDistribution);
 
-  // Paginated query — args change auto-resets cursor
+  // Topic-filtered query — server-side, returns all items for the selected topic
+  const topicResults = useQuery(
+    api.content.getContentByTopic,
+    isTopicFiltered
+      ? {
+          topicSlug: categoryFilter,
+          ...(typeFilter !== "all" ? { type: typeFilter } : {}),
+          ...(gradeFilter !== "all" ? { grade: gradeFilter } : {}),
+        }
+      : "skip"
+  );
+
+  // Paginated query — only used when NO topic is selected
   const paginatedArgs = useMemo(() => {
+    if (isTopicFiltered) return "skip" as const;
     const args: { type?: ContentType; grade?: string } = {};
     if (typeFilter !== "all") args.type = typeFilter;
     if (gradeFilter !== "all") args.grade = gradeFilter;
     return args;
-  }, [typeFilter, gradeFilter]);
+  }, [typeFilter, gradeFilter, isTopicFiltered]);
 
   const {
     results: paginatedResults,
@@ -311,22 +803,22 @@ function ContentTableInner() {
     isLoading: isPaginatedLoading,
   } = usePaginatedQuery(
     api.content.getContentPaginated,
-    paginatedArgs,
+    paginatedArgs === "skip" ? "skip" : paginatedArgs,
     { initialNumItems: 50 }
   );
 
-  // Search results (when actively searching)
+  // Search results (when actively searching) — uses debounced value
   const searchResults = useQuery(
     api.content.search,
-    searchTerm.length >= 2
+    debouncedSearch.length >= 2
       ? {
-          searchTerm,
+          searchTerm: debouncedSearch,
           ...(typeFilter !== "all" ? { type: typeFilter } : {}),
         }
       : "skip"
   );
 
-  // ------ URL parameter helpers ------
+  // ------ URL parameter helpers (for non-search filters) ------
 
   const updateParam = useCallback(
     (key: string, value: string) => {
@@ -357,51 +849,11 @@ function ContentTableInner() {
 
   // ------ Derive filtered + sorted rows ------
 
-  const isSearching = searchTerm.length >= 2;
+  const isSearching = debouncedSearch.length >= 2;
 
-  const rows = useMemo(() => {
-    // When searching, use search results
-    if (isSearching) {
-      if (!searchResults) return undefined;
-
-      let base = searchResults.map((item) => {
-        // Enrich search results with grade info from paginated results if available
-        const match = paginatedResults.find((a) => a._id === item._id);
-        if (match) return match;
-        return { ...item, latestGrade: null as any, topicName: null, category: null };
-      });
-
-      // Grade filter (client-side on search results)
-      if (gradeFilter !== "all") {
-        base = base.filter((item) => item.latestGrade?.grade === gradeFilter);
-      }
-
-      // Category filter
-      if (categoryFilter !== "all") {
-        base = base.filter((item) => item.category === categoryFilter);
-      }
-
-      return base;
-    }
-
-    // Not searching — use paginated results
-    if (isPaginatedLoading && paginatedResults.length === 0) return undefined;
-
-    let base = [...paginatedResults];
-
-    // Category filter (client-side)
-    if (categoryFilter !== "all") {
-      base = base.filter((item) => item.category === categoryFilter);
-    }
-
-    // Client-side search fallback for short queries (1 char)
-    if (searchTerm.length === 1) {
-      const lowerQ = searchTerm.toLowerCase();
-      base = base.filter((item) => item.title.toLowerCase().includes(lowerQ));
-    }
-
-    // Sort
-    const sorted = base.sort((a, b) => {
+  // Helper to sort rows
+  const sortRows = useCallback((items: typeof paginatedResults) => {
+    return [...items].sort((a, b) => {
       let cmp = 0;
       switch (sortKey) {
         case "title":
@@ -435,15 +887,98 @@ function ContentTableInner() {
       }
       return sortDir === "asc" ? cmp : -cmp;
     });
+  }, [sortKey, sortDir]);
 
-    return sorted;
-  }, [paginatedResults, searchResults, searchTerm, isSearching, gradeFilter, categoryFilter, sortKey, sortDir, isPaginatedLoading]);
+  const rows = useMemo(() => {
+    // Helper to apply bookmarked filter
+    const applyBookmarkFilter = (items: any[]) => {
+      if (bookmarkedOnly && bookmarkedContentIds) {
+        return items.filter((item) => bookmarkedContentIds.has(item._id));
+      }
+      return items;
+    };
+
+    // When searching, use search results
+    if (isSearching) {
+      if (!searchResults) return undefined;
+
+      // Merge search results with enriched data from either topicResults or paginatedResults
+      const enrichedSource = isTopicFiltered ? (topicResults ?? []) : paginatedResults;
+      let base = searchResults.map((item) => {
+        const match = enrichedSource.find((a: any) => a._id === item._id);
+        if (match) return match;
+        return { ...item, latestGrade: null as any, topicName: null, category: null };
+      });
+
+      // Grade filter (client-side on search results)
+      if (gradeFilter !== "all") {
+        base = base.filter((item: any) => item.latestGrade?.grade === gradeFilter);
+      }
+
+      // Category filter (client-side on search results when not using server-side topic query)
+      if (isTopicFiltered) {
+        base = base.filter((item: any) => item.category === categoryFilter);
+      }
+
+      return sortRows(applyBookmarkFilter(base));
+    }
+
+    // When filtering by topic, use the dedicated topic query
+    if (isTopicFiltered) {
+      if (!topicResults) return undefined;
+
+      let base = [...topicResults];
+
+      // Client-side search fallback for short queries (1 char)
+      if (debouncedSearch.length === 1) {
+        const lowerQ = debouncedSearch.toLowerCase();
+        base = base.filter((item: any) => item.title.toLowerCase().includes(lowerQ));
+      }
+
+      return sortRows(applyBookmarkFilter(base));
+    }
+
+    // No topic filter, not searching — use paginated results
+    if (isPaginatedLoading && paginatedResults.length === 0) return undefined;
+
+    let base = [...paginatedResults];
+
+    // Client-side search fallback for short queries (1 char)
+    if (debouncedSearch.length === 1) {
+      const lowerQ = debouncedSearch.toLowerCase();
+      base = base.filter((item) => item.title.toLowerCase().includes(lowerQ));
+    }
+
+    return sortRows(applyBookmarkFilter(base));
+  }, [paginatedResults, topicResults, searchResults, debouncedSearch, isSearching, isTopicFiltered, gradeFilter, categoryFilter, sortRows, isPaginatedLoading, bookmarkedOnly, bookmarkedContentIds]);
+
+  // Group rows by content section when searching
+  const groupedRows = useMemo(() => {
+    if (!isSearching || !rows) return null;
+    const groups: { type: ContentType; label: string; icon: string; items: typeof rows }[] = [];
+    for (const section of CONTENT_SECTIONS) {
+      const items = rows.filter((r) => r.type === section.type);
+      if (items.length > 0) {
+        groups.push({ ...section, items });
+      }
+    }
+    // "Other" bucket for stages, videos, bonus
+    const otherItems = rows.filter((r) => OTHER_TYPES.has(r.type));
+    if (otherItems.length > 0) {
+      groups.push({ type: "video" as ContentType, label: "Other", icon: "📦", items: otherItems });
+    }
+    return groups;
+  }, [isSearching, rows]);
 
   // ------ Loading state ------
+  // Only show full skeleton on very first load (before any data has arrived)
+  const isInitialLoad = !stats && !gradeDistribution && rows === undefined;
 
-  if (rows === undefined) {
+  if (isInitialLoad) {
     return <PageSkeleton />;
   }
+
+  const isResultsLoading = rows === undefined;
 
   // ------ Render ------
 
@@ -484,10 +1019,13 @@ function ContentTableInner() {
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             placeholder="Search content..."
-            value={searchTerm}
-            onChange={(e) => updateParam("q", e.target.value)}
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
             className="pl-9"
           />
+          {searchInput && debouncedSearch !== searchInput && (
+            <Loader2 className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 animate-spin text-muted-foreground" />
+          )}
         </div>
 
         {/* Grade filter */}
@@ -524,195 +1062,90 @@ function ContentTableInner() {
           </SelectContent>
         </Select>
 
+        {/* Bookmarked filter */}
+        <Button
+          variant={bookmarkedOnly ? "default" : "outline"}
+          size="sm"
+          className="gap-1.5"
+          onClick={() => setBookmarkedOnly((prev) => !prev)}
+        >
+          <Bookmark className="size-3.5" />
+          Bookmarked
+        </Button>
+
         {/* Results count */}
-        <span className="text-sm text-muted-foreground whitespace-nowrap">
-          {rows.length} item{rows.length !== 1 && "s"}
-        </span>
+        {rows && (
+          <span className="text-sm text-muted-foreground whitespace-nowrap">
+            {rows.length} item{rows.length !== 1 && "s"}
+          </span>
+        )}
       </div>
 
-      {/* Table */}
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("title")}
-              >
-                Title
-                <SortIcon column="title" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("topic")}
-              >
-                Topic
-                <SortIcon column="topic" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("type")}
-              >
-                Type
-                <SortIcon column="type" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("level")}
-              >
-                Level
-                <SortIcon column="level" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("duration")}
-              >
-                Duration
-                <SortIcon column="duration" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("grade")}
-              >
-                Grade
-                <SortIcon column="grade" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("score")}
-              >
-                Score
-                <SortIcon column="score" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead
-                className="cursor-pointer select-none"
-                onClick={() => toggleSort("updatedAt")}
-              >
-                Updated
-                <SortIcon column="updatedAt" sortKey={sortKey} sortDir={sortDir} />
-              </TableHead>
-              <TableHead>Actions</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {rows.length === 0 ? (
-              <TableRow>
-                <TableCell
-                  colSpan={9}
-                  className="py-12 text-center text-muted-foreground"
-                >
-                  No content items found.
-                </TableCell>
-              </TableRow>
-            ) : (
-              rows.map((item) => (
-                <TableRow key={item._id} className="group">
-                  <TableCell className="max-w-xs truncate font-medium">
-                    <Link
-                      href={`/content/${item._id}`}
-                      className="hover:underline"
-                    >
-                      {item.title}
-                    </Link>
-                  </TableCell>
-                  <TableCell>
-                    {item.topicName ? (
-                      <Badge
-                        variant="outline"
-                        className={topicBadgeColor[item.category ?? ""] ?? DEFAULT_BADGE_COLOR}
-                      >
-                        {item.topicName}
-                      </Badge>
-                    ) : (
-                      <span className="text-xs text-muted-foreground">--</span>
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    <Badge
-                      variant="outline"
-                      className={typeBadgeColor[item.type as ContentType] ?? ""}
-                    >
-                      {item.type}
-                    </Badge>
-                  </TableCell>
-                  <TableCell>
-                    {item.skillLevel ? (
-                      <Badge
-                        variant="outline"
-                        className={skillLevelColor[item.skillLevel as SkillLevel] ?? ""}
-                      >
-                        {item.skillLevel}
-                      </Badge>
-                    ) : (
-                      <span className="text-xs text-muted-foreground">--</span>
-                    )}
-                  </TableCell>
-                  <TableCell className="text-muted-foreground whitespace-nowrap">
-                    {item.estimatedMinutes ? (
-                      <span className="flex items-center gap-1 text-sm">
-                        <Clock className="size-3" />
-                        {formatDuration(item.estimatedMinutes)}
-                      </span>
-                    ) : (
-                      <span className="text-xs">--</span>
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {item.latestGrade ? (
-                      <GradeBadge
-                        grade={item.latestGrade.grade}
-                        size="sm"
-                      />
-                    ) : (
-                      <span className="text-xs text-muted-foreground">--</span>
-                    )}
-                  </TableCell>
-                  <TableCell className="tabular-nums">
-                    {item.latestGrade
-                      ? item.latestGrade.overallScore.toFixed(1)
-                      : "--"}
-                  </TableCell>
-                  <TableCell className="text-muted-foreground">
-                    {formatRelativeDate(item.updatedAt)}
-                  </TableCell>
-                  <TableCell>
-                    <Link
-                      href={`/content/${item._id}`}
-                      className="text-sm text-emerald-600 hover:underline opacity-0 group-hover:opacity-100 transition-opacity"
-                    >
-                      View
-                    </Link>
-                  </TableCell>
-                </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
-      </div>
-
-      {/* Load more / status */}
-      {!isSearching && (
-        <div className="flex justify-center py-2">
-          {paginationStatus === "CanLoadMore" && (
-            <Button
-              variant="outline"
-              onClick={() => loadMore(50)}
-            >
-              Load More
-            </Button>
-          )}
-          {paginationStatus === "LoadingMore" && (
-            <Button variant="outline" disabled>
-              <Loader2 className="mr-2 size-4 animate-spin" />
-              Loading...
-            </Button>
-          )}
-          {paginationStatus === "Exhausted" && paginatedResults.length > 0 && (
-            <p className="text-sm text-muted-foreground">
-              All {paginatedResults.length.toLocaleString()} items loaded
-            </p>
-          )}
+      {/* Results area — inline loading so search input stays mounted */}
+      {isResultsLoading ? (
+        <div className="flex items-center justify-center py-16">
+          <Loader2 className="size-6 animate-spin text-muted-foreground" />
         </div>
+      ) : isSearching && groupedRows ? (
+        groupedRows.length === 0 ? (
+          <div className="py-12 text-center text-muted-foreground">
+            No content items found.
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {groupedRows.map((group) => (
+              <section key={group.label}>
+                <div className="mb-3 flex items-center gap-2">
+                  <span className="text-lg">{group.icon}</span>
+                  <h3 className="text-sm font-semibold text-foreground">{group.label}</h3>
+                  <span className="text-xs text-muted-foreground tabular-nums">
+                    {group.items.length} result{group.items.length !== 1 && "s"}
+                  </span>
+                </div>
+                <ContentTable rows={group.items} sortKey={sortKey} sortDir={sortDir} toggleSort={toggleSort} />
+              </section>
+            ))}
+          </div>
+        )
+      ) : (
+        <>
+          {/* Flat table for non-search view */}
+          <ContentTable rows={rows ?? []} sortKey={sortKey} sortDir={sortDir} toggleSort={toggleSort} />
+
+          {/* Load more / status — only for paginated (non-topic-filtered) view */}
+          {!isSearching && !isTopicFiltered && (
+            <div className="flex justify-center py-2">
+              {paginationStatus === "CanLoadMore" && (
+                <Button
+                  variant="outline"
+                  onClick={() => loadMore(50)}
+                >
+                  Load More
+                </Button>
+              )}
+              {paginationStatus === "LoadingMore" && (
+                <Button variant="outline" disabled>
+                  <Loader2 className="mr-2 size-4 animate-spin" />
+                  Loading...
+                </Button>
+              )}
+              {paginationStatus === "Exhausted" && paginatedResults.length > 0 && (
+                <p className="text-sm text-muted-foreground">
+                  All {paginatedResults.length.toLocaleString()} items loaded
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* Item count for topic-filtered view */}
+          {!isSearching && isTopicFiltered && topicResults && (
+            <div className="flex justify-center py-2">
+              <p className="text-sm text-muted-foreground">
+                {topicResults.length.toLocaleString()} item{topicResults.length !== 1 && "s"} in this topic
+              </p>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
@@ -727,11 +1160,15 @@ function TopicsSidebar({
   onSelectTopic,
   isOpen,
   onToggle,
+  categoryCounts,
+  total,
 }: {
   activeTopic: string;
   onSelectTopic: (slug: string) => void;
   isOpen: boolean;
   onToggle: () => void;
+  categoryCounts?: Record<string, number>;
+  total?: number;
 }) {
   return (
     <aside
@@ -760,28 +1197,37 @@ function TopicsSidebar({
           <button
             onClick={() => onSelectTopic("all")}
             className={cn(
-              "w-full text-left rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+              "w-full text-left rounded-md px-3 py-1.5 text-sm font-medium transition-colors flex items-center justify-between",
               activeTopic === "all"
                 ? "bg-emerald-50 text-emerald-600"
                 : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
             )}
           >
             All Topics
+            {total !== undefined && (
+              <span className="text-xs tabular-nums opacity-60">{total.toLocaleString()}</span>
+            )}
           </button>
-          {TREEHOUSE_TOPICS.map((topic) => (
-            <button
-              key={topic.slug}
-              onClick={() => onSelectTopic(topic.slug)}
-              className={cn(
-                "w-full text-left rounded-md px-3 py-1.5 text-sm transition-colors",
-                activeTopic === topic.slug
-                  ? "bg-emerald-50 text-emerald-600 font-medium"
-                  : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              )}
-            >
-              {topic.label}
-            </button>
-          ))}
+          {TREEHOUSE_TOPICS.map((topic) => {
+            const count = categoryCounts?.[topic.slug] ?? 0;
+            return (
+              <button
+                key={topic.slug}
+                onClick={() => onSelectTopic(topic.slug)}
+                className={cn(
+                  "w-full text-left rounded-md px-3 py-1.5 text-sm transition-colors flex items-center justify-between",
+                  activeTopic === topic.slug
+                    ? "bg-emerald-50 text-emerald-600 font-medium"
+                    : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                )}
+              >
+                {topic.label}
+                {categoryCounts && (
+                  <span className="text-xs tabular-nums opacity-60">{count.toLocaleString()}</span>
+                )}
+              </button>
+            );
+          })}
         </div>
       </ScrollArea>
     </aside>
@@ -799,6 +1245,9 @@ function ContentPageInner() {
   const [mobileSheetOpen, setMobileSheetOpen] = useState(false);
 
   const categoryFilter = searchParams.get("category") ?? "all";
+
+  // Stats for sidebar counts
+  const stats = useQuery(api.content.getContentStats);
 
   const updateCategory = useCallback(
     (slug: string) => {
@@ -837,6 +1286,8 @@ function ContentPageInner() {
         onSelectTopic={updateCategory}
         isOpen={sidebarOpen}
         onToggle={() => setSidebarOpen(false)}
+        categoryCounts={stats?.categoryCounts}
+        total={stats?.total}
       />
 
       {/* Main content */}
@@ -875,28 +1326,37 @@ function ContentPageInner() {
                   <button
                     onClick={() => updateCategory("all")}
                     className={cn(
-                      "w-full text-left rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                      "w-full text-left rounded-md px-3 py-2 text-sm font-medium transition-colors flex items-center justify-between",
                       categoryFilter === "all"
                         ? "bg-emerald-50 text-emerald-600"
                         : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                     )}
                   >
                     All Topics
+                    {stats?.total !== undefined && (
+                      <span className="text-xs tabular-nums opacity-60">{stats.total.toLocaleString()}</span>
+                    )}
                   </button>
-                  {TREEHOUSE_TOPICS.map((topic) => (
-                    <button
-                      key={topic.slug}
-                      onClick={() => updateCategory(topic.slug)}
-                      className={cn(
-                        "w-full text-left rounded-md px-3 py-2 text-sm transition-colors",
-                        categoryFilter === topic.slug
-                          ? "bg-emerald-50 text-emerald-600 font-medium"
-                          : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                      )}
-                    >
-                      {topic.label}
-                    </button>
-                  ))}
+                  {TREEHOUSE_TOPICS.map((topic) => {
+                    const count = stats?.categoryCounts?.[topic.slug] ?? 0;
+                    return (
+                      <button
+                        key={topic.slug}
+                        onClick={() => updateCategory(topic.slug)}
+                        className={cn(
+                          "w-full text-left rounded-md px-3 py-2 text-sm transition-colors flex items-center justify-between",
+                          categoryFilter === topic.slug
+                            ? "bg-emerald-50 text-emerald-600 font-medium"
+                            : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                        )}
+                      >
+                        {topic.label}
+                        {stats?.categoryCounts && (
+                          <span className="text-xs tabular-nums opacity-60">{count.toLocaleString()}</span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </ScrollArea>
             </SheetContent>

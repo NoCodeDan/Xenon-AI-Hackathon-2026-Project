@@ -12,4 +12,7 @@ crons.daily("daily snapshot", { hourUTC: 8, minuteUTC: 0 }, internal.snapshots.g
 // Monthly topic health check (1st of month)
 crons.monthly("monthly topic check", { day: 1, hourUTC: 10, minuteUTC: 0 }, internal.topicHealth.batchCheckTopics);
 
+// Weekly market intel refresh (Wednesday at 10am UTC)
+crons.weekly("weekly market intel", { dayOfWeek: "wednesday", hourUTC: 10, minuteUTC: 0 }, internal.marketIntelFetch.refreshAllMarketIntel);
+
 export default crons;

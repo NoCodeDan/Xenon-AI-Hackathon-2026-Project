@@ -25,6 +25,7 @@ import {
   Clock,
   ArrowRight,
 } from "lucide-react";
+import { BookmarkButton } from "@/components/bookmark-button";
 import {
   topicBadgeColor,
   topicLabel,
@@ -368,6 +369,7 @@ export default function ContentDetailPage() {
 
           {/* Quick actions */}
           <div className="flex items-center gap-2 shrink-0">
+            <BookmarkButton contentId={id} />
             <Button variant="outline" size="sm" disabled>
               <RefreshCcw className="size-3.5" />
               Re-grade

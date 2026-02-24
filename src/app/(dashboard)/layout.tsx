@@ -11,9 +11,11 @@ import {
   BarChart3,
   MessageSquarePlus,
   Bot,
+  Radar,
   Settings,
   TreePine,
   Menu,
+  Bookmark,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -31,6 +33,7 @@ const navItems = [
   { label: "Topics", href: "/topics", icon: Tag },
   { label: "Grading", href: "/grading", icon: BarChart3 },
   { label: "Requests", href: "/requests", icon: MessageSquarePlus },
+  { label: "Market Intel", href: "/market-intel", icon: Radar },
   { label: "Chat", href: "/chat", icon: Bot },
 ];
 
@@ -49,17 +52,17 @@ export default function DashboardLayout({
   return (
     <div className="flex h-screen flex-col overflow-hidden bg-background">
       {/* Horizontal top nav bar */}
-      <header className="flex h-14 shrink-0 items-center border-b bg-background px-4 md:px-6">
+      <header className="relative z-50 flex h-14 shrink-0 items-center border-b bg-background px-4 md:px-6">
         {/* Left: Brand */}
-        <Link href="/dashboard" className="flex items-center gap-2 mr-6 shrink-0">
+        <Link href="/dashboard" className="flex items-center gap-2 shrink-0 mr-2">
           <TreePine className="size-5 text-emerald-600" />
           <span className="text-sm font-semibold tracking-tight hidden sm:inline">
             Treehouse Intelligence
           </span>
         </Link>
 
-        {/* Center: Desktop nav links */}
-        <nav className="hidden md:flex items-center gap-1 flex-1 justify-center">
+        {/* Center: Desktop nav links — absolutely centered */}
+        <nav className="hidden md:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {navItems.map((item) => {
             const active = isActive(pathname, item.href);
             return (
@@ -80,10 +83,13 @@ export default function DashboardLayout({
           })}
         </nav>
 
+        {/* Spacer to push right items */}
+        <div className="flex-1" />
+
         {/* Mobile: Hamburger menu */}
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden mr-auto">
+            <Button variant="ghost" size="icon" className="md:hidden mr-2">
               <Menu className="size-5" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
@@ -123,8 +129,8 @@ export default function DashboardLayout({
           </SheetContent>
         </Sheet>
 
-        {/* Right: User button */}
-        <div className="ml-auto flex items-center gap-4 shrink-0">
+        {/* Right: User button — relative z-10 so it sits above the absolutely-centered nav */}
+        <div className="relative z-10 flex items-center gap-4 shrink-0">
           <UserButton
             afterSignOutUrl="/"
             appearance={{
@@ -134,6 +140,11 @@ export default function DashboardLayout({
             }}
           >
             <UserButton.MenuItems>
+              <UserButton.Link
+                label="My Bookmarks"
+                labelIcon={<Bookmark className="size-4" />}
+                href="/bookmarks"
+              />
               <UserButton.Link
                 label="Settings"
                 labelIcon={<Settings className="size-4" />}

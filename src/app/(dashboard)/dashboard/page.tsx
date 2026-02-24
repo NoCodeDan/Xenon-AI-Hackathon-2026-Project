@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback, Fragment } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useQuery, useMutation, useAction } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
@@ -50,6 +50,8 @@ import {
   Play,
   type LucideIcon,
 } from "lucide-react";
+import { FormattedContent } from "@/components/formatted-content";
+import { LinkPreviews } from "@/components/link-preview";
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -92,216 +94,81 @@ function velocityLabel(velocity: number): { label: string; className: string } {
   return { label: "Moderate", className: "bg-emerald-50 text-emerald-700" };
 }
 
-/** Inline formatting: **bold**, *italic*, `code`, [link](url) */
-function renderInline(text: string): React.ReactNode[] {
-  const parts: React.ReactNode[] = [];
-  // Order matters: links first, then bold, italic, code
-  const regex = /(\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`)/g;
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  let key = 0;
-
-  while ((match = regex.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
-    }
-    if (match[2] && match[3]) {
-      // [text](url)
-      parts.push(
-        <a
-          key={key++}
-          href={match[3]}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-emerald-700 underline decoration-emerald-300 underline-offset-2 hover:text-emerald-800 hover:decoration-emerald-500"
-        >
-          {match[2]}
-        </a>
-      );
-    } else if (match[4]) {
-      parts.push(<strong key={key++} className="font-semibold">{match[4]}</strong>);
-    } else if (match[5]) {
-      parts.push(<em key={key++} className="italic">{match[5]}</em>);
-    } else if (match[6]) {
-      parts.push(
-        <code key={key++} className="rounded bg-emerald-100/50 px-1 py-0.5 text-xs font-mono text-emerald-800">
-          {match[6]}
-        </code>
-      );
-    }
-    lastIndex = match.index + match[0].length;
-  }
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
-  }
-  return parts;
-}
-
-/** Render a single line, stripping markdown header prefixes into styled elements */
-function renderLine(line: string, key: number): React.ReactNode {
-  // Headers: # ## ### etc.
-  const headerMatch = line.match(/^(#{1,3})\s+(.+)$/);
-  if (headerMatch) {
-    const level = headerMatch[1].length;
-    const text = headerMatch[2];
-    if (level === 1) {
-      return <h3 key={key} className="text-sm font-bold mt-3 mb-1 first:mt-0">{renderInline(text)}</h3>;
-    }
-    if (level === 2) {
-      return <h4 key={key} className="text-sm font-bold mt-2.5 mb-0.5 first:mt-0">{renderInline(text)}</h4>;
-    }
-    return <h5 key={key} className="text-xs font-bold mt-2 mb-0.5 first:mt-0 uppercase tracking-wide text-emerald-700/70">{renderInline(text)}</h5>;
-  }
-
-  // Bullet list item: - or *
-  const bulletMatch = line.match(/^[-*]\s+(.+)$/);
-  if (bulletMatch) {
-    return (
-      <li key={key} className="ml-3.5 list-disc text-sm leading-relaxed marker:text-emerald-400">
-        {renderInline(bulletMatch[1])}
-      </li>
-    );
-  }
-
-  // Numbered list item: 1.
-  const numberedMatch = line.match(/^(\d+)\.\s+(.+)$/);
-  if (numberedMatch) {
-    return (
-      <li key={key} className="ml-3.5 list-decimal text-sm leading-relaxed marker:text-emerald-500 marker:font-semibold">
-        {renderInline(numberedMatch[2])}
-      </li>
-    );
-  }
-
-  // Plain paragraph line
-  return <Fragment key={key}>{renderInline(line)}</Fragment>;
-}
-
-/** Full markdown-like content renderer for chat messages */
-function FormattedContent({ text }: { text: string }) {
-  const lines = text.split("\n");
-  const elements: React.ReactNode[] = [];
-  let currentList: React.ReactNode[] = [];
-  let listType: "ul" | "ol" | null = null;
-  let key = 0;
-
-  const flushList = () => {
-    if (currentList.length > 0 && listType) {
-      const Tag = listType;
-      elements.push(
-        <Tag key={`list-${key++}`} className="my-1 space-y-0.5">
-          {currentList}
-        </Tag>
-      );
-      currentList = [];
-      listType = null;
-    }
-  };
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    // Empty line — flush and add spacing
-    if (!trimmed) {
-      flushList();
-      continue;
-    }
-
-    const isBullet = /^[-*]\s+/.test(trimmed);
-    const isNumbered = /^\d+\.\s+/.test(trimmed);
-
-    if (isBullet) {
-      if (listType !== "ul") {
-        flushList();
-        listType = "ul";
-      }
-      currentList.push(renderLine(trimmed, key++));
-    } else if (isNumbered) {
-      if (listType !== "ol") {
-        flushList();
-        listType = "ol";
-      }
-      currentList.push(renderLine(trimmed, key++));
-    } else {
-      flushList();
-      const rendered = renderLine(trimmed, key++);
-      // Headers render their own block element
-      if (/^#{1,3}\s+/.test(trimmed)) {
-        elements.push(rendered);
-      } else {
-        elements.push(<p key={`p-${key++}`} className="text-sm leading-relaxed">{rendered}</p>);
-      }
-    }
-  }
-
-  flushList();
-
-  return <div className="space-y-1">{elements}</div>;
-}
 
 // ---------------------------------------------------------------------------
-// ContentPreviewCard — mini card for content items shown in chat
+// ContentPreviewCards — batch-loaded content cards for chat messages
 // ---------------------------------------------------------------------------
 
-function ContentPreviewCard({ contentId }: { contentId: Id<"contentItems"> }) {
-  const content = useQuery(api.content.getById, { id: contentId });
-  const grade = useQuery(api.grades.getLatest, { contentId });
+function ContentPreviewCards({ contentIds }: { contentIds: Id<"contentItems">[] }) {
+  const batchData = useQuery(api.dashboard.getBatchWithGrades, { contentIds });
 
-  if (content === undefined) {
+  if (batchData === undefined) {
     return (
-      <div className="rounded-xl border border-emerald-200/60 bg-white p-3 animate-pulse">
-        <Skeleton className="h-4 w-3/4" />
-        <Skeleton className="mt-2 h-3 w-1/2" />
+      <div className="space-y-2 pl-1">
+        {contentIds.slice(0, 5).map((cid) => (
+          <div key={cid} className="rounded-xl border border-emerald-200/60 bg-white p-3 animate-pulse">
+            <Skeleton className="h-4 w-3/4" />
+            <Skeleton className="mt-2 h-3 w-1/2" />
+          </div>
+        ))}
       </div>
     );
   }
 
-  if (content === null) return null;
+  const items = batchData.filter((item): item is NonNullable<typeof item> => item !== null);
 
   return (
-    <div className="rounded-xl border border-emerald-200/60 bg-white p-3 shadow-sm transition-shadow hover:shadow-md">
-      <div className="flex items-start gap-2.5">
-        {/* Thumbnail / icon */}
-        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100">
-          <Play className="size-4 text-emerald-600" />
-        </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-1.5">
-            <span className="truncate text-sm font-medium leading-tight">
-              {content.title}
-            </span>
-            {grade && <GradeBadge grade={grade.grade} size="sm" />}
+    <div className="space-y-2 pl-1">
+      {items.slice(0, 5).map((item) => (
+        <div key={item._id} className="rounded-xl border border-emerald-200/60 bg-white p-3 shadow-sm transition-shadow hover:shadow-md">
+          <div className="flex items-start gap-2.5">
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100">
+              <Play className="size-4 text-emerald-600" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1.5">
+                <span className="truncate text-sm font-medium leading-tight">
+                  {item.title}
+                </span>
+                {item.latestGrade && <GradeBadge grade={item.latestGrade.grade} size="sm" />}
+              </div>
+              <p className="mt-0.5 text-xs text-muted-foreground capitalize">
+                {item.type}
+              </p>
+              {item.description && (
+                <p className="mt-1 line-clamp-2 text-xs text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              )}
+              <div className="mt-2 flex items-center gap-3">
+                <Link
+                  href={`/content/${item._id}`}
+                  className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 hover:text-emerald-700 hover:underline"
+                >
+                  View Details
+                  <ExternalLink className="size-3" />
+                </Link>
+                {item.url && (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-emerald-500 hover:text-emerald-600 hover:underline"
+                  >
+                    Watch on Treehouse
+                    <ExternalLink className="size-3" />
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
-          <p className="mt-0.5 text-xs text-muted-foreground capitalize">
-            {content.type}
-          </p>
-          {content.description && (
-            <p className="mt-1 line-clamp-2 text-xs text-muted-foreground leading-relaxed">
-              {content.description}
-            </p>
-          )}
-          <div className="mt-2 flex items-center gap-3">
-            <Link
-              href={`/content/${contentId}`}
-              className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 hover:text-emerald-700 hover:underline"
-            >
-              View Details
-              <ExternalLink className="size-3" />
-            </Link>
-            {content.url && (
-              <a
-                href={content.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-medium text-emerald-500 hover:text-emerald-600 hover:underline"
-              >
-                Watch on Treehouse
-                <ExternalLink className="size-3" />
-              </a>
-            )}
-          </div>
         </div>
-      </div>
+      ))}
+      {contentIds.length > 5 && (
+        <p className="text-center text-xs text-muted-foreground">
+          +{contentIds.length - 5} more results
+        </p>
+      )}
     </div>
   );
 }
@@ -393,16 +260,12 @@ function SuggestionLink({
 // ---------------------------------------------------------------------------
 
 function SummaryStatsRow() {
-  const latest = useQuery(api.snapshots.getLatest);
-  const contentStats = useQuery(api.content.getContentStats);
-  const openRequests = useQuery(api.requests.getByStatus, { status: "open" });
+  const summary = useQuery(api.dashboard.getSummary);
 
-  const loading =
-    latest === undefined ||
-    contentStats === undefined ||
-    openRequests === undefined;
+  const loading = summary === undefined;
 
-  const totalContent = contentStats?.total ?? 0;
+  const latest = summary?.latestSnapshot;
+  const totalContent = summary?.contentStats?.total ?? 0;
   const avgScore = latest ? Math.round(latest.averageScore) : 0;
 
   let aGradeRate = 0;
@@ -415,7 +278,7 @@ function SummaryStatsRow() {
   }
 
   const topicsTracked = latest?.topicBreakdown?.length ?? 0;
-  const openRequestCount = openRequests?.length ?? 0;
+  const openRequestCount = summary?.openRequestCount ?? 0;
 
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
@@ -535,8 +398,7 @@ function FreshnessTrendWidget({ onAskChat }: { onAskChat: (q: string) => void })
 // Widget: Grade Breakdown (Bar Chart)
 // ---------------------------------------------------------------------------
 
-function GradeBreakdownWidget() {
-  const distribution = useQuery(api.grades.getDistribution);
+function GradeBreakdownWidget({ distribution }: { distribution?: Record<string, number> }) {
 
   if (distribution === undefined) {
     return (
@@ -581,8 +443,7 @@ function GradeBreakdownWidget() {
 // Widget: Needs Attention (Worst Performers)
 // ---------------------------------------------------------------------------
 
-function NeedsAttentionWidget({ onAskChat }: { onAskChat: (q: string) => void }) {
-  const worstPerformers = useQuery(api.grades.getWorstPerformers, { limit: 5 });
+function NeedsAttentionWidget({ onAskChat, worstPerformers }: { onAskChat: (q: string) => void; worstPerformers?: any[] }) {
 
   if (worstPerformers === undefined) {
     return (
@@ -649,8 +510,7 @@ function NeedsAttentionWidget({ onAskChat }: { onAskChat: (q: string) => void })
 // Widget: Top Performers (Best Performers)
 // ---------------------------------------------------------------------------
 
-function TopPerformersWidget() {
-  const bestPerformers = useQuery(api.grades.getBestPerformers, { limit: 5 });
+function TopPerformersWidget({ bestPerformers }: { bestPerformers?: any[] }) {
 
   if (bestPerformers === undefined) {
     return (
@@ -713,8 +573,7 @@ function TopPerformersWidget() {
 // Widget: Trending Topics
 // ---------------------------------------------------------------------------
 
-function TrendingTopicsWidget({ onAskChat }: { onAskChat: (q: string) => void }) {
-  const trendingTopics = useQuery(api.topics.getTrendingTopics, { limit: 5 });
+function TrendingTopicsWidget({ onAskChat, trendingTopics }: { onAskChat: (q: string) => void; trendingTopics?: any[] }) {
 
   if (trendingTopics === undefined) {
     return (
@@ -788,8 +647,7 @@ function TrendingTopicsWidget({ onAskChat }: { onAskChat: (q: string) => void })
 // Widget: Stale Content
 // ---------------------------------------------------------------------------
 
-function StaleContentWidget() {
-  const stalest = useQuery(api.grades.getStalestContent, { limit: 5 });
+function StaleContentWidget({ stalest }: { stalest?: any[] }) {
 
   if (stalest === undefined) {
     return (
@@ -919,9 +777,13 @@ function InsightsChatPanel({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialQuestion, open, activeUser]);
 
+  // Optimistic message — shown instantly while server processes
+  const [optimisticMsg, setOptimisticMsg] = useState<string | null>(null);
+
   const handleSendWithText = useCallback(
     async (text: string) => {
       if (!activeUser || !text.trim() || isSending) return;
+      setOptimisticMsg(text.trim());
       setIsSending(true);
 
       try {
@@ -938,6 +800,7 @@ function InsightsChatPanel({
       } catch (err) {
         console.error("Failed to send message:", err);
       } finally {
+        setOptimisticMsg(null);
         setIsSending(false);
         inputRef.current?.focus();
       }
@@ -973,10 +836,8 @@ function InsightsChatPanel({
     }
   }, [activeUser, createSession]);
 
-  if (!open) return null;
-
   return (
-    <div className="flex w-80 shrink-0 flex-col border-l bg-background xl:w-96">
+    <div className="flex h-full w-80 shrink-0 flex-col border-l bg-background xl:w-96">
       {/* Header */}
       <div className="flex items-center gap-2 border-b px-4 py-3">
         <span className="flex-1 text-sm font-semibold">New conversation</span>
@@ -1039,24 +900,26 @@ function InsightsChatPanel({
                   <FormattedContent text={msg.content} />
                 </div>
 
-                {/* Content preview cards */}
-                {msg.role === "assistant" &&
-                  msg.contentIdsShown &&
-                  msg.contentIdsShown.length > 0 && (
-                    <div className="space-y-2 pl-1">
-                      {msg.contentIdsShown.slice(0, 5).map((cid) => (
-                        <ContentPreviewCard key={cid} contentId={cid} />
-                      ))}
-                      {msg.contentIdsShown.length > 5 && (
-                        <p className="text-center text-xs text-muted-foreground">
-                          +{msg.contentIdsShown.length - 5} more results
-                        </p>
-                      )}
-                    </div>
-                  )}
+                {/* OG link previews for URLs in message */}
+                {msg.role === "assistant" && <LinkPreviews text={msg.content} />}
+
               </div>
             </div>
           ))}
+
+          {/* Optimistic user message */}
+          {optimisticMsg && (
+            <div className="flex gap-2.5 flex-row-reverse">
+              <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                <User className="size-3.5" />
+              </div>
+              <div className="max-w-[85%]">
+                <div className="rounded-2xl rounded-br-md bg-emerald-600 text-white px-3 py-2.5">
+                  <p className="text-sm leading-relaxed">{optimisticMsg}</p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {isSending && (
             <div className="flex gap-2.5">
@@ -1114,6 +977,9 @@ export default function DashboardPage() {
 
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Single composite query for all widget data (replaces 5+ individual queries)
+  const widgetData = useQuery(api.dashboard.getWidgetData);
+
   // Override parent <main> padding so we can do a side-by-side layout
   useEffect(() => {
     const main = containerRef.current?.closest("main");
@@ -1136,20 +1002,30 @@ export default function DashboardPage() {
   return (
     <div ref={containerRef} className="flex h-[calc(100dvh-3.5rem)] overflow-hidden">
       {/* Main insights content — scrollable */}
-      <div className="flex-1 overflow-y-auto p-4 md:p-6">
+      <div className="min-w-0 flex-1 overflow-y-auto p-4 md:p-6">
         <div className="mx-auto max-w-5xl space-y-8">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold tracking-tight">Insights</h1>
-            {!chatOpen && (
-              <Button
-                size="sm"
-                className="gap-2 bg-emerald-600 text-white shadow-md hover:bg-emerald-700"
-                onClick={() => setChatOpen(true)}
-              >
-                <MessageCircle className="size-4" />
-                <span className="hidden sm:inline">Ask AI</span>
-              </Button>
-            )}
+            <Button
+              size="sm"
+              className="gap-2 bg-emerald-600 text-white shadow-md hover:bg-emerald-700 overflow-hidden whitespace-nowrap"
+              style={{
+                transition: chatOpen
+                  ? "opacity 200ms ease-out, transform 200ms ease-out, max-width 250ms ease-out, padding 250ms ease-out"
+                  : "opacity 300ms ease-out 150ms, transform 300ms ease-out 150ms, max-width 350ms ease-out 100ms, padding 350ms ease-out 100ms",
+                opacity: chatOpen ? 0 : 1,
+                transform: chatOpen ? "scale(0.85)" : "scale(1)",
+                maxWidth: chatOpen ? "0px" : "140px",
+                paddingLeft: chatOpen ? "0px" : undefined,
+                paddingRight: chatOpen ? "0px" : undefined,
+                pointerEvents: chatOpen ? "none" : undefined,
+              }}
+              onClick={() => setChatOpen(true)}
+              tabIndex={chatOpen ? -1 : undefined}
+            >
+              <MessageCircle className="size-4 shrink-0" />
+              <span className="hidden sm:inline">Ask AI</span>
+            </Button>
           </div>
 
           <section>
@@ -1165,23 +1041,29 @@ export default function DashboardPage() {
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <FreshnessTrendWidget onAskChat={handleAskChat} />
-              <GradeBreakdownWidget />
-              <NeedsAttentionWidget onAskChat={handleAskChat} />
-              <TopPerformersWidget />
-              <TrendingTopicsWidget onAskChat={handleAskChat} />
-              <StaleContentWidget />
+              <GradeBreakdownWidget distribution={widgetData?.distribution} />
+              <NeedsAttentionWidget onAskChat={handleAskChat} worstPerformers={widgetData?.worstPerformers} />
+              <TopPerformersWidget bestPerformers={widgetData?.bestPerformers} />
+              <TrendingTopicsWidget onAskChat={handleAskChat} trendingTopics={widgetData?.trendingTopics} />
+              <StaleContentWidget stalest={widgetData?.stalestContent} />
             </div>
           </section>
         </div>
       </div>
 
-      {/* Chat panel — docked right */}
-      <InsightsChatPanel
-        open={chatOpen}
-        onClose={() => setChatOpen(false)}
-        initialQuestion={pendingQuestion}
-        onQuestionConsumed={() => setPendingQuestion(null)}
-      />
+      {/* Chat panel — wrapper transitions width so main content slides smoothly */}
+      <div
+        className={`shrink-0 overflow-hidden transition-[width] duration-300 ease-out ${
+          chatOpen ? "w-80 xl:w-96" : "w-0"
+        }`}
+      >
+        <InsightsChatPanel
+          open={chatOpen}
+          onClose={() => setChatOpen(false)}
+          initialQuestion={pendingQuestion}
+          onQuestionConsumed={() => setPendingQuestion(null)}
+        />
+      </div>
     </div>
   );
 }

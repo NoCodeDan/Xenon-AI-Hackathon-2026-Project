@@ -2,6 +2,7 @@
 
 import React, { useState, useCallback, useRef } from "react";
 import { useQuery, useMutation } from "convex/react";
+import { useUser } from "@clerk/nextjs";
 import { api } from "../../../../convex/_generated/api";
 import type { Id } from "../../../../convex/_generated/dataModel";
 import { Button } from "@/components/ui/button";
@@ -46,6 +47,10 @@ import {
   AlertCircle,
   FileJson,
   Info,
+  User,
+  Mail,
+  Shield,
+  Calendar,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -389,6 +394,8 @@ function ImportToolTab() {
   }, []);
 
   return (
+    <div className="space-y-6">
+    <AutoTagSection />
     <Card>
       <CardHeader>
         <CardTitle>Import Content</CardTitle>
@@ -534,6 +541,135 @@ function ImportToolTab() {
             <p className="text-xs">
               Choose a JSON file to preview and import content.
             </p>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Auto-Tag Content Section
+// ---------------------------------------------------------------------------
+
+function AutoTagSection() {
+  const autoTag = useMutation(api.autoTagContent.autoTagAll);
+  const stats = useQuery(api.content.getContentStats);
+  const [isRunning, setIsRunning] = useState(false);
+  const [result, setResult] = useState<{
+    tagged: number;
+    skipped: number;
+    alreadyTagged: number;
+    total: number;
+    slugCounts: Record<string, number>;
+  } | null>(null);
+
+  const untaggedCount = stats
+    ? (stats.categoryCounts["other"] ?? 0)
+    : undefined;
+
+  const handleAutoTag = useCallback(async () => {
+    setIsRunning(true);
+    setResult(null);
+    try {
+      const res = await autoTag({ overwriteExisting: false });
+      setResult(res);
+      toast.success(`Auto-tagged ${res.tagged} content items`);
+    } catch (error: any) {
+      toast.error(error?.message ?? "Auto-tagging failed");
+    } finally {
+      setIsRunning(false);
+    }
+  }, [autoTag]);
+
+  const handleRetagAll = useCallback(async () => {
+    setIsRunning(true);
+    setResult(null);
+    try {
+      const res = await autoTag({ overwriteExisting: true });
+      setResult(res);
+      toast.success(`Re-tagged ${res.tagged} content items`);
+    } catch (error: any) {
+      toast.error(error?.message ?? "Auto-tagging failed");
+    } finally {
+      setIsRunning(false);
+    }
+  }, [autoTag]);
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Auto-Tag Content by Topic</CardTitle>
+        <CardDescription>
+          Automatically assign topics to content items using keyword matching on titles, descriptions, and URLs.
+          Items without a topic are categorized as &quot;other&quot; and won&apos;t appear in topic filters.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        {untaggedCount !== undefined && untaggedCount > 0 && (
+          <div className="flex items-start gap-3 rounded-md border border-amber-200 bg-amber-50 p-4">
+            <AlertCircle className="mt-0.5 size-4 shrink-0 text-amber-500" />
+            <p className="text-sm text-amber-800">
+              <strong>{untaggedCount.toLocaleString()}</strong> content item{untaggedCount !== 1 && "s"} currently have no topic assigned.
+            </p>
+          </div>
+        )}
+
+        {untaggedCount === 0 && (
+          <div className="flex items-start gap-3 rounded-md border border-emerald-200 bg-emerald-50 p-4">
+            <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" />
+            <p className="text-sm text-emerald-800">
+              All content items have a topic assigned.
+            </p>
+          </div>
+        )}
+
+        <div className="flex items-center gap-3">
+          <Button
+            onClick={handleAutoTag}
+            disabled={isRunning}
+          >
+            {isRunning ? (
+              <Loader2 className="mr-2 size-4 animate-spin" />
+            ) : (
+              <Settings2 className="mr-2 size-4" />
+            )}
+            {isRunning ? "Tagging..." : "Auto-Tag Untagged Items"}
+          </Button>
+          <Button
+            variant="outline"
+            onClick={handleRetagAll}
+            disabled={isRunning}
+          >
+            Re-Tag All Items
+          </Button>
+        </div>
+
+        {result && (
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 rounded-md border border-emerald-200 bg-emerald-50 p-4">
+              <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" />
+              <div className="text-sm text-emerald-800">
+                <p>
+                  <strong>{result.tagged.toLocaleString()}</strong> items tagged,{" "}
+                  <strong>{result.alreadyTagged.toLocaleString()}</strong> already had topics,{" "}
+                  <strong>{result.skipped.toLocaleString()}</strong> could not be matched.
+                </p>
+              </div>
+            </div>
+
+            {Object.keys(result.slugCounts).length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {Object.entries(result.slugCounts)
+                  .sort(([, a], [, b]) => b - a)
+                  .map(([slug, count]) => (
+                    <Badge key={slug} variant="secondary" className="text-xs">
+                      {slug}: {count}
+                    </Badge>
+                  ))}
+              </div>
+            )}
           </div>
         )}
       </CardContent>
@@ -721,6 +857,136 @@ function GradeThresholdRow({
 }
 
 // ---------------------------------------------------------------------------
+// Tab 4: Account Profile
+// ---------------------------------------------------------------------------
+
+function AccountProfileTab() {
+  const { user, isLoaded } = useUser();
+  const currentUser = useQuery(api.users.getCurrent);
+
+  if (!isLoaded || currentUser === undefined) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>My Profile</CardTitle>
+          <CardDescription>Your account details and preferences.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center gap-4">
+            <Skeleton className="size-16 rounded-full" />
+            <div className="space-y-2">
+              <Skeleton className="h-5 w-40" />
+              <Skeleton className="h-4 w-56" />
+              <Skeleton className="h-4 w-24" />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (!user) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>My Profile</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground">
+            Unable to load profile. Please sign in again.
+          </p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  const role = (currentUser?.role as UserRole) ?? "viewer";
+  const joinedDate = user.createdAt
+    ? new Date(user.createdAt).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
+
+  return (
+    <div className="space-y-6">
+      {/* Profile overview card */}
+      <Card>
+        <CardHeader>
+          <CardTitle>My Profile</CardTitle>
+          <CardDescription>Your account details and preferences.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-col sm:flex-row items-start gap-6">
+            {/* Avatar */}
+            <Avatar className="size-20">
+              {user.imageUrl && (
+                <AvatarImage src={user.imageUrl} alt={user.fullName ?? "Profile"} />
+              )}
+              <AvatarFallback className="text-lg">
+                {getInitials(user.fullName ?? user.primaryEmailAddress?.emailAddress ?? "U")}
+              </AvatarFallback>
+            </Avatar>
+
+            {/* Details */}
+            <div className="flex-1 space-y-4">
+              <div>
+                <h3 className="text-xl font-semibold">
+                  {user.fullName ?? "Unnamed User"}
+                </h3>
+                {user.username && (
+                  <p className="text-sm text-muted-foreground">@{user.username}</p>
+                )}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="flex items-center gap-2 text-sm">
+                  <Mail className="size-4 text-muted-foreground" />
+                  <span>{user.primaryEmailAddress?.emailAddress ?? "No email"}</span>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm">
+                  <Shield className="size-4 text-muted-foreground" />
+                  <span>Role:</span>
+                  <Badge
+                    variant="outline"
+                    className={ROLE_COLORS[role] ?? ""}
+                  >
+                    {role}
+                  </Badge>
+                </div>
+
+                {joinedDate && (
+                  <div className="flex items-center gap-2 text-sm">
+                    <Calendar className="size-4 text-muted-foreground" />
+                    <span>Joined {joinedDate}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Manage account hint */}
+      <div className="flex items-start gap-3 rounded-md border border-emerald-200 bg-emerald-50 p-4">
+        <Info className="mt-0.5 size-4 shrink-0 text-emerald-500" />
+        <div>
+          <p className="text-sm font-medium text-emerald-800">
+            Manage your account
+          </p>
+          <p className="text-xs text-emerald-600">
+            To update your name, email, password, or profile picture, click your
+            avatar in the top-right corner and select &quot;Manage account&quot;.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Main Settings Page
 // ---------------------------------------------------------------------------
 
@@ -736,8 +1002,12 @@ export default function SettingsPage() {
       </div>
 
       {/* Tabs */}
-      <Tabs defaultValue="users" className="space-y-6">
+      <Tabs defaultValue="profile" className="space-y-6">
         <TabsList>
+          <TabsTrigger value="profile" className="gap-2">
+            <User className="size-4" />
+            Account Profile
+          </TabsTrigger>
           <TabsTrigger value="users" className="gap-2">
             <Users className="size-4" />
             User Management
@@ -751,6 +1021,10 @@ export default function SettingsPage() {
             Grading Config
           </TabsTrigger>
         </TabsList>
+
+        <TabsContent value="profile">
+          <AccountProfileTab />
+        </TabsContent>
 
         <TabsContent value="users">
           <UserManagementTab />

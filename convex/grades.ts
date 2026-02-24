@@ -108,11 +108,22 @@ export const getHistory = query({
 export const getDistribution = query({
   args: {},
   handler: async (ctx) => {
-    const allGrades = await ctx.db.query("contentLatestGrade").collect();
+    // Use the by_grade index to count each grade letter separately
+    // instead of scanning all records
+    const grades = ["A", "B", "C", "D", "F"];
+    const counts = await Promise.all(
+      grades.map(async (grade) => {
+        const items = await ctx.db
+          .query("contentLatestGrade")
+          .withIndex("by_grade", (q) => q.eq("grade", grade))
+          .collect();
+        return [grade, items.length] as const;
+      })
+    );
 
     const distribution: Record<string, number> = {};
-    for (const entry of allGrades) {
-      distribution[entry.grade] = (distribution[entry.grade] ?? 0) + 1;
+    for (const [grade, count] of counts) {
+      distribution[grade] = count;
     }
 
     return distribution;
@@ -134,18 +145,24 @@ export const getWorstPerformers = query({
       .order("asc")
       .take(args.limit);
 
-    const results = await Promise.all(
-      worstGrades.map(async (gradeEntry) => {
-        const contentItem = await ctx.db.get(gradeEntry.contentId);
-        return {
-          ...gradeEntry,
-          title: contentItem?.title ?? null,
-          type: contentItem?.type ?? null,
-        };
-      })
+    // Batch-fetch all content items at once
+    const contentItems = await Promise.all(
+      worstGrades.map((g) => ctx.db.get(g.contentId))
+    );
+    const contentMap = new Map(
+      contentItems
+        .filter((c): c is NonNullable<typeof c> => c !== null)
+        .map((c) => [c._id.toString(), c])
     );
 
-    return results;
+    return worstGrades.map((gradeEntry) => {
+      const contentItem = contentMap.get(gradeEntry.contentId.toString());
+      return {
+        ...gradeEntry,
+        title: contentItem?.title ?? null,
+        type: contentItem?.type ?? null,
+      };
+    });
   },
 });
 
@@ -164,19 +181,25 @@ export const getBestPerformers = query({
       .order("desc")
       .take(args.limit);
 
-    const results = await Promise.all(
-      bestGrades.map(async (gradeEntry) => {
-        const contentItem = await ctx.db.get(gradeEntry.contentId);
-        return {
-          ...gradeEntry,
-          title: contentItem?.title ?? null,
-          type: contentItem?.type ?? null,
-          updatedAt: contentItem?.updatedAt ?? null,
-        };
-      })
+    // Batch-fetch all content items at once
+    const contentItems = await Promise.all(
+      bestGrades.map((g) => ctx.db.get(g.contentId))
+    );
+    const contentMap = new Map(
+      contentItems
+        .filter((c): c is NonNullable<typeof c> => c !== null)
+        .map((c) => [c._id.toString(), c])
     );
 
-    return results;
+    return bestGrades.map((gradeEntry) => {
+      const contentItem = contentMap.get(gradeEntry.contentId.toString());
+      return {
+        ...gradeEntry,
+        title: contentItem?.title ?? null,
+        type: contentItem?.type ?? null,
+        updatedAt: contentItem?.updatedAt ?? null,
+      };
+    });
   },
 });
 
@@ -191,17 +214,26 @@ export const getStalestContent = query({
   handler: async (ctx, args) => {
     const allGraded = await ctx.db.query("contentLatestGrade").collect();
 
-    const withContent = await Promise.all(
-      allGraded.map(async (gradeEntry) => {
-        const contentItem = await ctx.db.get(gradeEntry.contentId);
-        return {
-          ...gradeEntry,
-          title: contentItem?.title ?? null,
-          type: contentItem?.type ?? null,
-          contentUpdatedAt: contentItem?.updatedAt ?? null,
-        };
-      })
+    // Batch-fetch all content items at once
+    const contentIds = allGraded.map((g) => g.contentId);
+    const contentItems = await Promise.all(
+      contentIds.map((id) => ctx.db.get(id))
     );
+    const contentMap = new Map(
+      contentItems
+        .filter((c): c is NonNullable<typeof c> => c !== null)
+        .map((c) => [c._id.toString(), c])
+    );
+
+    const withContent = allGraded.map((gradeEntry) => {
+      const contentItem = contentMap.get(gradeEntry.contentId.toString());
+      return {
+        ...gradeEntry,
+        title: contentItem?.title ?? null,
+        type: contentItem?.type ?? null,
+        contentUpdatedAt: contentItem?.updatedAt ?? null,
+      };
+    });
 
     // Sort by content updatedAt ascending (oldest first), filter out nulls
     return withContent

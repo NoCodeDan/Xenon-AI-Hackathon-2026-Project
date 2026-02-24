@@ -96,24 +96,31 @@ export const getTrendingTopics = query({
       }
     }
 
-    // Batch-fetch active snapshots for all topics
-    const topicsWithSnapshots = await Promise.all(
-      allTopics.map(async (topic) => {
-        let activeSnapshot = null;
-        if (topic.activeSnapshotId) {
-          activeSnapshot = await ctx.db.get(topic.activeSnapshotId);
-        }
-
-        return {
-          _id: topic._id,
-          name: topic.name,
-          domain: topic.domain,
-          changeVelocity: activeSnapshot?.changeVelocity ?? 0,
-          emergingTrends: activeSnapshot?.emergingTrends ?? [],
-          contentCount: contentCountByTopic.get(topic._id as string) ?? 0,
-        };
-      })
+    // Batch-fetch all active snapshots in one pass
+    const snapshotIds = allTopics
+      .map((t) => t.activeSnapshotId)
+      .filter((id): id is typeof id & {} => id !== undefined);
+    const snapshots = await Promise.all(snapshotIds.map((id) => ctx.db.get(id)));
+    const snapshotMap = new Map(
+      snapshots
+        .filter((s): s is NonNullable<typeof s> => s !== null)
+        .map((s) => [s._id.toString(), s])
     );
+
+    const topicsWithSnapshots = allTopics.map((topic) => {
+      const activeSnapshot = topic.activeSnapshotId
+        ? snapshotMap.get(topic.activeSnapshotId.toString()) ?? null
+        : null;
+
+      return {
+        _id: topic._id,
+        name: topic.name,
+        domain: topic.domain,
+        changeVelocity: activeSnapshot?.changeVelocity ?? 0,
+        emergingTrends: activeSnapshot?.emergingTrends ?? [],
+        contentCount: contentCountByTopic.get(topic._id as string) ?? 0,
+      };
+    });
 
     // Sort by changeVelocity descending and take limit
     return topicsWithSnapshots

@@ -119,23 +119,28 @@ async function executeSearchContent(
     };
   }
 
-  // Only show preview cards for the top 5 most relevant results
-  const resultsWithGrades = await Promise.all(
-    searchResults.map(async (item: any) => {
-      const latestGrade = await ctx.runQuery(api.grades.getLatest, {
-        contentId: item._id,
-      });
-      return {
-        id: item._id,
-        title: item.title,
-        type: item.type,
-        description: item.description ?? null,
-        url: item.url ?? null,
-        grade: latestGrade?.grade ?? "ungraded",
-        score: latestGrade?.overallScore ?? null,
-      };
-    }),
+  // Batch-fetch all grades at once instead of N individual queries
+  const gradeResults = await Promise.all(
+    searchResults.map((item: any) =>
+      ctx.runQuery(api.grades.getLatest, { contentId: item._id })
+    ),
   );
+  const gradeMap = new Map(
+    searchResults.map((item: any, i: number) => [item._id, gradeResults[i]])
+  );
+
+  const resultsWithGrades = searchResults.map((item: any) => {
+    const latestGrade = gradeMap.get(item._id) as any;
+    return {
+      id: item._id,
+      title: item.title,
+      type: item.type,
+      description: item.description ?? null,
+      url: item.url ?? null,
+      grade: latestGrade?.grade ?? "ungraded",
+      score: latestGrade?.overallScore ?? null,
+    };
+  });
 
   return {
     result: JSON.stringify({

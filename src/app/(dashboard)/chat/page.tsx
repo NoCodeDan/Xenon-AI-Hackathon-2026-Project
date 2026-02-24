@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback, Fragment } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useQuery, useMutation, useAction } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
@@ -52,6 +52,8 @@ import {
   Check,
   Play,
 } from "lucide-react";
+import { FormattedContent } from "@/components/formatted-content";
+import { LinkPreviews } from "@/components/link-preview";
 import { cn } from "@/lib/utils";
 
 // ---------------------------------------------------------------------------
@@ -96,208 +98,82 @@ function formatRelativeTime(timestamp: number): string {
   return `${Math.floor(months / 12)}y ago`;
 }
 
-/** Inline formatting: **bold**, *italic*, `code`, [link](url) */
-function renderInline(text: string): React.ReactNode[] {
-  const parts: React.ReactNode[] = [];
-  const regex = /(\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`)/g;
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  let key = 0;
-
-  while ((match = regex.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
-    }
-    if (match[2] && match[3]) {
-      parts.push(
-        <a
-          key={key++}
-          href={match[3]}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-emerald-700 underline decoration-emerald-300 underline-offset-2 hover:text-emerald-800 hover:decoration-emerald-500"
-        >
-          {match[2]}
-        </a>
-      );
-    } else if (match[4]) {
-      parts.push(<strong key={key++} className="font-semibold">{match[4]}</strong>);
-    } else if (match[5]) {
-      parts.push(<em key={key++} className="italic">{match[5]}</em>);
-    } else if (match[6]) {
-      parts.push(
-        <code key={key++} className="rounded bg-emerald-100/50 px-1 py-0.5 text-xs font-mono text-emerald-800">
-          {match[6]}
-        </code>
-      );
-    }
-    lastIndex = match.index + match[0].length;
-  }
-  if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
-  }
-  return parts;
-}
-
-/** Render a single line, stripping markdown header prefixes into styled elements */
-function renderLine(line: string, key: number): React.ReactNode {
-  const headerMatch = line.match(/^(#{1,3})\s+(.+)$/);
-  if (headerMatch) {
-    const level = headerMatch[1].length;
-    const text = headerMatch[2];
-    if (level === 1) {
-      return <h3 key={key} className="text-sm font-bold mt-3 mb-1 first:mt-0">{renderInline(text)}</h3>;
-    }
-    if (level === 2) {
-      return <h4 key={key} className="text-sm font-bold mt-2.5 mb-0.5 first:mt-0">{renderInline(text)}</h4>;
-    }
-    return <h5 key={key} className="text-xs font-bold mt-2 mb-0.5 first:mt-0 uppercase tracking-wide text-emerald-700/70">{renderInline(text)}</h5>;
-  }
-
-  const bulletMatch = line.match(/^[-*]\s+(.+)$/);
-  if (bulletMatch) {
-    return (
-      <li key={key} className="ml-3.5 list-disc text-sm leading-relaxed marker:text-emerald-400">
-        {renderInline(bulletMatch[1])}
-      </li>
-    );
-  }
-
-  const numberedMatch = line.match(/^(\d+)\.\s+(.+)$/);
-  if (numberedMatch) {
-    return (
-      <li key={key} className="ml-3.5 list-decimal text-sm leading-relaxed marker:text-emerald-500 marker:font-semibold">
-        {renderInline(numberedMatch[2])}
-      </li>
-    );
-  }
-
-  return <Fragment key={key}>{renderInline(line)}</Fragment>;
-}
-
-/** Full markdown-like content renderer for chat messages */
-function FormattedContent({ text }: { text: string }) {
-  const lines = text.split("\n");
-  const elements: React.ReactNode[] = [];
-  let currentList: React.ReactNode[] = [];
-  let listType: "ul" | "ol" | null = null;
-  let key = 0;
-
-  const flushList = () => {
-    if (currentList.length > 0 && listType) {
-      const Tag = listType;
-      elements.push(
-        <Tag key={`list-${key++}`} className="my-1 space-y-0.5">
-          {currentList}
-        </Tag>
-      );
-      currentList = [];
-      listType = null;
-    }
-  };
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-
-    if (!trimmed) {
-      flushList();
-      continue;
-    }
-
-    const isBullet = /^[-*]\s+/.test(trimmed);
-    const isNumbered = /^\d+\.\s+/.test(trimmed);
-
-    if (isBullet) {
-      if (listType !== "ul") {
-        flushList();
-        listType = "ul";
-      }
-      currentList.push(renderLine(trimmed, key++));
-    } else if (isNumbered) {
-      if (listType !== "ol") {
-        flushList();
-        listType = "ol";
-      }
-      currentList.push(renderLine(trimmed, key++));
-    } else {
-      flushList();
-      const rendered = renderLine(trimmed, key++);
-      if (/^#{1,3}\s+/.test(trimmed)) {
-        elements.push(rendered);
-      } else {
-        elements.push(<p key={`p-${key++}`} className="text-sm leading-relaxed">{rendered}</p>);
-      }
-    }
-  }
-
-  flushList();
-
-  return <div className="space-y-1">{elements}</div>;
-}
 
 // ---------------------------------------------------------------------------
-// ContentPreviewCard
+// ContentPreviewCards — batch-loaded content cards
 // ---------------------------------------------------------------------------
 
-function ContentPreviewCard({ contentId }: { contentId: Id<"contentItems"> }) {
-  const content = useQuery(api.content.getById, { id: contentId });
-  const grade = useQuery(api.grades.getLatest, { contentId });
+function ContentPreviewCards({ contentIds }: { contentIds: Id<"contentItems">[] }) {
+  const batchData = useQuery(api.dashboard.getBatchWithGrades, { contentIds });
 
-  if (content === undefined) {
+  if (batchData === undefined) {
     return (
-      <div className="rounded-xl border border-emerald-200/60 bg-white p-3 animate-pulse">
-        <Skeleton className="h-4 w-3/4" />
-        <Skeleton className="mt-2 h-3 w-1/2" />
-      </div>
+      <>
+        {contentIds.slice(0, 5).map((cid) => (
+          <div key={cid} className="rounded-xl border border-emerald-200/60 bg-white p-3 animate-pulse">
+            <Skeleton className="h-4 w-3/4" />
+            <Skeleton className="mt-2 h-3 w-1/2" />
+          </div>
+        ))}
+      </>
     );
   }
 
-  if (content === null) return null;
+  const items = batchData.filter((item): item is NonNullable<typeof item> => item !== null);
 
   return (
-    <div className="rounded-xl border border-emerald-200/60 bg-white p-3 shadow-sm transition-shadow hover:shadow-md">
-      <div className="flex items-start gap-2.5">
-        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100">
-          <Play className="size-4 text-emerald-600" />
-        </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-1.5">
-            <span className="truncate text-sm font-medium leading-tight">
-              {content.title}
-            </span>
-            {grade && <GradeBadge grade={grade.grade} size="sm" />}
+    <>
+      {items.slice(0, 5).map((item) => (
+        <div key={item._id} className="rounded-xl border border-emerald-200/60 bg-white p-3 shadow-sm transition-shadow hover:shadow-md">
+          <div className="flex items-start gap-2.5">
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100">
+              <Play className="size-4 text-emerald-600" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1.5">
+                <span className="truncate text-sm font-medium leading-tight">
+                  {item.title}
+                </span>
+                {item.latestGrade && <GradeBadge grade={item.latestGrade.grade} size="sm" />}
+              </div>
+              <p className="mt-0.5 text-xs text-muted-foreground capitalize">
+                {item.type}
+              </p>
+              {item.description && (
+                <p className="mt-1 line-clamp-2 text-xs text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              )}
+              <div className="mt-2 flex items-center gap-3">
+                <Link
+                  href={`/content/${item._id}`}
+                  className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 hover:text-emerald-700 hover:underline"
+                >
+                  View Details
+                  <ExternalLink className="size-3" />
+                </Link>
+                {item.url && (
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-emerald-500 hover:text-emerald-600 hover:underline"
+                  >
+                    Watch on Treehouse
+                    <ExternalLink className="size-3" />
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
-          <p className="mt-0.5 text-xs text-muted-foreground capitalize">
-            {content.type}
-          </p>
-          {content.description && (
-            <p className="mt-1 line-clamp-2 text-xs text-muted-foreground leading-relaxed">
-              {content.description}
-            </p>
-          )}
-          <div className="mt-2 flex items-center gap-3">
-            <Link
-              href={`/content/${contentId}`}
-              className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 hover:text-emerald-700 hover:underline"
-            >
-              View Details
-              <ExternalLink className="size-3" />
-            </Link>
-            {content.url && (
-              <a
-                href={content.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-medium text-emerald-500 hover:text-emerald-600 hover:underline"
-              >
-                Watch on Treehouse
-                <ExternalLink className="size-3" />
-              </a>
-            )}
-          </div>
         </div>
-      </div>
-    </div>
+      ))}
+      {contentIds.length > 5 && (
+        <p className="py-1 text-center text-xs text-muted-foreground">
+          +{contentIds.length - 5} more results
+        </p>
+      )}
+    </>
   );
 }
 
@@ -374,12 +250,70 @@ function RequestPreviewCard({
 // CreateRequestButton — inline button + dialog for creating content requests
 // ---------------------------------------------------------------------------
 
-function CreateRequestButton({ userId }: { userId?: Id<"users"> }) {
+function deriveRequestFields(userQuery: string, assistantContent: string): { title: string; description: string } {
+  // Clean up the user query
+  const q = userQuery.trim().replace(/[?!.]+$/, "").trim();
+
+  // Extract the core subject from common question patterns
+  let subject = q;
+  const patterns = [
+    /^(?:do you have|have|got|any|is there|are there|show me|find me|looking for|i need|i want|can i get|where is|where are)\s+(?:any\s+)?(.+)/i,
+    /^(?:what|which)\s+(?:kind of\s+)?(.+?)(?:\s+(?:do you have|content|courses?|tracks?|material))?$/i,
+    /^(.+?)\s+(?:content|courses?|tracks?|tutorials?|material|lessons?|videos?)$/i,
+  ];
+  for (const pattern of patterns) {
+    const m = q.match(pattern);
+    if (m) {
+      subject = m[1].trim();
+      break;
+    }
+  }
+
+  // Capitalize first letter of each word
+  const titleCase = subject
+    .split(/\s+/)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
+
+  // Build a short description from the assistant's context
+  const firstLine = assistantContent.split("\n")[0]?.trim() ?? "";
+  const contextSnippet = firstLine.length > 20
+    ? firstLine.slice(0, 200)
+    : `Content covering ${titleCase}`;
+
+  return {
+    title: `${titleCase} Content`,
+    description: `Requested from chat: "${userQuery.trim()}"\n\n${contextSnippet}`,
+  };
+}
+
+function CreateRequestButton({
+  userId,
+  userQuery,
+  assistantContent,
+}: {
+  userId?: Id<"users">;
+  userQuery?: string;
+  assistantContent?: string;
+}) {
+  const derived = userQuery
+    ? deriveRequestFields(userQuery, assistantContent ?? "")
+    : null;
+
   const [open, setOpen] = useState(false);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState(derived?.title ?? "");
+  const [description, setDescription] = useState(derived?.description ?? "");
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  // Update fields when dialog opens if derived values changed
+  const handleOpenChange = (isOpen: boolean) => {
+    if (isOpen && derived) {
+      setTitle(derived.title);
+      setDescription(derived.description);
+    }
+    setOpen(isOpen);
+  };
 
   const createRequest = useMutation(api.requests.create);
   const topics = useQuery(api.topics.getAll);
@@ -415,7 +349,7 @@ function CreateRequestButton({ userId }: { userId?: Id<"users"> }) {
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <button className="mt-2 inline-flex items-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-medium text-emerald-700 transition-colors hover:bg-emerald-100 hover:border-emerald-300">
           <Lightbulb className="size-3.5" />
@@ -501,9 +435,11 @@ function CreateRequestButton({ userId }: { userId?: Id<"users"> }) {
 function MessageBubble({
   message,
   userId,
+  precedingUserQuery,
 }: {
   message: ChatMessage;
   userId?: Id<"users">;
+  precedingUserQuery?: string;
 }) {
   const isUser = message.role === "user";
 
@@ -541,21 +477,8 @@ function MessageBubble({
           <FormattedContent text={message.content} />
         </div>
 
-        {/* Embedded content cards (max 5, scrollable) */}
-        {!isUser &&
-          message.contentIdsShown &&
-          message.contentIdsShown.length > 0 && (
-            <div className="max-h-[400px] space-y-2 overflow-y-auto rounded-lg pl-1 pr-1">
-              {message.contentIdsShown.slice(0, 5).map((contentId) => (
-                <ContentPreviewCard key={contentId} contentId={contentId} />
-              ))}
-              {message.contentIdsShown.length > 5 && (
-                <p className="py-1 text-center text-xs text-muted-foreground">
-                  +{message.contentIdsShown.length - 5} more results
-                </p>
-              )}
-            </div>
-          )}
+        {/* OG link previews for URLs in message */}
+        {!isUser && <LinkPreviews text={message.content} />}
 
         {/* Request created card */}
         {!isUser && message.requestIdCreated && (
@@ -577,13 +500,18 @@ function MessageBubble({
           </div>
         )}
 
-        {/* Create request button — show on assistant messages without an existing request card */}
+        {/* Create request button — only show when no content was found */}
         {!isUser &&
           !message.requestIdCreated &&
           !message.requestIdUpvoted &&
+          (!message.contentIdsShown || message.contentIdsShown.length === 0) &&
           message.content.length > 0 && (
             <div className="pl-1">
-              <CreateRequestButton userId={userId} />
+              <CreateRequestButton
+                userId={userId}
+                userQuery={precedingUserQuery}
+                assistantContent={message.content}
+              />
             </div>
           )}
 
@@ -768,11 +696,15 @@ export default function ChatPage() {
     [deleteSessionMut, activeSessionId]
   );
 
+  // Optimistic message — shown instantly while server processes
+  const [optimisticMsg, setOptimisticMsg] = useState<string | null>(null);
+
   const handleSendMessage = useCallback(async () => {
     if (!activeSessionId || !inputValue.trim() || isSending) return;
 
     const messageText = inputValue.trim();
     setInputValue("");
+    setOptimisticMsg(messageText);
     setIsSending(true);
 
     try {
@@ -784,6 +716,7 @@ export default function ChatPage() {
     } catch (err) {
       console.error("Failed to send message:", err);
     } finally {
+      setOptimisticMsg(null);
       setIsSending(false);
       inputRef.current?.focus();
     }
@@ -956,13 +889,40 @@ export default function ChatPage() {
                     </p>
                   </div>
                 ) : (
-                  messages.map((message) => (
-                    <MessageBubble
-                      key={message._id}
-                      message={message}
-                      userId={activeUser?._id}
-                    />
-                  ))
+                  messages.map((message, idx) => {
+                    // Find preceding user message for request context
+                    let precedingUserQuery: string | undefined;
+                    if (message.role === "assistant") {
+                      for (let i = idx - 1; i >= 0; i--) {
+                        if (messages[i].role === "user") {
+                          precedingUserQuery = messages[i].content;
+                          break;
+                        }
+                      }
+                    }
+                    return (
+                      <MessageBubble
+                        key={message._id}
+                        message={message}
+                        userId={activeUser?._id}
+                        precedingUserQuery={precedingUserQuery}
+                      />
+                    );
+                  })
+                )}
+
+                {/* Optimistic user message — shown instantly before server confirms */}
+                {optimisticMsg && (
+                  <div className={cn("flex gap-3", "flex-row-reverse")}>
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                      <User className="size-4" />
+                    </div>
+                    <div className="max-w-[85%] md:max-w-[75%]">
+                      <div className="rounded-2xl rounded-br-md bg-emerald-600 text-white px-4 py-2.5">
+                        <p className="text-sm leading-relaxed">{optimisticMsg}</p>
+                      </div>
+                    </div>
+                  </div>
                 )}
 
                 {/* Typing indicator when sending */}

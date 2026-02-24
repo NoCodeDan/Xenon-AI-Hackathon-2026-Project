@@ -266,27 +266,28 @@ export const getWithGrades = query({
       allTopics.map((t) => [t._id.toString(), t])
     );
 
-    const results = await Promise.all(
-      items.map(async (item) => {
-        const latestGrade = await ctx.db
-          .query("contentLatestGrade")
-          .withIndex("by_content", (q) => q.eq("contentId", item._id))
-          .unique();
-
-        // Resolve primary topic for category
-        const primaryTopicId = item.topicIds[0];
-        const primaryTopic = primaryTopicId
-          ? topicMap.get(primaryTopicId.toString())
-          : null;
-
-        return {
-          ...item,
-          latestGrade: latestGrade ?? null,
-          topicName: primaryTopic?.name ?? null,
-          category: primaryTopic?.domain ?? null,
-        };
-      })
+    // Batch-fetch all grades in a single query instead of N individual lookups
+    const allGrades = await ctx.db.query("contentLatestGrade").collect();
+    const gradeMap = new Map(
+      allGrades.map((g) => [g.contentId.toString(), g])
     );
+
+    const results = items.map((item) => {
+      const latestGrade = gradeMap.get(item._id.toString()) ?? null;
+
+      // Resolve primary topic for category
+      const primaryTopicId = item.topicIds[0];
+      const primaryTopic = primaryTopicId
+        ? topicMap.get(primaryTopicId.toString())
+        : null;
+
+      return {
+        ...item,
+        latestGrade,
+        topicName: primaryTopic?.name ?? null,
+        category: primaryTopic?.domain ?? null,
+      };
+    });
 
     return results;
   },
@@ -406,27 +407,30 @@ export const getContentPaginated = query({
 
     const itemPage = await q.paginate(args.paginationOpts);
 
-    // Enrich with grade + topic info
-    const enrichedPage = await Promise.all(
-      itemPage.page.map(async (item) => {
-        const latestGrade = await ctx.db
-          .query("contentLatestGrade")
-          .withIndex("by_content", (q) => q.eq("contentId", item._id))
-          .unique();
-
-        const primaryTopicId = item.topicIds[0];
-        const primaryTopic = primaryTopicId
-          ? topicMap.get(primaryTopicId.toString())
-          : null;
-
-        return {
-          ...item,
-          latestGrade: latestGrade ?? null,
-          topicName: primaryTopic?.name ?? null,
-          category: primaryTopic?.domain ?? null,
-        };
-      })
+    // Batch-fetch grades for all items on this page
+    const pageContentIds = new Set(itemPage.page.map((item) => item._id.toString()));
+    const allGrades = await ctx.db.query("contentLatestGrade").collect();
+    const gradeMap = new Map(
+      allGrades
+        .filter((g) => pageContentIds.has(g.contentId.toString()))
+        .map((g) => [g.contentId.toString(), g])
     );
+
+    const enrichedPage = itemPage.page.map((item) => {
+      const latestGrade = gradeMap.get(item._id.toString()) ?? null;
+
+      const primaryTopicId = item.topicIds[0];
+      const primaryTopic = primaryTopicId
+        ? topicMap.get(primaryTopicId.toString())
+        : null;
+
+      return {
+        ...item,
+        latestGrade,
+        topicName: primaryTopic?.name ?? null,
+        category: primaryTopic?.domain ?? null,
+      };
+    });
 
     return {
       ...itemPage,
@@ -438,18 +442,33 @@ export const getContentPaginated = query({
 export const getContentStats = query({
   args: {},
   handler: async (ctx) => {
+    // Use by_type index to count each type without a full scan
+    const types = ["track", "course", "stage", "video", "practice", "workshop", "bonus"] as const;
+    const typeCountEntries = await Promise.all(
+      types.map(async (type) => {
+        const items = await ctx.db
+          .query("contentItems")
+          .withIndex("by_type", (q) => q.eq("type", type))
+          .collect();
+        return [type, items.length] as const;
+      })
+    );
+    const typeCounts: Record<string, number> = {};
+    let total = 0;
+    for (const [type, count] of typeCountEntries) {
+      typeCounts[type] = count;
+      total += count;
+    }
+
+    // For category counts, we still need to scan items (topicIds is an array field)
     const items = await ctx.db.query("contentItems").collect();
     const allTopics = await ctx.db.query("topics").collect();
     const topicMap = new Map(
       allTopics.map((t) => [t._id.toString(), t])
     );
 
-    const typeCounts: Record<string, number> = {};
     const categoryCounts: Record<string, number> = {};
-
     for (const item of items) {
-      typeCounts[item.type] = (typeCounts[item.type] ?? 0) + 1;
-
       const primaryTopicId = item.topicIds[0];
       const primaryTopic = primaryTopicId
         ? topicMap.get(primaryTopicId.toString())
@@ -459,10 +478,99 @@ export const getContentStats = query({
     }
 
     return {
-      total: items.length,
+      total,
       typeCounts,
       categoryCounts,
     };
+  },
+});
+
+/**
+ * Get all content items that belong to a given topic (by slug/domain).
+ * Scans all items and filters by topicIds membership.
+ * Returns items enriched with grade + topic info, same shape as getContentPaginated results.
+ */
+export const getContentByTopic = query({
+  args: {
+    topicSlug: v.string(),
+    type: v.optional(
+      v.union(
+        v.literal("track"),
+        v.literal("course"),
+        v.literal("stage"),
+        v.literal("video"),
+        v.literal("practice"),
+        v.literal("workshop"),
+        v.literal("bonus")
+      )
+    ),
+    grade: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    // Find the topic by slug or domain
+    let topic = await ctx.db
+      .query("topics")
+      .withIndex("by_slug", (q) => q.eq("slug", args.topicSlug))
+      .unique();
+
+    if (!topic) {
+      topic = await ctx.db
+        .query("topics")
+        .withIndex("by_domain", (q) => q.eq("domain", args.topicSlug))
+        .first();
+      if (!topic) return [];
+    }
+
+    const targetTopicId = topic._id;
+
+    // Preload all topics for enrichment
+    const allTopics = await ctx.db.query("topics").collect();
+    const topicMap = new Map(
+      allTopics.map((t) => [t._id.toString(), t])
+    );
+
+    // Get all content items and filter by topic membership
+    const allItems = await ctx.db.query("contentItems").collect();
+    const topicIdStr = targetTopicId.toString();
+
+    let matched = allItems.filter((item) =>
+      item.topicIds.some((tid) => tid.toString() === topicIdStr)
+    );
+
+    // Apply type filter
+    if (args.type) {
+      matched = matched.filter((item) => item.type === args.type);
+    }
+
+    // Batch-fetch all grades in a single query instead of N individual lookups
+    const allGrades = await ctx.db.query("contentLatestGrade").collect();
+    const gradeMap = new Map(
+      allGrades.map((g) => [g.contentId.toString(), g])
+    );
+
+    // Enrich with grade + topic info
+    const enriched = matched.map((item) => {
+      const latestGrade = gradeMap.get(item._id.toString()) ?? null;
+
+      const primaryTopicId = item.topicIds[0];
+      const primaryTopic = primaryTopicId
+        ? topicMap.get(primaryTopicId.toString())
+        : null;
+
+      return {
+        ...item,
+        latestGrade,
+        topicName: primaryTopic?.name ?? null,
+        category: primaryTopic?.domain ?? null,
+      };
+    });
+
+    // Apply grade filter
+    if (args.grade) {
+      return enriched.filter((item) => item.latestGrade?.grade === args.grade);
+    }
+
+    return enriched;
   },
 });
 
