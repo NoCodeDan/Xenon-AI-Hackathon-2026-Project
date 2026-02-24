@@ -647,16 +647,12 @@ function updateSendButton() {
   sendBtn.disabled = !input.value.trim() || chatSending;
 }
 
-async function initChat() {
+function initChat() {
   const input = document.getElementById("chat-input");
   const sendBtn = document.getElementById("chat-send");
 
-  // Restore persisted chat state
-  await loadChatState();
-  renderAllMessages();
-
+  // Wire up all event listeners immediately (synchronous)
   input.addEventListener("input", () => {
-    // Auto-resize textarea
     input.style.height = "auto";
     input.style.height = Math.min(input.scrollHeight, 80) + "px";
     updateSendButton();
@@ -690,6 +686,11 @@ async function initChat() {
   // Tab switching
   document.getElementById("tab-intel").addEventListener("click", () => switchTab("intel"));
   document.getElementById("tab-chat").addEventListener("click", () => switchTab("chat"));
+
+  // Restore persisted chat state (async, non-blocking)
+  loadChatState()
+    .then(() => renderAllMessages())
+    .catch(() => renderAllMessages());
 }
 
 // ── Main Initialization ──────────────────────────────────────────────────────
