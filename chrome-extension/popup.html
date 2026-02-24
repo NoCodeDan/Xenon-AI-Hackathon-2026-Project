@@ -12,10 +12,8 @@
     <header class="header">
       <div class="header-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M17 8c0-5-5-5-5-5s-5 0-5 5c0 3 2 5 5 8c3-3 5-5 5-8z"/>
-          <path d="M12 21V11"/>
-          <path d="M9 17c-2 0-4-1-4-3"/>
-          <path d="M15 17c2 0 4-1 4-3"/>
+          <path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/>
+          <path d="M12 22v-3"/>
         </svg>
       </div>
       <div class="header-text">
@@ -24,161 +22,226 @@
       </div>
     </header>
 
-    <!-- Loading State -->
-    <div id="state-loading" class="state">
-      <div class="spinner"></div>
-      <p>Analyzing content...</p>
-    </div>
-
-    <!-- Not on Treehouse State -->
-    <div id="state-not-treehouse" class="state hidden">
-      <div class="state-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 8v4"/>
-          <path d="M12 16h.01"/>
-        </svg>
-      </div>
-      <p class="state-title">Not on Treehouse</p>
-      <p class="state-desc">Navigate to <strong>teamtreehouse.com</strong> to view content intelligence.</p>
-    </div>
-
-    <!-- Not Found State -->
-    <div id="state-not-found" class="state hidden">
-      <div class="state-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="M21 21l-4.3-4.3"/>
-          <path d="M8 11h6"/>
-        </svg>
-      </div>
-      <p class="state-title">Not Tracked</p>
-      <p class="state-desc">This content is not yet tracked in the intelligence system.</p>
-    </div>
-
-    <!-- Content Card -->
-    <div id="state-content" class="state hidden">
-      <!-- Content Title -->
-      <div class="content-header">
-        <span id="content-type" class="type-badge">course</span>
-        <h2 id="content-title" class="content-title">Content Title</h2>
-      </div>
-
-      <!-- Gauge -->
-      <div class="gauge-container">
-        <svg class="gauge" viewBox="0 0 120 120">
-          <circle class="gauge-bg" cx="60" cy="60" r="50" />
-          <circle id="gauge-fill" class="gauge-fill" cx="60" cy="60" r="50" />
-        </svg>
-        <div class="gauge-center">
-          <span id="gauge-score" class="gauge-score">--</span>
-          <span id="gauge-label" class="gauge-label">--</span>
-        </div>
-      </div>
-
-      <!-- Grade + Meta Row -->
-      <div class="meta-row">
-        <div class="meta-item">
-          <span class="meta-label">Grade</span>
-          <span id="meta-grade" class="grade-badge">--</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Confidence</span>
-          <span id="meta-confidence" class="meta-value">--</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Benchmark</span>
-          <span id="meta-benchmark" class="meta-value">--</span>
-        </div>
-        <div class="meta-item">
-          <span class="meta-label">Last Reviewed</span>
-          <span id="meta-reviewed" class="meta-value">--</span>
-        </div>
-      </div>
-
-      <!-- Score Breakdown -->
-      <div class="section">
-        <h3 class="section-title">Score Breakdown</h3>
-        <div class="score-bar-group">
-          <div class="score-bar-row">
-            <span class="score-bar-label">Recency <span class="weight">(50%)</span></span>
-            <div class="score-bar-track">
-              <div id="bar-recency" class="score-bar-fill emerald"></div>
-            </div>
-            <span id="val-recency" class="score-bar-value">--</span>
-          </div>
-          <div class="score-bar-row">
-            <span class="score-bar-label">Alignment <span class="weight">(35%)</span></span>
-            <div class="score-bar-track">
-              <div id="bar-alignment" class="score-bar-fill emerald"></div>
-            </div>
-            <span id="val-alignment" class="score-bar-value">--</span>
-          </div>
-          <div class="score-bar-row">
-            <span class="score-bar-label">Demand <span class="weight">(15%)</span></span>
-            <div class="score-bar-track">
-              <div id="bar-demand" class="score-bar-fill violet"></div>
-            </div>
-            <span id="val-demand" class="score-bar-value">--</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Topics -->
-      <div id="topics-section" class="section">
-        <h3 class="section-title">Content Topics</h3>
-        <div id="topics-list" class="topics-list"></div>
-      </div>
-
-      <!-- Recommended Action -->
-      <div id="action-section" class="section hidden">
-        <h3 class="section-title">Recommended Action</h3>
-        <div id="action-card" class="action-card"></div>
-      </div>
-
-      <!-- Warnings -->
-      <div id="warnings-section" class="section hidden">
-        <div id="outdated-warning" class="warning-card warning-orange hidden">
-          <span class="warning-icon">!</span>
-          <div>
-            <strong>Outdated Topics</strong>
-            <p id="outdated-list"></p>
-          </div>
-        </div>
-        <div id="missing-warning" class="warning-card warning-red hidden">
-          <span class="warning-icon">!</span>
-          <div>
-            <strong>Missing Topics</strong>
-            <p id="missing-list"></p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer link -->
-      <a id="dashboard-link" class="dashboard-link" href="#" target="_blank">
-        View full details in dashboard
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+      <button id="tab-intel" class="tab-btn tab-active" data-tab="intel">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
         </svg>
-      </a>
+        Intel
+      </button>
+      <button id="tab-chat" class="tab-btn" data-tab="chat">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        Chat
+      </button>
     </div>
 
-    <!-- No Grade State (content found but not graded) -->
-    <div id="state-no-grade" class="state hidden">
-      <div class="content-header">
-        <span id="ng-content-type" class="type-badge">course</span>
-        <h2 id="ng-content-title" class="content-title">Content Title</h2>
+    <!-- ═══ Intel View ═══ -->
+    <div id="view-intel">
+      <!-- Loading State -->
+      <div id="state-loading" class="state">
+        <div class="spinner"></div>
+        <p>Analyzing content...</p>
       </div>
-      <div class="state-icon" style="margin-top: 16px;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <polyline points="12 6 12 12 16 14"/>
-        </svg>
+
+      <!-- Not on Treehouse State -->
+      <div id="state-not-treehouse" class="state hidden">
+        <div class="state-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4"/>
+            <path d="M12 16h.01"/>
+          </svg>
+        </div>
+        <p class="state-title">Not on Treehouse</p>
+        <p class="state-desc">Navigate to <strong>teamtreehouse.com</strong> to view content intelligence.</p>
       </div>
-      <p class="state-title">Pending Grading</p>
-      <p class="state-desc">This content is tracked but hasn't been graded yet.</p>
+
+      <!-- Not Found State -->
+      <div id="state-not-found" class="state hidden">
+        <div class="state-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.3-4.3"/>
+            <path d="M8 11h6"/>
+          </svg>
+        </div>
+        <p class="state-title">Not Tracked</p>
+        <p class="state-desc">This content is not yet tracked in the intelligence system.</p>
+      </div>
+
+      <!-- Content Card -->
+      <div id="state-content" class="state hidden">
+        <!-- Content Title -->
+        <div class="content-header">
+          <span id="content-type" class="type-badge">course</span>
+          <h2 id="content-title" class="content-title">Content Title</h2>
+        </div>
+
+        <!-- Gauge -->
+        <div class="gauge-container">
+          <svg class="gauge" viewBox="0 0 120 120">
+            <circle class="gauge-bg" cx="60" cy="60" r="50" />
+            <circle id="gauge-fill" class="gauge-fill" cx="60" cy="60" r="50" />
+          </svg>
+          <div class="gauge-center">
+            <span id="gauge-score" class="gauge-score">--</span>
+            <span id="gauge-label" class="gauge-label">--</span>
+          </div>
+        </div>
+
+        <!-- Grade + Meta Row -->
+        <div class="meta-row">
+          <div class="meta-item">
+            <span class="meta-label">Grade</span>
+            <span id="meta-grade" class="grade-badge">--</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Confidence</span>
+            <span id="meta-confidence" class="meta-value">--</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Benchmark</span>
+            <span id="meta-benchmark" class="meta-value">--</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Last Reviewed</span>
+            <span id="meta-reviewed" class="meta-value">--</span>
+          </div>
+        </div>
+
+        <!-- Score Breakdown -->
+        <div class="section">
+          <h3 class="section-title">Score Breakdown</h3>
+          <div class="score-bar-group">
+            <div class="score-bar-row">
+              <span class="score-bar-label">Recency <span class="weight">(50%)</span></span>
+              <div class="score-bar-track">
+                <div id="bar-recency" class="score-bar-fill emerald"></div>
+              </div>
+              <span id="val-recency" class="score-bar-value">--</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Alignment <span class="weight">(35%)</span></span>
+              <div class="score-bar-track">
+                <div id="bar-alignment" class="score-bar-fill emerald"></div>
+              </div>
+              <span id="val-alignment" class="score-bar-value">--</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Demand <span class="weight">(15%)</span></span>
+              <div class="score-bar-track">
+                <div id="bar-demand" class="score-bar-fill violet"></div>
+              </div>
+              <span id="val-demand" class="score-bar-value">--</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topics -->
+        <div id="topics-section" class="section">
+          <h3 class="section-title">Content Topics</h3>
+          <div id="topics-list" class="topics-list"></div>
+        </div>
+
+        <!-- Recommended Action -->
+        <div id="action-section" class="section hidden">
+          <h3 class="section-title">Recommended Action</h3>
+          <div id="action-card" class="action-card"></div>
+        </div>
+
+        <!-- Warnings -->
+        <div id="warnings-section" class="section hidden">
+          <div id="outdated-warning" class="warning-card warning-orange hidden">
+            <span class="warning-icon">!</span>
+            <div>
+              <strong>Outdated Topics</strong>
+              <p id="outdated-list"></p>
+            </div>
+          </div>
+          <div id="missing-warning" class="warning-card warning-red hidden">
+            <span class="warning-icon">!</span>
+            <div>
+              <strong>Missing Topics</strong>
+              <p id="missing-list"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer link -->
+        <a id="dashboard-link" class="dashboard-link" href="#" target="_blank">
+          View full details in dashboard
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- No Grade State (content found but not graded) -->
+      <div id="state-no-grade" class="state hidden">
+        <div class="content-header">
+          <span id="ng-content-type" class="type-badge">course</span>
+          <h2 id="ng-content-title" class="content-title">Content Title</h2>
+        </div>
+        <div class="state-icon" style="margin-top: 16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <p class="state-title">Pending Grading</p>
+        <p class="state-desc">This content is tracked but hasn't been graded yet.</p>
+      </div>
+    </div>
+
+    <!-- ═══ Chat View ═══ -->
+    <div id="view-chat" class="hidden">
+      <div class="chat-container">
+        <div class="chat-toolbar">
+          <span class="chat-toolbar-title">Chat</span>
+          <div class="chat-toolbar-actions">
+            <button id="chat-new" class="chat-toolbar-btn" title="New chat">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+            <button id="chat-close" class="chat-toolbar-btn" title="Close chat">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+          <div class="chat-welcome">
+            <div class="chat-welcome-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8c0-5-5-5-5-5s-5 0-5 5c0 3 2 5 5 8c3-3 5-5 5-8z"/>
+                <path d="M12 21V11"/>
+                <path d="M9 17c-2 0-4-1-4-3"/>
+                <path d="M15 17c2 0 4-1 4-3"/>
+              </svg>
+            </div>
+            <p class="chat-welcome-title">Treehouse Assistant</p>
+            <p class="chat-welcome-desc">Ask about content, grades, topics, or request new content.</p>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <textarea id="chat-input" class="chat-textarea" placeholder="Ask about content..." rows="1"></textarea>
+          <button id="chat-send" class="chat-send-btn" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
