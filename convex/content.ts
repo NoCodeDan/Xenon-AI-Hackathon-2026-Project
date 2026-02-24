@@ -145,6 +145,27 @@ export const setGradingStatus = mutation({
   },
 });
 
+export const bulkSetSkillLevel = mutation({
+  args: {
+    updates: v.array(
+      v.object({
+        id: v.id("contentItems"),
+        skillLevel: v.union(
+          v.literal("Beginner"),
+          v.literal("Intermediate"),
+          v.literal("Advanced")
+        ),
+      })
+    ),
+  },
+  handler: async (ctx, args) => {
+    for (const update of args.updates) {
+      await ctx.db.patch(update.id, { skillLevel: update.skillLevel });
+    }
+    return args.updates.length;
+  },
+});
+
 // ---------- Queries ----------
 
 export const getById = query({

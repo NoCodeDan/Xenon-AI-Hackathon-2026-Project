@@ -219,9 +219,9 @@ function SummaryCards({
       <Card className="py-4">
         <CardContent className="px-4">
           <p className="text-xs font-medium text-muted-foreground">Total Items</p>
-          <p className="text-2xl font-bold tabular-nums">
+          <div className="text-2xl font-bold tabular-nums">
             {stats ? total.toLocaleString() : <Skeleton className="inline-block h-7 w-16" />}
-          </p>
+          </div>
         </CardContent>
       </Card>
 
@@ -265,7 +265,7 @@ function SummaryCards({
       <Card className="py-4">
         <CardContent className="px-4">
           <p className="text-xs font-medium text-muted-foreground">Needs Attention</p>
-          <p className="text-2xl font-bold tabular-nums">
+          <div className="text-2xl font-bold tabular-nums">
             {gradeDistribution ? (
               <span className={fCount > 0 ? "text-red-600" : "text-emerald-600"}>
                 {fCount.toLocaleString()}
@@ -273,7 +273,7 @@ function SummaryCards({
             ) : (
               <Skeleton className="inline-block h-7 w-16" />
             )}
-          </p>
+          </div>
           <p className="text-xs text-muted-foreground">F-grade items</p>
         </CardContent>
       </Card>
@@ -732,13 +732,14 @@ function useDebouncedValue<T>(value: T, delay: number): T {
 // ---------------------------------------------------------------------------
 
 const CONTENT_SECTIONS: { type: ContentType; label: string; icon: string }[] = [
-  { type: "course", label: "Courses", icon: "📚" },
   { type: "track", label: "Tracks", icon: "🛤️" },
-  { type: "workshop", label: "Workshops", icon: "🔧" },
+  { type: "course", label: "Courses", icon: "📚" },
   { type: "practice", label: "Practice", icon: "💪" },
+  { type: "workshop", label: "Workshops", icon: "🔧" },
+  { type: "bonus", label: "Bonus", icon: "🎁" },
 ];
 
-const OTHER_TYPES = new Set<string>(["stage", "video", "bonus"]);
+const OTHER_TYPES = new Set<string>(["stage", "video"]);
 
 function ContentTableInner() {
   const router = useRouter();
@@ -952,9 +953,9 @@ function ContentTableInner() {
     return sortRows(applyBookmarkFilter(base));
   }, [paginatedResults, topicResults, searchResults, debouncedSearch, isSearching, isTopicFiltered, gradeFilter, categoryFilter, sortRows, isPaginatedLoading, bookmarkedOnly, bookmarkedContentIds]);
 
-  // Group rows by content section when searching
+  // Group rows by content section when searching or filtering by topic
   const groupedRows = useMemo(() => {
-    if (!isSearching || !rows) return null;
+    if ((!isSearching && !isTopicFiltered) || !rows) return null;
     const groups: { type: ContentType; label: string; icon: string; items: typeof rows }[] = [];
     for (const section of CONTENT_SECTIONS) {
       const items = rows.filter((r) => r.type === section.type);
@@ -968,7 +969,7 @@ function ContentTableInner() {
       groups.push({ type: "video" as ContentType, label: "Other", icon: "📦", items: otherItems });
     }
     return groups;
-  }, [isSearching, rows]);
+  }, [isSearching, isTopicFiltered, rows]);
 
   // ------ Loading state ------
   // Only show full skeleton on very first load (before any data has arrived)
@@ -1086,7 +1087,7 @@ function ContentTableInner() {
         <div className="flex items-center justify-center py-16">
           <Loader2 className="size-6 animate-spin text-muted-foreground" />
         </div>
-      ) : isSearching && groupedRows ? (
+      ) : (isSearching || isTopicFiltered) && groupedRows ? (
         groupedRows.length === 0 ? (
           <div className="py-12 text-center text-muted-foreground">
             No content items found.
@@ -1099,7 +1100,7 @@ function ContentTableInner() {
                   <span className="text-lg">{group.icon}</span>
                   <h3 className="text-sm font-semibold text-foreground">{group.label}</h3>
                   <span className="text-xs text-muted-foreground tabular-nums">
-                    {group.items.length} result{group.items.length !== 1 && "s"}
+                    {group.items.length} item{group.items.length !== 1 && "s"}
                   </span>
                 </div>
                 <ContentTable rows={group.items} sortKey={sortKey} sortDir={sortDir} toggleSort={toggleSort} />
@@ -1112,39 +1113,28 @@ function ContentTableInner() {
           {/* Flat table for non-search view */}
           <ContentTable rows={rows ?? []} sortKey={sortKey} sortDir={sortDir} toggleSort={toggleSort} />
 
-          {/* Load more / status — only for paginated (non-topic-filtered) view */}
-          {!isSearching && !isTopicFiltered && (
-            <div className="flex justify-center py-2">
-              {paginationStatus === "CanLoadMore" && (
-                <Button
-                  variant="outline"
-                  onClick={() => loadMore(50)}
-                >
-                  Load More
-                </Button>
-              )}
-              {paginationStatus === "LoadingMore" && (
-                <Button variant="outline" disabled>
-                  <Loader2 className="mr-2 size-4 animate-spin" />
-                  Loading...
-                </Button>
-              )}
-              {paginationStatus === "Exhausted" && paginatedResults.length > 0 && (
-                <p className="text-sm text-muted-foreground">
-                  All {paginatedResults.length.toLocaleString()} items loaded
-                </p>
-              )}
-            </div>
-          )}
-
-          {/* Item count for topic-filtered view */}
-          {!isSearching && isTopicFiltered && topicResults && (
-            <div className="flex justify-center py-2">
+          {/* Load more / status — only for paginated view */}
+          <div className="flex justify-center py-2">
+            {paginationStatus === "CanLoadMore" && (
+              <Button
+                variant="outline"
+                onClick={() => loadMore(50)}
+              >
+                Load More
+              </Button>
+            )}
+            {paginationStatus === "LoadingMore" && (
+              <Button variant="outline" disabled>
+                <Loader2 className="mr-2 size-4 animate-spin" />
+                Loading...
+              </Button>
+            )}
+            {paginationStatus === "Exhausted" && paginatedResults.length > 0 && (
               <p className="text-sm text-muted-foreground">
-                {topicResults.length.toLocaleString()} item{topicResults.length !== 1 && "s"} in this topic
+                All {paginatedResults.length.toLocaleString()} items loaded
               </p>
-            </div>
-          )}
+            )}
+          </div>
         </>
       )}
     </div>

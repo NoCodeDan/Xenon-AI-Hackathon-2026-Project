@@ -201,6 +201,208 @@ export const seed = internalMutation({
       createdAt: now - 4 * DAY,
     });
 
+    // ─── ADDITIONAL TOPICS ─────────────────────────────────────────
+    const vibeCodingTopicId = await ctx.db.insert("topics", {
+      name: "Vibe Coding",
+      slug: "vibe-coding",
+      domain: "vibe-coding",
+      description:
+        "AI-assisted development tools that let you build apps by describing what you want in natural language.",
+    });
+
+    const noCodeTopicId = await ctx.db.insert("topics", {
+      name: "No-Code",
+      slug: "nocode",
+      domain: "nocode",
+      description:
+        "Build applications without writing code using visual builders and drag-and-drop platforms.",
+    });
+
+    const aiTopicId = await ctx.db.insert("topics", {
+      name: "AI",
+      slug: "ai",
+      domain: "ai",
+      description:
+        "Artificial intelligence concepts, tools, and practical applications for developers.",
+    });
+
+    const htmlTopicId = await ctx.db.insert("topics", {
+      name: "HTML",
+      slug: "html",
+      domain: "html",
+      description:
+        "The standard markup language for creating web pages and web applications.",
+    });
+
+    const designTopicId = await ctx.db.insert("topics", {
+      name: "Design",
+      slug: "design",
+      domain: "design",
+      description:
+        "User interface and user experience design principles for building great products.",
+    });
+
+    const databasesTopicId = await ctx.db.insert("topics", {
+      name: "Databases",
+      slug: "databases",
+      domain: "databases",
+      description:
+        "Relational and non-relational database concepts, SQL, and data modeling.",
+    });
+
+    const devToolsTopicId = await ctx.db.insert("topics", {
+      name: "Development Tools",
+      slug: "development-tools",
+      domain: "development-tools",
+      description:
+        "Tools and workflows for modern software development including Git, CLI, and debugging.",
+    });
+
+    const securityTopicId = await ctx.db.insert("topics", {
+      name: "Security",
+      slug: "security",
+      domain: "security",
+      description:
+        "Web security fundamentals including authentication, authorization, and common vulnerabilities.",
+    });
+
+    const javaTopicId = await ctx.db.insert("topics", {
+      name: "Java",
+      slug: "java",
+      domain: "java",
+      description:
+        "A robust, object-oriented programming language used in enterprise, mobile, and web development.",
+    });
+
+    const swiftTopicId = await ctx.db.insert("topics", {
+      name: "Swift",
+      slug: "swift",
+      domain: "swift",
+      description:
+        "Apple's modern programming language for iOS, macOS, watchOS, and tvOS development.",
+    });
+
+    const phpTopicId = await ctx.db.insert("topics", {
+      name: "PHP",
+      slug: "php",
+      domain: "php",
+      description:
+        "A widely-used server-side scripting language for web development.",
+    });
+
+    const rubyTopicId = await ctx.db.insert("topics", {
+      name: "Ruby",
+      slug: "ruby",
+      domain: "ruby",
+      description:
+        "A dynamic, object-oriented language known for developer happiness and the Rails framework.",
+    });
+
+    const dataAnalysisTopicId = await ctx.db.insert("topics", {
+      name: "Data Analysis",
+      slug: "data-analysis",
+      domain: "data-analysis",
+      description:
+        "Techniques for analyzing and visualizing data to drive decisions.",
+    });
+
+    const gameDevTopicId = await ctx.db.insert("topics", {
+      name: "Game Development",
+      slug: "game-development",
+      domain: "game-development",
+      description:
+        "Building interactive games using various engines, frameworks, and languages.",
+    });
+
+    const apisTopicId = await ctx.db.insert("topics", {
+      name: "APIs",
+      slug: "apis",
+      domain: "apis",
+      description:
+        "Designing, building, and consuming APIs for web and mobile applications.",
+    });
+
+    // ─── ADDITIONAL TOPIC SNAPSHOTS ─────────────────────────────────
+    const vibeCodingSnapshotId = await ctx.db.insert("topicSnapshots", {
+      topicId: vibeCodingTopicId,
+      keyPractices: [
+        "Prompt engineering for code generation",
+        "Iterative refinement with AI assistants",
+        "Cursor AI for full-stack development",
+        "Lovable for rapid UI prototyping",
+        "Windsurf IDE for AI-first workflows",
+        "Replit Agent for cloud-based AI development",
+      ],
+      deprecatedPractices: [
+        "Writing all code manually without AI assistance",
+        "Copy-pasting from StackOverflow without understanding",
+      ],
+      emergingTrends: [
+        "Multi-modal AI coding (voice + visual)",
+        "AI agents that handle entire features autonomously",
+        "MCP (Model Context Protocol) for tool integration",
+      ],
+      changeVelocity: 0.95,
+      confidence: 0.75,
+      notes:
+        "Vibe coding is the fastest-growing category in 2026. Tools like Cursor, Lovable, and Windsurf are redefining how developers build.",
+      createdAt: now - 1 * DAY,
+    });
+
+    const noCodeSnapshotId = await ctx.db.insert("topicSnapshots", {
+      topicId: noCodeTopicId,
+      keyPractices: [
+        "Visual app building with Adalo",
+        "Responsive web apps with WeWeb",
+        "Database-driven apps with Airtable",
+        "Workflow automation with Zapier and Make",
+        "Form-based apps with Glide",
+      ],
+      deprecatedPractices: [
+        "Building simple CRUD apps entirely from scratch",
+        "Ignoring no-code for internal tools",
+      ],
+      emergingTrends: [
+        "AI-enhanced no-code platforms",
+        "No-code + custom code hybrid workflows",
+        "Enterprise adoption of no-code tooling",
+      ],
+      changeVelocity: 0.72,
+      confidence: 0.8,
+      notes:
+        "No-code platforms are maturing rapidly. Adalo, WeWeb, and Bubble now support production-grade applications.",
+      createdAt: now - 3 * DAY,
+    });
+
+    const aiSnapshotId = await ctx.db.insert("topicSnapshots", {
+      topicId: aiTopicId,
+      keyPractices: [
+        "Prompt engineering fundamentals",
+        "Using LLM APIs (OpenAI, Anthropic, Google)",
+        "RAG (Retrieval-Augmented Generation)",
+        "Fine-tuning and evaluation",
+        "AI safety and responsible use",
+      ],
+      deprecatedPractices: [
+        "Rule-based chatbots for conversational AI",
+        "Training models from scratch for common tasks",
+      ],
+      emergingTrends: [
+        "Agentic AI workflows",
+        "Multi-modal models (text + image + audio)",
+        "On-device AI inference",
+      ],
+      changeVelocity: 0.98,
+      confidence: 0.82,
+      notes:
+        "AI is transforming every industry. Focus is shifting from building models to building AI-powered applications.",
+      createdAt: now - 2 * DAY,
+    });
+
+    await ctx.db.patch(vibeCodingTopicId, { activeSnapshotId: vibeCodingSnapshotId });
+    await ctx.db.patch(noCodeTopicId, { activeSnapshotId: noCodeSnapshotId });
+    await ctx.db.patch(aiTopicId, { activeSnapshotId: aiSnapshotId });
+
     // Patch topics with activeSnapshotId
     await ctx.db.patch(reactTopicId, { activeSnapshotId: reactSnapshotId });
     await ctx.db.patch(jsTopicId, { activeSnapshotId: jsSnapshotId });
@@ -862,6 +1064,451 @@ export const seed = internalMutation({
       450,
       "https://teamtreehouse.com/library/functions-and-scope"
     );
+
+    // ─── VIBE CODING CONTENT ────────────────────────────────────────
+    const trackVibeCoding = await ctx.db.insert("contentItems", {
+      title: "Vibe Coding",
+      type: "track",
+      description:
+        "Learn to build apps using AI-powered development tools. From Cursor to Lovable, discover the future of coding.",
+      topicIds: [vibeCodingTopicId, aiTopicId],
+      updatedAt: now - 2 * DAY,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    const courseVibeCodingIntro = await ctx.db.insert("contentItems", {
+      title: "Introduction to Vibe Coding",
+      type: "course",
+      description:
+        "What is vibe coding? Learn how AI-assisted development tools are changing the way we build software.",
+      topicIds: [vibeCodingTopicId, aiTopicId],
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    const courseCursor = await ctx.db.insert("contentItems", {
+      title: "Building with Cursor",
+      type: "course",
+      description:
+        "Master Cursor AI — the AI-first code editor. Learn prompt-driven development, multi-file editing, and AI-powered debugging.",
+      topicIds: [vibeCodingTopicId, aiTopicId],
+      updatedAt: now - 3 * DAY,
+      createdAt: now - 1 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    const courseLovable = await ctx.db.insert("contentItems", {
+      title: "Rapid Prototyping with Lovable",
+      type: "course",
+      description:
+        "Use Lovable to go from idea to working web app in minutes. Build full-stack applications by describing what you want.",
+      topicIds: [vibeCodingTopicId],
+      updatedAt: now - 5 * DAY,
+      createdAt: now - 1 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    const courseWindsurf = await ctx.db.insert("contentItems", {
+      title: "Windsurf IDE Essentials",
+      type: "course",
+      description:
+        "Get started with Windsurf — the AI-native IDE. Learn its Cascade feature for multi-step code generation and refactoring.",
+      topicIds: [vibeCodingTopicId, aiTopicId],
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 3 * WEEK,
+      gradingStatus: "pending",
+    });
+
+    const courseReplit = await ctx.db.insert("contentItems", {
+      title: "AI Development with Replit",
+      type: "course",
+      description:
+        "Build and deploy apps entirely in the browser with Replit Agent. Cloud-based AI-powered development from start to ship.",
+      topicIds: [vibeCodingTopicId, aiTopicId],
+      updatedAt: now - 10 * DAY,
+      createdAt: now - 6 * WEEK,
+      gradingStatus: "pending",
+    });
+
+    // Vibe Coding track → course edges
+    await ctx.db.insert("contentEdges", { parentId: trackVibeCoding, childId: courseVibeCodingIntro, edgeType: "contains", order: 0 });
+    await ctx.db.insert("contentEdges", { parentId: trackVibeCoding, childId: courseCursor, edgeType: "contains", order: 1 });
+    await ctx.db.insert("contentEdges", { parentId: trackVibeCoding, childId: courseLovable, edgeType: "contains", order: 2 });
+    await ctx.db.insert("contentEdges", { parentId: trackVibeCoding, childId: courseWindsurf, edgeType: "contains", order: 3 });
+    await ctx.db.insert("contentEdges", { parentId: trackVibeCoding, childId: courseReplit, edgeType: "contains", order: 4 });
+
+    // Vibe Coding standalone videos
+    await ctx.db.insert("contentItems", {
+      title: "What is Vibe Coding?",
+      type: "video",
+      description: "Video lesson: An overview of the vibe coding movement and how AI is changing development.",
+      topicIds: [vibeCodingTopicId, aiTopicId],
+      url: "https://teamtreehouse.com/library/what-is-vibe-coding",
+      duration: 480,
+      publishedAt: now - 2 * MONTH,
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Cursor AI: Your First Project",
+      type: "video",
+      description: "Video lesson: Set up Cursor and build your first app using AI-assisted coding.",
+      topicIds: [vibeCodingTopicId],
+      url: "https://teamtreehouse.com/library/cursor-ai-first-project",
+      duration: 720,
+      publishedAt: now - 1 * MONTH,
+      updatedAt: now - 3 * DAY,
+      createdAt: now - 1 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Building a Full App with Lovable",
+      type: "video",
+      description: "Video lesson: Go from a text prompt to a deployed web application using Lovable.",
+      topicIds: [vibeCodingTopicId],
+      url: "https://teamtreehouse.com/library/building-full-app-lovable",
+      duration: 900,
+      publishedAt: now - 3 * WEEK,
+      updatedAt: now - 5 * DAY,
+      createdAt: now - 3 * WEEK,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Windsurf Cascade Deep Dive",
+      type: "video",
+      description: "Video lesson: Master Windsurf's Cascade feature for multi-step AI-powered code generation.",
+      topicIds: [vibeCodingTopicId, aiTopicId],
+      url: "https://teamtreehouse.com/library/windsurf-cascade-deep-dive",
+      duration: 660,
+      publishedAt: now - 2 * WEEK,
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 2 * WEEK,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Replit Agent: Build & Deploy",
+      type: "video",
+      description: "Video lesson: Use Replit Agent to build, test, and deploy an app without leaving the browser.",
+      topicIds: [vibeCodingTopicId],
+      url: "https://teamtreehouse.com/library/replit-agent-build-deploy",
+      duration: 600,
+      publishedAt: now - 6 * WEEK,
+      updatedAt: now - 10 * DAY,
+      createdAt: now - 6 * WEEK,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Comparing Vibe Coding Tools",
+      type: "video",
+      description: "Video lesson: Cursor vs Lovable vs Windsurf vs Replit — when to use each tool.",
+      topicIds: [vibeCodingTopicId],
+      url: "https://teamtreehouse.com/library/comparing-vibe-coding-tools",
+      duration: 540,
+      publishedAt: now - 1 * WEEK,
+      updatedAt: now - 2 * DAY,
+      createdAt: now - 1 * WEEK,
+      gradingStatus: "pending",
+    });
+
+    // ─── NO-CODE CONTENT ────────────────────────────────────────────
+    const trackNoCode = await ctx.db.insert("contentItems", {
+      title: "No-Code Development",
+      type: "track",
+      description:
+        "Build real applications without writing code. Learn visual development platforms from Adalo to WeWeb.",
+      topicIds: [noCodeTopicId],
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 3 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    const courseAdalo = await ctx.db.insert("contentItems", {
+      title: "Building Mobile Apps with Adalo",
+      type: "course",
+      description:
+        "Create native mobile apps visually with Adalo. Design screens, connect databases, and publish to app stores.",
+      topicIds: [noCodeTopicId],
+      updatedAt: now - 2 * WEEK,
+      createdAt: now - 3 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    const courseWeWeb = await ctx.db.insert("contentItems", {
+      title: "Web Apps with WeWeb",
+      type: "course",
+      description:
+        "Build responsive, data-driven web applications with WeWeb. Connect APIs, design layouts, and deploy without code.",
+      topicIds: [noCodeTopicId],
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    const courseNoCodeFundamentals = await ctx.db.insert("contentItems", {
+      title: "No-Code Fundamentals",
+      type: "course",
+      description:
+        "Understand the no-code landscape. Learn when to use no-code vs low-code vs custom code.",
+      topicIds: [noCodeTopicId],
+      updatedAt: now - 3 * WEEK,
+      createdAt: now - 3 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    // No-Code track → course edges
+    await ctx.db.insert("contentEdges", { parentId: trackNoCode, childId: courseNoCodeFundamentals, edgeType: "contains", order: 0 });
+    await ctx.db.insert("contentEdges", { parentId: trackNoCode, childId: courseAdalo, edgeType: "contains", order: 1 });
+    await ctx.db.insert("contentEdges", { parentId: trackNoCode, childId: courseWeWeb, edgeType: "contains", order: 2 });
+
+    // No-Code videos
+    await ctx.db.insert("contentItems", {
+      title: "Getting Started with Adalo",
+      type: "video",
+      description: "Video lesson: Build your first mobile app screen in Adalo with drag-and-drop components.",
+      topicIds: [noCodeTopicId],
+      url: "https://teamtreehouse.com/library/getting-started-with-adalo",
+      duration: 480,
+      publishedAt: now - 3 * MONTH,
+      updatedAt: now - 2 * WEEK,
+      createdAt: now - 3 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "WeWeb: Connecting External APIs",
+      type: "video",
+      description: "Video lesson: Connect your WeWeb app to REST APIs and display dynamic data.",
+      topicIds: [noCodeTopicId],
+      url: "https://teamtreehouse.com/library/weweb-connecting-apis",
+      duration: 540,
+      publishedAt: now - 2 * MONTH,
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Automating Workflows with Zapier",
+      type: "video",
+      description: "Video lesson: Connect your no-code apps with automated workflows using Zapier.",
+      topicIds: [noCodeTopicId],
+      url: "https://teamtreehouse.com/library/automating-workflows-zapier",
+      duration: 420,
+      publishedAt: now - 2 * MONTH,
+      updatedAt: now - 3 * WEEK,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Building with Glide Apps",
+      type: "video",
+      description: "Video lesson: Turn spreadsheet data into a mobile app with Glide.",
+      topicIds: [noCodeTopicId],
+      url: "https://teamtreehouse.com/library/building-with-glide",
+      duration: 360,
+      publishedAt: now - 2.5 * MONTH,
+      updatedAt: now - 3 * WEEK,
+      createdAt: now - 2.5 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    // ─── AI CONTENT ─────────────────────────────────────────────────
+    const courseAIBasics = await ctx.db.insert("contentItems", {
+      title: "AI for Developers",
+      type: "course",
+      description:
+        "Understand AI fundamentals as a developer. Learn prompt engineering, LLM APIs, and how to build AI-powered features.",
+      topicIds: [aiTopicId, pythonTopicId],
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Prompt Engineering Basics",
+      type: "video",
+      description: "Video lesson: Write effective prompts that get consistent, high-quality responses from AI models.",
+      topicIds: [aiTopicId],
+      url: "https://teamtreehouse.com/library/prompt-engineering-basics",
+      duration: 540,
+      publishedAt: now - 2 * MONTH,
+      updatedAt: now - 1 * WEEK,
+      createdAt: now - 2 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Building with the OpenAI API",
+      type: "video",
+      description: "Video lesson: Integrate OpenAI's API into your applications for chat, completion, and embeddings.",
+      topicIds: [aiTopicId, pythonTopicId],
+      url: "https://teamtreehouse.com/library/building-with-openai-api",
+      duration: 720,
+      publishedAt: now - 6 * WEEK,
+      updatedAt: now - 2 * WEEK,
+      createdAt: now - 6 * WEEK,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Introduction to RAG",
+      type: "video",
+      description: "Video lesson: Build a Retrieval-Augmented Generation system to give AI context from your own data.",
+      topicIds: [aiTopicId],
+      url: "https://teamtreehouse.com/library/introduction-to-rag",
+      duration: 660,
+      publishedAt: now - 1 * MONTH,
+      updatedAt: now - 10 * DAY,
+      createdAt: now - 1 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    // ─── HTML CONTENT ───────────────────────────────────────────────
+    const courseHTMLBasics = await ctx.db.insert("contentItems", {
+      title: "HTML Basics",
+      type: "course",
+      description:
+        "Learn the building blocks of the web. Semantic HTML, forms, accessibility, and modern markup practices.",
+      topicIds: [htmlTopicId],
+      updatedAt: now - 3 * MONTH,
+      createdAt: now - 9 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "HTML Forms and Validation",
+      type: "course",
+      description:
+        "Master HTML forms — inputs, selects, validation, accessibility, and modern form patterns.",
+      topicIds: [htmlTopicId],
+      updatedAt: now - 4 * MONTH,
+      createdAt: now - 8 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    // ─── DATABASES CONTENT ──────────────────────────────────────────
+    await ctx.db.insert("contentItems", {
+      title: "SQL Basics",
+      type: "course",
+      description:
+        "Learn SQL from scratch. Write queries, filter data, join tables, and understand relational database concepts.",
+      topicIds: [databasesTopicId],
+      updatedAt: now - 2 * MONTH,
+      createdAt: now - 6 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Modifying Data with SQL",
+      type: "course",
+      description:
+        "INSERT, UPDATE, DELETE, and transaction management in SQL databases.",
+      topicIds: [databasesTopicId],
+      updatedAt: now - 3 * MONTH,
+      createdAt: now - 7 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    // ─── DESIGN CONTENT ─────────────────────────────────────────────
+    await ctx.db.insert("contentItems", {
+      title: "UX Design Foundations",
+      type: "course",
+      description:
+        "Learn user-centered design principles, wireframing, prototyping, and usability testing.",
+      topicIds: [designTopicId],
+      updatedAt: now - 1 * MONTH,
+      createdAt: now - 5 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Web Design Process",
+      type: "course",
+      description:
+        "From mood boards to mockups. Learn the complete web design process using modern tools.",
+      topicIds: [designTopicId, cssTopicId],
+      updatedAt: now - 2 * MONTH,
+      createdAt: now - 6 * MONTH,
+      gradingStatus: "pending",
+    });
+
+    // ─── JAVA / SWIFT / PHP / RUBY / OTHER CONTENT ──────────────────
+    await ctx.db.insert("contentItems", {
+      title: "Java Basics",
+      type: "course",
+      description: "Get started with Java. Learn syntax, OOP, data structures, and build your first Java application.",
+      topicIds: [javaTopicId],
+      updatedAt: now - 4 * MONTH,
+      createdAt: now - 10 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Swift Basics",
+      type: "course",
+      description: "Start building iOS apps with Swift. Learn the language fundamentals, Xcode, and UIKit basics.",
+      topicIds: [swiftTopicId],
+      updatedAt: now - 5 * MONTH,
+      createdAt: now - 10 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "PHP Basics",
+      type: "course",
+      description: "Learn server-side web development with PHP. Build dynamic websites and understand the LAMP stack.",
+      topicIds: [phpTopicId],
+      updatedAt: now - 6 * MONTH,
+      createdAt: now - 12 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Ruby Basics",
+      type: "course",
+      description: "Learn Ruby programming fundamentals. A friendly, expressive language perfect for web development with Rails.",
+      topicIds: [rubyTopicId],
+      updatedAt: now - 7 * MONTH,
+      createdAt: now - 12 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Data Analysis with Python",
+      type: "course",
+      description: "Use Python with Pandas, NumPy, and Matplotlib to analyze and visualize real-world data sets.",
+      topicIds: [dataAnalysisTopicId, pythonTopicId],
+      updatedAt: now - 2 * MONTH,
+      createdAt: now - 5 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Introduction to Game Development",
+      type: "course",
+      description: "Build your first game. Learn game loops, physics, sprites, and user input handling.",
+      topicIds: [gameDevTopicId, jsTopicId],
+      updatedAt: now - 3 * MONTH,
+      createdAt: now - 8 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "REST APIs with Express",
+      type: "course",
+      description: "Design and build RESTful APIs using Express.js. Learn routing, middleware, error handling, and authentication.",
+      topicIds: [apisTopicId, nodeTopicId],
+      updatedAt: now - 2 * MONTH,
+      createdAt: now - 6 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Git Basics",
+      type: "course",
+      description: "Learn version control with Git. Commits, branches, merges, and collaboration workflows.",
+      topicIds: [devToolsTopicId],
+      updatedAt: now - 3 * MONTH,
+      createdAt: now - 9 * MONTH,
+      gradingStatus: "pending",
+    });
+    await ctx.db.insert("contentItems", {
+      title: "Web Security Basics",
+      type: "course",
+      description: "Understand common web vulnerabilities (XSS, CSRF, SQL injection) and how to prevent them.",
+      topicIds: [securityTopicId],
+      updatedAt: now - 4 * MONTH,
+      createdAt: now - 8 * MONTH,
+      gradingStatus: "pending",
+    });
 
     // ─── PRACTICE SESSIONS (3 total) ──────────────────────────────────
     // Practice 1: JS Practice (in Intro to JS, stage 2 "Practice")

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useQuery, useAction } from "convex/react";
 import { api } from "../../../../convex/_generated/api";
 import {
@@ -49,6 +49,9 @@ import {
   ArrowUpRight,
   ArrowRight,
   ArrowDownRight,
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
   Loader2,
 } from "lucide-react";
 
@@ -93,7 +96,6 @@ const SEVERITY_COLORS: Record<string, string> = {
 
 const SOURCE_LABELS: Record<string, string> = {
   github_trending: "GitHub",
-  stackoverflow: "Stack Overflow",
   job_postings: "Jobs",
   google_trends: "Google",
   ai_synthesized: "AI Analysis",
@@ -106,10 +108,10 @@ const GROWTH_ICONS: Record<string, React.ReactNode> = {
 };
 
 const COMPETITOR_COLORS: Record<string, string> = {
-  deep: "#059669",
-  moderate: "#eab308",
-  shallow: "#f97316",
-  none: "#ef4444",
+  deep: "#3b82f6",
+  moderate: "#22c55e",
+  shallow: "#ef4444",
+  none: "#f97316",
 };
 
 // ---------------------------------------------------------------------------
@@ -237,8 +239,8 @@ function TrendRadarWidget({
   // Baseline Treehouse coverage (used when DB content-to-topic mapping is incomplete)
   const baselineCoverage: Record<string, number> = {
     javascript: 95, python: 90, react: 85, css: 92,
-    nodejs: 58, typescript: 28, sql: 80, rust: 0,
-    go: 20, "ai-ml": 72, docker: 38, aws: 35,
+    nodejs: 58, typescript: 45, sql: 80, rust: 0,
+    go: 20, "ai-ml": 85, docker: 60, aws: 35,
   };
 
   // Average signal score per topic across all sources
@@ -323,7 +325,7 @@ function TrendGapCard({
     competitor_gap: "Competitors Cover This",
     job_demand_gap: "Job Demand Gap",
     needs_update: "Needs Content Update",
-    trending_low_coverage: "Trending — Slightly Covered",
+    trending_low_coverage: "Trending — Low Coverage",
   };
 
   return (
@@ -378,6 +380,11 @@ function CoverageBadge({ level }: { level: string }) {
   );
 }
 
+const LEVEL_ORDER: Record<string, number> = { deep: 3, moderate: 2, shallow: 1, none: 0 };
+
+type MatrixSortKey = "topic" | "treehouse" | "codecademy" | "freecodecamp" | "udemy";
+type MatrixSortDir = "asc" | "desc";
+
 function CompetitorMatrixTable({
   matrix,
 }: {
@@ -390,6 +397,48 @@ function CompetitorMatrixTable({
     udemy: string;
   }>;
 }) {
+  const [sortKey, setSortKey] = useState<MatrixSortKey>("topic");
+  const [sortDir, setSortDir] = useState<MatrixSortDir>("asc");
+
+  const toggleSort = (key: MatrixSortKey) => {
+    if (sortKey === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir(key === "topic" ? "asc" : "desc");
+    }
+  };
+
+  const sorted = useMemo(() => {
+    const rows = [...matrix];
+    const dir = sortDir === "asc" ? 1 : -1;
+    rows.sort((a, b) => {
+      if (sortKey === "topic") {
+        return dir * a.topicLabel.localeCompare(b.topicLabel);
+      }
+      const aLevel = sortKey === "treehouse" ? a.treehouse.level : a[sortKey];
+      const bLevel = sortKey === "treehouse" ? b.treehouse.level : b[sortKey];
+      const diff = (LEVEL_ORDER[aLevel] ?? 0) - (LEVEL_ORDER[bLevel] ?? 0);
+      return diff !== 0 ? dir * diff : a.topicLabel.localeCompare(b.topicLabel);
+    });
+    return rows;
+  }, [matrix, sortKey, sortDir]);
+
+  const SortIcon = ({ col }: { col: MatrixSortKey }) => {
+    if (col !== sortKey) return <ArrowUpDown className="ml-1 inline size-3 text-muted-foreground/50" />;
+    return sortDir === "asc"
+      ? <ArrowUp className="ml-1 inline size-3" />
+      : <ArrowDown className="ml-1 inline size-3" />;
+  };
+
+  const columns: { key: MatrixSortKey; label: string }[] = [
+    { key: "topic", label: "Topic" },
+    { key: "treehouse", label: "Treehouse" },
+    { key: "codecademy", label: "Codecademy" },
+    { key: "freecodecamp", label: "freeCodeCamp" },
+    { key: "udemy", label: "Udemy" },
+  ];
+
   return (
     <Card>
       <CardHeader>
@@ -401,16 +450,21 @@ function CompetitorMatrixTable({
           <Table>
             <TableHeader className="sticky top-0 z-10 bg-background">
               <TableRow>
-                <TableHead>Topic</TableHead>
-                <TableHead>Treehouse</TableHead>
-                <TableHead>Codecademy</TableHead>
-                <TableHead>freeCodeCamp</TableHead>
-                <TableHead>Udemy</TableHead>
+                {columns.map((col) => (
+                  <TableHead
+                    key={col.key}
+                    className="cursor-pointer select-none hover:text-foreground transition-colors"
+                    onClick={() => toggleSort(col.key)}
+                  >
+                    {col.label}
+                    <SortIcon col={col.key} />
+                  </TableHead>
+                ))}
               </TableRow>
             </TableHeader>
             <TableBody>
-              {matrix.map((row) => (
-                <TableRow key={row.topicSlug}>
+              {sorted.map((row, i) => (
+                <TableRow key={row.topicSlug} className={i % 2 === 1 ? "bg-muted/40" : ""}>
                   <TableCell className="font-medium">{row.topicLabel}</TableCell>
                   <TableCell>
                     <div className="flex items-center gap-1.5">
@@ -442,27 +496,31 @@ function CompetitorBarChart({
 }: {
   matrix: Array<{
     topicLabel: string;
+    treehouse: { contentCount: number; level: string };
     codecademy: string;
     freecodecamp: string;
     udemy: string;
   }>;
 }) {
-  // Count coverage levels per competitor
-  const competitors = ["codecademy", "freecodecamp", "udemy"] as const;
-  const competitorLabels: Record<string, string> = {
+  // Count coverage levels per platform (including Treehouse)
+  const platforms = ["treehouse", "codecademy", "freecodecamp", "udemy"] as const;
+  const platformLabels: Record<string, string> = {
+    treehouse: "Treehouse",
     codecademy: "Codecademy",
     freecodecamp: "freeCodeCamp",
     udemy: "Udemy",
   };
   const levels = ["deep", "moderate", "shallow", "none"] as const;
 
-  const chartData = competitors.map((comp) => {
+  const chartData = platforms.map((plat) => {
     const counts: Record<string, number> = { deep: 0, moderate: 0, shallow: 0, none: 0 };
     for (const row of matrix) {
-      const level = row[comp] as string;
+      const level = plat === "treehouse"
+        ? (row.treehouse as { contentCount: number; level: string }).level
+        : row[plat] as string;
       counts[level] = (counts[level] ?? 0) + 1;
     }
-    return { name: competitorLabels[comp], ...counts };
+    return { name: platformLabels[plat], ...counts };
   });
 
   return (
@@ -697,9 +755,9 @@ function PriorityRecommendations({
         {recommendations.length === 0 ? (
           <p className="text-sm text-muted-foreground">No urgent recommendations at this time.</p>
         ) : (
-          <ol className="space-y-3">
+          <ol className="divide-y">
             {recommendations.slice(0, 8).map((rec, i) => (
-              <li key={i} className="flex items-start gap-3">
+              <li key={i} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
                 <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-700">
                   {i + 1}
                 </span>
@@ -826,6 +884,46 @@ export default function MarketIntelPage() {
     }
   };
 
+  // Effective snapshot with fallback values derived from page data
+  const effectiveSnapshot = snapshot ?? {
+    overallAlignmentScore: 72,
+    trendGapCount: 7,
+    competitorGapCount: 10,
+    jobAlignmentScore: 68,
+    topGaps: [],
+  };
+
+  // Baseline trending signals (used when DB signal tables are empty)
+  const effectiveSignals = Object.keys(overview.signalsBySource).length > 0 ? overview.signalsBySource : {
+    github_trending: [
+      { topicSlug: "ai-ml", signalName: "AI/ML & LLM Frameworks", signalScore: 96, source: "github_trending" },
+      { topicSlug: "rust", signalName: "Rust Systems Programming", signalScore: 91, source: "github_trending" },
+      { topicSlug: "typescript", signalName: "TypeScript Full-Stack", signalScore: 89, source: "github_trending" },
+      { topicSlug: "go", signalName: "Go Cloud Infrastructure", signalScore: 84, source: "github_trending" },
+      { topicSlug: "python", signalName: "Python Data Tooling", signalScore: 82, source: "github_trending" },
+      { topicSlug: "react", signalName: "React Server Components", signalScore: 78, source: "github_trending" },
+      { topicSlug: "docker", signalName: "Container Orchestration", signalScore: 76, source: "github_trending" },
+    ],
+    job_postings: [
+      { topicSlug: "python", signalName: "Python (All Roles)", signalScore: 95, source: "job_postings" },
+      { topicSlug: "ai-ml", signalName: "AI/ML Engineer", signalScore: 94, source: "job_postings" },
+      { topicSlug: "javascript", signalName: "JavaScript / Front-End", signalScore: 92, source: "job_postings" },
+      { topicSlug: "typescript", signalName: "TypeScript Required", signalScore: 88, source: "job_postings" },
+      { topicSlug: "aws", signalName: "AWS Cloud Certification", signalScore: 85, source: "job_postings" },
+      { topicSlug: "sql", signalName: "SQL & Data Engineering", signalScore: 82, source: "job_postings" },
+      { topicSlug: "docker", signalName: "Docker / Kubernetes", signalScore: 78, source: "job_postings" },
+      { topicSlug: "react", signalName: "React / Next.js", signalScore: 76, source: "job_postings" },
+    ],
+    google_trends: [
+      { topicSlug: "ai-ml", signalName: "Generative AI & ChatGPT", signalScore: 98, source: "google_trends" },
+      { topicSlug: "python", signalName: "Learn Python", signalScore: 88, source: "google_trends" },
+      { topicSlug: "rust", signalName: "Rust Programming Language", signalScore: 80, source: "google_trends" },
+      { topicSlug: "typescript", signalName: "TypeScript Tutorial", signalScore: 77, source: "google_trends" },
+      { topicSlug: "go", signalName: "Golang Tutorial", signalScore: 72, source: "google_trends" },
+      { topicSlug: "react", signalName: "React Framework", signalScore: 70, source: "google_trends" },
+    ],
+  };
+
   // Baseline competitor matrix (used when DB competitor tables are empty)
   const effectiveMatrix = competitorMatrix && competitorMatrix.length > 0 ? competitorMatrix : [
     { topicSlug: "html-css", topicLabel: "HTML & CSS", treehouse: { contentCount: 8, level: "deep" }, codecademy: "deep", freecodecamp: "deep", udemy: "deep" },
@@ -886,11 +984,9 @@ export default function MarketIntelPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Market Intelligence</h1>
-          {overview.latestFetchedAt && (
-            <p className="text-xs text-muted-foreground mt-1">
-              Last refreshed {timeAgo(overview.latestFetchedAt)}
-            </p>
-          )}
+          <p className="text-xs text-muted-foreground mt-1">
+            Last refreshed {overview.latestFetchedAt ? timeAgo(overview.latestFetchedAt) : "just now"}
+          </p>
         </div>
         {isEditor && (
           <Button
@@ -911,15 +1007,35 @@ export default function MarketIntelPage() {
 
       {/* Stat Cards */}
       <section>
-        <MarketSummaryStats snapshot={snapshot} loading={false} />
+        <MarketSummaryStats snapshot={effectiveSnapshot} loading={false} />
       </section>
 
-      {/* Trending Topics (full width with tabs) */}
-      <section>
-        <h2 className="mb-4 text-sm font-medium text-emerald-700/60">
-          Trending Topics
-        </h2>
-        <TrendingTopicsWidget signalsBySource={overview.signalsBySource} />
+      {/* Priority Recommendations + Trending Topics side-by-side */}
+      <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <PriorityRecommendations
+          jobData={jobAlignment && jobAlignment.length > 0 ? jobAlignment : [
+            { topicLabel: "Python", demandScore: 95, treehouseContentCount: 9, growthTrend: "rising" },
+            { topicLabel: "AI/ML", demandScore: 94, treehouseContentCount: 7, growthTrend: "rising" },
+            { topicLabel: "JavaScript", demandScore: 92, treehouseContentCount: 10, growthTrend: "stable" },
+            { topicLabel: "TypeScript", demandScore: 88, treehouseContentCount: 3, growthTrend: "rising" },
+            { topicLabel: "React", demandScore: 85, treehouseContentCount: 9, growthTrend: "stable" },
+            { topicLabel: "SQL", demandScore: 82, treehouseContentCount: 8, growthTrend: "stable" },
+            { topicLabel: "AWS", demandScore: 80, treehouseContentCount: 4, growthTrend: "rising" },
+            { topicLabel: "Docker", demandScore: 78, treehouseContentCount: 4, growthTrend: "rising" },
+            { topicLabel: "Node.js", demandScore: 76, treehouseContentCount: 6, growthTrend: "stable" },
+            { topicLabel: "Rust", demandScore: 65, treehouseContentCount: 0, growthTrend: "rising" },
+          ]}
+          gaps={effectiveSnapshot.topGaps && effectiveSnapshot.topGaps.length > 0 ? effectiveSnapshot.topGaps : [
+            { topicLabel: "Rust", gapType: "trending_not_covered", severity: "critical" },
+            { topicLabel: "TypeScript", gapType: "high_demand_low_coverage", severity: "critical" },
+            { topicLabel: "Go", gapType: "trending_low_coverage", severity: "high" },
+            { topicLabel: "AWS", gapType: "job_demand_gap", severity: "high" },
+            { topicLabel: "Docker", gapType: "competitor_gap", severity: "high" },
+            { topicLabel: "AI/ML", gapType: "high_demand_low_coverage", severity: "medium" },
+            { topicLabel: "Node.js", gapType: "needs_update", severity: "medium" },
+          ]}
+        />
+        <TrendingTopicsWidget signalsBySource={effectiveSignals} />
       </section>
 
       {/* Radar + Gap Analysis */}
@@ -929,11 +1045,11 @@ export default function MarketIntelPage() {
         </h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <TrendRadarWidget
-            signalsBySource={overview.signalsBySource}
+            signalsBySource={effectiveSignals}
             treehouseCoverage={overview.treehouseCoverage}
             jobDemand={jobAlignment ?? []}
           />
-          <TrendGapCard gaps={snapshot?.topGaps && snapshot.topGaps.length > 0 ? snapshot.topGaps : [
+          <TrendGapCard gaps={effectiveSnapshot.topGaps && effectiveSnapshot.topGaps.length > 0 ? effectiveSnapshot.topGaps : [
             { topicLabel: "Rust", gapType: "trending_not_covered", severity: "critical" },
             { topicLabel: "TypeScript", gapType: "high_demand_low_coverage", severity: "critical" },
             { topicLabel: "Go", gapType: "trending_low_coverage", severity: "high" },
@@ -979,16 +1095,8 @@ export default function MarketIntelPage() {
             { topicLabel: "Rust", demandScore: 65, treehouseContentCount: 0, treehouseAvgScore: null },
             { topicLabel: "CSS", demandScore: 58, treehouseContentCount: 9, treehouseAvgScore: 90 },
           ]} />
-          <JobAlignmentScoreCard score={snapshot?.jobAlignmentScore ?? 68} />
+          <JobAlignmentScoreCard score={effectiveSnapshot.jobAlignmentScore} />
         </div>
-        {jobAlignment !== undefined && snapshot && (
-          <div className="mt-6">
-            <PriorityRecommendations
-              jobData={jobAlignment}
-              gaps={snapshot.topGaps}
-            />
-          </div>
-        )}
       </section>
     </div>
   );

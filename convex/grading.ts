@@ -1,14 +1,14 @@
 "use node";
 
 // ---------------------------------------------------------------------------
-// Freshness grading engine -- Convex actions that call Claude for alignment
+// Freshness grading engine -- Convex actions that call OpenAI for alignment
 // scoring, then compute and persist overall freshness grades.
 // ---------------------------------------------------------------------------
 
 import { v } from "convex/values";
 import { internalAction } from "./_generated/server";
 import { internal, api } from "./_generated/api";
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 
 import {
   calculateRecencyScore,
@@ -20,11 +20,11 @@ import {
 import { buildGradingPrompt } from "./prompts/grading";
 
 // ---------------------------------------------------------------------------
-// Anthropic client (lazily initialised so env var is read at runtime)
+// OpenAI client (lazily initialised so env var is read at runtime)
 // ---------------------------------------------------------------------------
 
-function getClient(): Anthropic {
-  return new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+function getClient(): OpenAI {
+  return new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 }
 
 // ---------------------------------------------------------------------------
@@ -52,7 +52,7 @@ async function withRetry<T>(
 }
 
 // ---------------------------------------------------------------------------
-// Claude alignment scoring
+// OpenAI alignment scoring
 // ---------------------------------------------------------------------------
 
 interface AlignmentResult {
@@ -64,22 +64,22 @@ interface AlignmentResult {
   confidence: number;
 }
 
-async function callClaudeForAlignment(prompt: string): Promise<AlignmentResult> {
+async function callAIForAlignment(prompt: string): Promise<AlignmentResult> {
   const client = getClient();
 
-  const message = await client.messages.create({
-    model: "claude-sonnet-4-20250514",
+  const response = await client.chat.completions.create({
+    model: "gpt-4o-mini",
     max_tokens: 1024,
     messages: [{ role: "user", content: prompt }],
+    response_format: { type: "json_object" },
   });
 
-  // Extract text from the first content block
-  const textBlock = message.content.find((block) => block.type === "text");
-  if (!textBlock || textBlock.type !== "text") {
-    throw new Error("Claude returned no text content");
+  const text = response.choices[0]?.message?.content;
+  if (!text) {
+    throw new Error("OpenAI returned no text content");
   }
 
-  const parsed = JSON.parse(textBlock.text) as AlignmentResult;
+  const parsed = JSON.parse(text) as AlignmentResult;
 
   // Basic validation
   if (
@@ -88,7 +88,7 @@ async function callClaudeForAlignment(prompt: string): Promise<AlignmentResult> 
     !Array.isArray(parsed.missingTopics) ||
     typeof parsed.confidence !== "number"
   ) {
-    throw new Error("Claude returned an invalid response shape");
+    throw new Error("OpenAI returned an invalid response shape");
   }
 
   return parsed;
@@ -110,7 +110,7 @@ function sleep(ms: number): Promise<void> {
  * Grade a single content item.
  *
  * 1. Fetches the content item and its topic snapshots.
- * 2. Calls Claude for alignment scoring (with retries).
+ * 2. Calls OpenAI (gpt-4o-mini) for alignment scoring (with retries).
  * 3. Computes recency + overall scores.
  * 4. Persists the result via grades.saveScore.
  * 5. Updates the content item's gradingStatus.
@@ -174,13 +174,14 @@ export const gradeContent = internalAction({
         );
       }
 
-      // ------ 3. Call Claude for alignment ------
+      // ------ 3. Call OpenAI for alignment ------
       const prompt = buildGradingPrompt(
         {
           title: content.title,
           type: content.type,
           description: content.description,
           updatedAt: content.updatedAt,
+          skillLevel: content.skillLevel,
         },
         {
           keyPractices: chosenSnapshot.keyPractices,
@@ -191,7 +192,7 @@ export const gradeContent = internalAction({
       );
 
       const alignment = await withRetry(
-        () => callClaudeForAlignment(prompt),
+        () => callAIForAlignment(prompt),
         3,
       );
 
@@ -339,6 +340,72 @@ export const gradeByTopic = internalAction({
     });
 
     return { topicId: args.topicId, results };
+  },
+});
+
+/**
+ * Grade a batch of content items with controlled parallelism.
+ *
+ * Splits the IDs into concurrent groups of `concurrency` size, running each
+ * group in parallel. This is much faster than sequential batchGrade for large
+ * batches while respecting API rate limits.
+ */
+export const parallelBatchGrade = internalAction({
+  args: {
+    contentIds: v.array(v.id("contentItems")),
+    concurrency: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    const ids = args.contentIds;
+    const concurrency = args.concurrency ?? 5;
+
+    const results: {
+      contentId: string;
+      success: boolean;
+      grade?: string;
+      error?: string;
+    }[] = [];
+
+    // Process in chunks of `concurrency`
+    for (let i = 0; i < ids.length; i += concurrency) {
+      const chunk = ids.slice(i, i + concurrency);
+
+      const chunkResults = await Promise.allSettled(
+        chunk.map(async (contentId) => {
+          const result = await ctx.runAction(internal.grading.gradeContent, {
+            contentId,
+          });
+          return { contentId: contentId as string, result };
+        }),
+      );
+
+      for (const settled of chunkResults) {
+        if (settled.status === "fulfilled") {
+          results.push({
+            contentId: settled.value.contentId,
+            success: true,
+            grade: (settled.value.result as any)?.grade,
+          });
+        } else {
+          const errorMessage =
+            settled.reason instanceof Error
+              ? settled.reason.message
+              : String(settled.reason);
+          results.push({
+            contentId: "unknown",
+            success: false,
+            error: errorMessage,
+          });
+        }
+      }
+
+      // Brief pause between chunks to avoid rate limits
+      if (i + concurrency < ids.length) {
+        await sleep(1000);
+      }
+    }
+
+    return results;
   },
 });
 

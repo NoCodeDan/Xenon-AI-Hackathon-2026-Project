@@ -12,6 +12,9 @@ import { v } from "convex/values";
 // Keyword → topic slug mapping. Order matters — first match wins.
 // More specific patterns come before generic ones.
 const KEYWORD_MAP: [RegExp, string][] = [
+  // College credit — must come before AI so "College Credit" titles don't match \bai\b
+  [/\bcollege\s*credit\b|\baccredited\b/i, "college-credit"],
+
   // Specific frameworks / languages first
   [/\breact\s*native\b/i, "react"],
   [/\breact\b|\bnext\.?js\b|\bredux\b|\bjsx\b/i, "react"],
@@ -75,9 +78,6 @@ const KEYWORD_MAP: [RegExp, string][] = [
 
   // Professional growth
   [/\bresume\b|\binterview\b|\bcareer\b|\bjob\b|\brecruiter\b|\bfreelance\b|\bbusiness\b|\bprofessional\b|\bsoft\s*skills\b|\bleadership\b|\bmanagement\b|\bworkplace\b|\bremote\s*work/i, "professional-growth"],
-
-  // College credit
-  [/\bcollege\s*credit\b|\baccredited\b/i, "college-credit"],
 
   // Learning resources — very generic, keep near bottom
   [/\blearning\b|\bstudy\b|\bgetting\s*started\b|\bhow\s*to\s*learn\b|\bbeginners?\s*guide\b|\bintroduction\s*to\b|\bwhat\s*is\b/i, "learning-resources"],
