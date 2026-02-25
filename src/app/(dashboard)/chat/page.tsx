@@ -52,6 +52,8 @@ import {
   Check,
   Play,
 } from "lucide-react";
+import { useUser } from "@clerk/nextjs";
+import Image from "next/image";
 import { FormattedContent } from "@/components/formatted-content";
 import { LinkPreviews } from "@/components/link-preview";
 import { cn } from "@/lib/utils";
@@ -436,10 +438,12 @@ function MessageBubble({
   message,
   userId,
   precedingUserQuery,
+  userImageUrl,
 }: {
   message: ChatMessage;
   userId?: Id<"users">;
   precedingUserQuery?: string;
+  userImageUrl?: string | null;
 }) {
   const isUser = message.role === "user";
 
@@ -448,16 +452,26 @@ function MessageBubble({
       className={cn("flex gap-3", isUser ? "flex-row-reverse" : "flex-row")}
     >
       {/* Avatar */}
-      <div
-        className={cn(
-          "flex size-8 shrink-0 items-center justify-center rounded-full",
-          isUser
-            ? "bg-emerald-600 text-white"
-            : "bg-emerald-100 text-emerald-700"
-        )}
-      >
-        {isUser ? <User className="size-4" /> : <Bot className="size-4" />}
-      </div>
+      {isUser && userImageUrl ? (
+        <Image
+          src={userImageUrl}
+          alt="You"
+          width={32}
+          height={32}
+          className="size-8 shrink-0 rounded-full object-cover"
+        />
+      ) : (
+        <div
+          className={cn(
+            "flex size-8 shrink-0 items-center justify-center rounded-full",
+            isUser
+              ? "bg-emerald-600 text-white"
+              : "bg-emerald-100 text-emerald-700"
+          )}
+        >
+          {isUser ? <User className="size-4" /> : <Bot className="size-4" />}
+        </div>
+      )}
 
       {/* Message content */}
       <div
@@ -602,6 +616,7 @@ function EmptyState({ onNewChat }: { onNewChat: () => void }) {
 // ---------------------------------------------------------------------------
 
 export default function ChatPage() {
+  const { user: clerkUser } = useUser();
   const [activeSessionId, setActiveSessionId] =
     useState<Id<"chatSessions"> | null>(null);
   const [inputValue, setInputValue] = useState("");
@@ -906,17 +921,28 @@ export default function ChatPage() {
                         message={message}
                         userId={activeUser?._id}
                         precedingUserQuery={precedingUserQuery}
+                        userImageUrl={clerkUser?.imageUrl}
                       />
                     );
                   })
                 )}
 
-                {/* Optimistic user message — shown instantly before server confirms */}
-                {optimisticMsg && (
+                {/* Optimistic user message — hide once the real message appears in DB */}
+                {optimisticMsg && !messages?.some((m) => m.role === "user" && m.content === optimisticMsg) && (
                   <div className={cn("flex gap-3", "flex-row-reverse")}>
-                    <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
-                      <User className="size-4" />
-                    </div>
+                    {clerkUser?.imageUrl ? (
+                      <Image
+                        src={clerkUser.imageUrl}
+                        alt="You"
+                        width={32}
+                        height={32}
+                        className="size-8 shrink-0 rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                        <User className="size-4" />
+                      </div>
+                    )}
                     <div className="max-w-[85%] md:max-w-[75%]">
                       <div className="rounded-2xl rounded-br-md bg-emerald-600 text-white px-4 py-2.5">
                         <p className="text-sm leading-relaxed">{optimisticMsg}</p>

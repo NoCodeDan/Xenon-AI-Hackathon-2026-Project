@@ -988,33 +988,35 @@ function ContentTableInner() {
       {/* Summary stats cards */}
       <SummaryCards stats={stats} gradeDistribution={gradeDistribution} />
 
-      {/* Type tabs */}
-      <Tabs
-        value={typeFilter}
-        onValueChange={(v) => updateParam("type", v)}
-      >
-        <TabsList>
-          {TYPE_TABS.map((tab) => {
-            const count =
-              tab.value === "all"
-                ? stats?.total
-                : stats?.typeCounts[tab.value];
-            return (
-              <TabsTrigger key={tab.value} value={tab.value}>
-                {tab.label}
-                {count !== undefined && (
-                  <span className="ml-1.5 text-xs text-muted-foreground tabular-nums">
-                    {count.toLocaleString()}
-                  </span>
-                )}
-              </TabsTrigger>
-            );
-          })}
-        </TabsList>
-      </Tabs>
-
       {/* Filters */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        {/* Type filter dropdown */}
+        <Select
+          value={typeFilter}
+          onValueChange={(v) => updateParam("type", v)}
+        >
+          <SelectTrigger className="w-full sm:w-44">
+            <SelectValue placeholder="All Types" />
+          </SelectTrigger>
+          <SelectContent>
+            {TYPE_TABS.map((tab) => {
+              const count =
+                tab.value === "all"
+                  ? stats?.total
+                  : stats?.typeCounts[tab.value];
+              return (
+                <SelectItem key={tab.value} value={tab.value}>
+                  {tab.label}
+                  {count !== undefined && (
+                    <span className="ml-1.5 text-xs text-muted-foreground tabular-nums">
+                      {count.toLocaleString()}
+                    </span>
+                  )}
+                </SelectItem>
+              );
+            })}
+          </SelectContent>
+        </Select>
         {/* Search */}
         <div className="relative flex-1 sm:max-w-sm">
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />

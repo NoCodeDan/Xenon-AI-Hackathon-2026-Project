@@ -795,7 +795,7 @@ function TrendingTopicsWidget({
   const sources = Object.keys(signalsBySource);
 
   return (
-    <Card className="md:col-span-2">
+    <Card>
       <CardHeader>
         <CardTitle>Trending Topics</CardTitle>
         <CardDescription>Top signals across all data sources</CardDescription>

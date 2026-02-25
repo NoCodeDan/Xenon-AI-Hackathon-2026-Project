@@ -90,6 +90,12 @@ export const getWidgetData = query({
       distribution[entry.grade] = (distribution[entry.grade] ?? 0) + 1;
     }
 
+    // --- Type counts ---
+    const typeCounts: Record<string, number> = {};
+    for (const item of allContent) {
+      typeCounts[item.type] = (typeCounts[item.type] ?? 0) + 1;
+    }
+
     // --- Build content lookup map ---
     const contentMap = new Map(
       allContent.map((c) => [c._id.toString(), c])
@@ -185,6 +191,7 @@ export const getWidgetData = query({
 
     return {
       distribution,
+      typeCounts,
       worstPerformers,
       bestPerformers,
       stalestContent,

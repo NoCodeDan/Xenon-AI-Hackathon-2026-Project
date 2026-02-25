@@ -211,14 +211,16 @@ async function init() {
       ? `${Math.round(data.freshness.confidence * 100)}%`
       : "--";
 
-    document.getElementById("meta-benchmark").textContent =
-      data.freshness?.industryBenchmark || "--";
-
     document.getElementById("meta-reviewed").textContent = data.freshness
       ? timeAgo(data.freshness.createdAt)
       : data.grade
         ? timeAgo(data.grade.updatedAt)
         : "--";
+
+    const publishTs = data.content?.publishedAt || data.content?.updatedAt;
+    document.getElementById("meta-published").textContent = publishTs
+      ? timeAgo(publishTs)
+      : "--";
 
     // Score bars
     if (data.freshness) {
@@ -601,6 +603,12 @@ async function sendChatMessage() {
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
+      // If session is stale/invalid, clear it and retry once
+      if (res.status >= 400 && chatSessionId) {
+        chatSessionId = null;
+        chatUserId = null;
+        saveChatState();
+      }
       throw new Error(err.error || `Request failed (${res.status})`);
     }
 

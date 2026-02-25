@@ -15,6 +15,8 @@ import {
   LineChart,
   Line,
   Cell,
+  PieChart,
+  Pie,
 } from "recharts";
 import {
   Card,
@@ -317,16 +319,34 @@ function SummaryStatsRow() {
 }
 
 // ---------------------------------------------------------------------------
-// Widget: Freshness Trend (Line Chart)
+// Widget: Content by Type (Donut Chart)
 // ---------------------------------------------------------------------------
 
-function FreshnessTrendWidget({ onAskChat }: { onAskChat: (q: string) => void }) {
-  const trend = useQuery(api.snapshots.getTrend, { limit: 30 });
+const TYPE_CHART_COLORS: Record<string, string> = {
+  course: "#6366f1",
+  track: "#a855f7",
+  workshop: "#f59e0b",
+  practice: "#14b8a6",
+  video: "#ec4899",
+  stage: "#0ea5e9",
+  bonus: "#f43f5e",
+};
 
-  if (trend === undefined) {
+const TYPE_LABELS: Record<string, string> = {
+  course: "Courses",
+  track: "Tracks",
+  workshop: "Workshops",
+  practice: "Practice",
+  video: "Videos",
+  stage: "Stages",
+  bonus: "Bonus",
+};
+
+function ContentByTypeWidget({ typeCounts }: { typeCounts?: Record<string, number> }) {
+  if (typeCounts === undefined) {
     return (
       <Card>
-        <WidgetHeader title="Freshness Trend" href="/grading" />
+        <WidgetHeader title="Content by Type" href="/content" />
         <CardContent className="h-56">
           <Skeleton className="h-full w-full" />
         </CardContent>
@@ -334,62 +354,58 @@ function FreshnessTrendWidget({ onAskChat }: { onAskChat: (q: string) => void })
     );
   }
 
-  if (trend.length === 0) {
-    return (
-      <Card>
-        <WidgetHeader title="Freshness Trend" href="/grading" />
-        <CardContent>
-          <p className="text-sm text-muted-foreground">
-            Not enough data to show a trend yet.
-          </p>
-        </CardContent>
-        <SuggestionLink
-          question="How can I improve my content scores?"
-          onClick={() => onAskChat("How can I improve my content scores?")}
-        />
-      </Card>
-    );
-  }
+  const chartData = Object.entries(typeCounts)
+    .filter(([, count]) => count > 0)
+    .sort((a, b) => b[1] - a[1])
+    .map(([type, count]) => ({
+      name: TYPE_LABELS[type] ?? type,
+      value: count,
+      type,
+    }));
 
-  const chartData = trend.map((s) => ({
-    date: new Date(s.createdAt).toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-    }),
-    score: Math.round(s.averageScore * 10) / 10,
-  }));
+  const total = chartData.reduce((s, d) => s + d.value, 0);
 
   return (
     <Card>
-      <WidgetHeader title="Freshness Trend" href="/grading" />
+      <WidgetHeader title="Content by Type" href="/content" />
       <CardContent className="h-56">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={chartData}>
-            <XAxis dataKey="date" tick={{ fontSize: 12 }} />
-            <YAxis
-              domain={[0, 100]}
-              tick={{ fontSize: 12 }}
-              tickFormatter={(v: number) => `${v}`}
-            />
+          <PieChart>
+            <Pie
+              data={chartData}
+              cx="50%"
+              cy="50%"
+              innerRadius="55%"
+              outerRadius="80%"
+              paddingAngle={2}
+              dataKey="value"
+              stroke="none"
+            >
+              {chartData.map((d) => (
+                <Cell key={d.type} fill={TYPE_CHART_COLORS[d.type] ?? "#94a3b8"} />
+              ))}
+            </Pie>
             <RechartsTooltip
               contentStyle={{ borderRadius: "8px", fontSize: "13px" }}
-              formatter={(value) => [`${value}`, "Avg Score"]}
+              formatter={(value: number, name: string) => [
+                `${value.toLocaleString()} (${Math.round((value / total) * 100)}%)`,
+                name,
+              ]}
             />
-            <Line
-              type="monotone"
-              dataKey="score"
-              stroke="#059669"
-              strokeWidth={2}
-              dot={{ r: 3, fill: "#059669" }}
-              activeDot={{ r: 5 }}
-            />
-          </LineChart>
+          </PieChart>
         </ResponsiveContainer>
       </CardContent>
-      <SuggestionLink
-        question="How can I improve my content scores?"
-        onClick={() => onAskChat("How can I improve my content scores?")}
-      />
+      <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 px-4 pb-4">
+        {chartData.map((d) => (
+          <div key={d.type} className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <span
+              className="inline-block size-2.5 rounded-full"
+              style={{ backgroundColor: TYPE_CHART_COLORS[d.type] ?? "#94a3b8" }}
+            />
+            {d.name}
+          </div>
+        ))}
+      </div>
     </Card>
   );
 }
@@ -907,8 +923,8 @@ function InsightsChatPanel({
             </div>
           ))}
 
-          {/* Optimistic user message */}
-          {optimisticMsg && (
+          {/* Optimistic user message — hide once the real message appears in the DB */}
+          {optimisticMsg && !messages?.some((m) => m.role === "user" && m.content === optimisticMsg) && (
             <div className="flex gap-2.5 flex-row-reverse">
               <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
                 <User className="size-3.5" />
@@ -1040,7 +1056,7 @@ export default function DashboardPage() {
               Library overview
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <FreshnessTrendWidget onAskChat={handleAskChat} />
+              <ContentByTypeWidget typeCounts={widgetData?.typeCounts} />
               <GradeBreakdownWidget distribution={widgetData?.distribution} />
               <NeedsAttentionWidget onAskChat={handleAskChat} worstPerformers={widgetData?.worstPerformers} />
               <TopPerformersWidget bestPerformers={widgetData?.bestPerformers} />

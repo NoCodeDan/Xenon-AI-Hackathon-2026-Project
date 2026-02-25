@@ -6,3 +6,24 @@
 node_modules
 .next/
 tsconfig.tsbuildinfo
+
+# AI agent/tool directories
+.agent/
+.agents/
+.claude/
+.cline/
+.commandcode/
+.factory/
+.goose/
+.kilocode/
+.kiro/
+.neovate/
+.openhands/
+.pi/
+.qoder/
+.roo/
+.trae/
+.windsurf/
+.zencoder/
+skills/
+skills-lock.json
