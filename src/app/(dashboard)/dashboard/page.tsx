@@ -387,10 +387,10 @@ function ContentByTypeWidget({ typeCounts }: { typeCounts?: Record<string, numbe
             </Pie>
             <RechartsTooltip
               contentStyle={{ borderRadius: "8px", fontSize: "13px" }}
-              formatter={(value: number, name: string) => [
-                `${value.toLocaleString()} (${Math.round((value / total) * 100)}%)`,
-                name,
-              ]}
+              formatter={(value) => {
+                const v = Number(value ?? 0);
+                return `${v.toLocaleString()} (${Math.round((v / total) * 100)}%)`;
+              }}
             />
           </PieChart>
         </ResponsiveContainer>
